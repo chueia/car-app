@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>注册页面</title>
+    <link rel="stylesheet" href="css/framework7.ios.min.css">
+    <link rel="stylesheet" href="css/framework7.ios.colors.min.css">
+    <link rel="stylesheet" href="css/app-main.css">
+</head>
+
+<body>
+    <div class="view-main jinrong-excel1">
+        <div class="main">
+            <div class="main-title">
+                <div class="exit" onclick='javascript:history.back(-1)'>
+                    <img src="./img/exit.png" alt="">
+                </div>
+                <p>金融贷款</p>
+            </div>
+            <div class="jinrong-message">
+                <span>该信息将作为您的实名凭证，请确保真实。</span>
+            </div>
+            <div class="excel-box">
+                <div>
+                    <span class="">本人姓名</span>
+                    <input type="text" placeholder="刘德华">
+                </div>
+                <div>
+                    <span class="">身份证号</span>
+                    <input type="text" placeholder="422801196502292525">
+                </div>
+                <div>
+                    <span class="">电话</span>
+                    <input type="text" placeholder="13988887777">
+                </div>
+            </div>
+
+            <div class="excel-box">
+                <div>
+                    <span class="">贷款金额</span>
+                    <input type="text" placeholder="（1000-20000）">
+                </div>
+                <div>
+                    <span class="">贷款期限</span>
+                    <input class="choose" id="choose-times" type="text" placeholder="1个月">
+                </div>
+
+            </div>
+
+            <div class="excel-box">
+                <div>
+                    <span class="">职业类别</span>
+                    <input class="choose" id="choose-job" type="text" placeholder="">
+                </div>
+                <div>
+                    <span class="">月工资收入</span>
+                    <input id="excel-salary" type="text" placeholder="">
+                </div>
+                <div>
+                    <span class="">现单位工作年限</span>
+                    <input type="">
+                </div>
+
+            </div>
+
+            <div class="excel-box">
+                <div>
+                    <span class="">社保情况</span>
+                    <input class="choose" id="choose-insurance" type="text" placeholder="">
+                </div>
+                <div>
+                    <span class="">公积金情况</span>
+                    <input class="choose" id="choose-fund" type="text" placeholder="">
+                </div>
+                <div>
+                    <span class="">保单情况</span>
+                    <input class="choose" id="choose-slip" type="text" placeholder="">
+                </div>
+                <div>
+                    <span class="">车辆情况</span>
+                    <input class="choose" id="choose-car" type="text" placeholder="">
+                </div>
+                <div>
+                    <span class="">房产情况</span>
+                    <input class="choose" type="text" placeholder="">
+                </div>
+                <div>
+                    <span class="">个人信用情况</span>
+                    <input type="text" placeholder="">
+                </div>
+            </div>
+            <div class="careful">
+                <img class="careful-img" src="./img/careful.png" alt="">
+                <span>我已阅读并同意 <a href="#">贷款知情书</a></span>
+                <button class="able">
+                    提交审核
+                </button>
+            </div>
+        </div>
+
+
+        <script src="./js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="js/framework7.min.js"></script>
+
+        <script type="text/javascript" src="js/my-app.js"></script>
+</body>
+
+</html>

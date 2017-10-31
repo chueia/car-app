@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>信用卡代还申请</title>
+    <link rel="stylesheet" href="css/framework7.ios.min.css">
+    <link rel="stylesheet" href="css/framework7.ios.colors.min.css">
+    <link rel="stylesheet" href="css/app-main.css">
+</head>
+
+<body>
+    <div class="view-main jinrong-excel1">
+        <div class="main">
+            <div class="main-title">
+                <div class="exit " onclick='javascript:history.back(-1)';>
+                    <img src="./img/exit.png" alt="">
+                </div>
+                <p>信用卡代还-及贷</p>
+            </div>
+            <div class="jinrong-message">
+                <span>该信息将作为您的实名凭证，请确保真实。</span>
+            </div>
+            <div class="excel-box">
+                <div>
+                    <span class="">本人姓名</span>
+                    <input type="text" placeholder="刘德华">
+                </div>
+                <div>
+                    <span class="">身份证号</span>
+                    <input type="text" placeholder="422801196502292525">
+                </div>
+                <div>
+                    <span class="">电话</span>
+                    <input type="text" placeholder="13988887777">
+                </div>
+            </div> 
+
+            <div class="excel-box">
+                <div>
+                    <span class="">贷款金额</span>
+                    <input type="text" placeholder="（1000-20000）">
+                </div>
+                <div>
+                    <span class="">还款方式</span> 
+                     <!--pos机还款 扫码还款-->
+                    <input class="choose" id="repayment" type="text" placeholder="">
+                </div>
+
+            </div>
+
+            <div class="excel-box">
+                <div>
+                    <span class="">信用卡信息</span>
+                    <input class="" id="" type="text" placeholder="">
+                </div>
+                <div>
+                    <span class="">信用卡卡号</span>
+                    <input id="" type="text" placeholder="">
+                </div>
+                <div>
+                    <span class="">银行名称</span>
+                    <input type="">
+                </div>
+                <div>
+                    <span class="">信用卡额度</span>
+                    <input type="">
+                </div>
+                <div >
+                    <span class="">最后还款日期</span>
+                                <input type="text" placeholder="" readonly id="calendar-default">
+
+                </div>
+            </div>
+
+         
+            <div class="careful">
+                <img class="careful-img" src="./img/careful.png" alt="">
+                <span>我已阅读并同意 <a href="#">贷款知情书</a></span>
+                <button class="able">
+                    提交审核
+                </button>
+            </div>
+        </div>
+
+
+        <script src="./js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="js/framework7.js"></script>
+
+        <script type="text/javascript" src="js/my-app.js"></script>
+</body>
+
+</html>

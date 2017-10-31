@@ -1,0 +1,935 @@
+
+/*选择字体*/
+.picker-3d .picker-item{
+    font-family: "微软雅黑"!important;
+        -webkit-perspective: none;
+        perspective: none;
+}
+
+/*金融详情页头部*/
+
+body {
+    background: #f0f0f6;
+    overflow: auto;
+}
+
+.main .main-title {
+    height: 50px;
+    background: linear-gradient(to top, #2c87b7, #81cbf3);
+    line-height: 50px;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.main-title .exit {
+    display: inline-block;
+    position: absolute;
+    top: 7px;
+    left: 10px;
+}
+
+.main-title .exit img {
+    width: 15px;
+    height: 25px;
+}
+
+.main-title p {
+    display: inline-block;
+    margin: 0;
+    font-size: 18px;
+}
+
+.shop .shop-box {
+    padding: 15px 20px;
+}
+
+.shop .shop-box .shop-top {
+    overflow: hidden;
+    background: url(./../img/icon-right.png) no-repeat;
+    background-size: 17px 23px;
+    background-position: center right;
+}
+
+.shop .shop-box .shop-top .shop-left {
+    float: left;
+}
+
+.shop .shop-box .shop-top .shop-left img {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    border-radius: 20px;
+    float: left;
+}
+
+.shop .shop-box .shop-top .shop-right {
+    margin-left: 10px;
+    float: left;
+}
+
+.shop .shop-box .shop-top .shop-right img {
+    height: 15px;
+    display: block;
+}
+
+.shop .shop-box .shop-top .shop-right h2 {
+    font-size: 18px;
+    font-weight: normal;
+    margin: 0;
+}
+
+.shop .shop-box .shop-top .shop-right span {
+    color: #6f6f6f;
+}
+
+.shop .shop-bottom {
+    margin-top: 10px;
+}
+
+.shop.jinrong-shop .shop-top {
+    background: none;
+}
+
+.jinrong-shop .shop-top {
+    position: relative;
+}
+
+.jinrong-shop .shop-box .shop-right .love {
+    width: 25px;
+    height: 23px;
+    background: url(./../img/love-2.png) no-repeat;
+    background-size: 25px 23px;
+    position: absolute;
+    left: 205px;
+    top: 1px;
+    height: 25px!important;
+}
+
+.jinrong-shop .shop-box {
+    background: white;
+}
+
+.jinrong-shop .shop-box .shop-right .love.active {
+    background: url(./../img/love-1.png) no-repeat;
+    background-size: 25px 23px;
+}
+
+.jinrong-shop .shop-box .shop-right .distance {
+    position: absolute;
+    right: 1px;
+    top: 1px;
+}
+
+.jinrong-shop .shop-box .shop-right .numbers {
+    position: absolute;
+    right: 1px;
+    bottom: 1px;
+}
+
+
+/*金融选择*/
+
+.choose {
+    background: white;
+    padding: 0 20px;
+    margin-top: 20px;
+}
+
+.choose .choose-box {
+    height: 50px;
+    line-height: 50px;
+}
+
+.choose .choose-box span {
+    font-size: 16px;
+}
+
+.choose .choose-box input {
+    border: 0;
+    float: right;
+    width: 80px;
+    height: 50px;
+    padding: 0;
+    background: url(./../img/icon-right.png) no-repeat;
+    background-position: right center;
+    background-size: 10px 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.text1 {
+    background: white;
+    margin-top: 20px;
+    padding: 10px 20px;
+    height: 50px;
+}
+
+.text1 .text1-box {
+    height: 100%;
+    text-align: center;
+    display: inline-block;
+    width: 32%;
+    border-right: 1px solid #f0f0f6;
+}
+
+.text1 .text1-box:last-child {
+    border: none;
+}
+
+.text1 .text1-box span {
+    color: #2e92c7;
+    font-size: 20px;
+}
+
+.text1 .text1-box p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.details {
+    background: white;
+    margin-top: 20px;
+    padding: 10px 0px;
+}
+
+.details .details-title {
+    height: 25px;
+    line-height: 25px;
+    padding: 0 20px;
+}
+
+.details .details-title p {
+    background: url(./../img/icon-right.png) no-repeat;
+    background-size: 10px 15px;
+    background-position: right center;
+    width: 110px;
+    margin: 0;
+    font-size: 16px;
+}
+
+.details .details-main {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border-top: 1px solid #f0f0f6;
+}
+
+.details .details-main .conditions {}
+
+.details .details-main .conditions i {
+    background: url(./../img/icon-tiaojian.png)no-repeat;
+    background-size: 15px 15px;
+    height: 15px;
+    width: 15px;
+    display: inline-block;
+    vertical-align: sub;
+}
+
+.details .details-main .conditions span {
+    color: #2e92c7;
+    margin-left: 10px;
+    font-size: 16px;
+}
+
+.details .details-main .conditions p {
+    margin: 0;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.details .details-main .conditions.introduction {
+    margin-top: 10px;
+}
+
+.details .details-main .conditions.introduction i {
+    background: url(./../img/icon-jieshao.png)no-repeat;
+    background-size: 15px 15px;
+    height: 15px;
+    width: 15px;
+    display: inline-block;
+    vertical-align: sub;
+}
+
+.button {
+    height: 50px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    background: linear-gradient(to top, #328dbd, #81cbf3);
+    border: none;
+    line-height: 50px;
+}
+.button a{
+    display:block;
+}
+.button p {
+    font-size: 16px;
+    margin: 0;
+    color:white;
+}
+
+.jinrong-excel1 {
+    color: #a5a5a5;
+    background: #f0f0f6;
+}
+
+.jinrong-excel1 .jinrong-message {
+    height: 40px;
+    background: white;
+    line-height: 40px;
+    padding: 0 20px;
+}
+
+.jinrong-excel1 .excel-box {
+    background: white;
+    padding: 0 20px;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.jinrong-excel1 .excel-box div {
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f6;
+}
+
+.jinrong-excel1 .excel-box div span {}
+
+.jinrong-excel1 .excel-box div input {
+    border: 0;
+    float: right;
+    text-align: right;
+    font-size: 16px;
+}
+
+.jinrong-excel1 .excel-box div input.choose {
+    background: url(./../img/icon-right.png)no-repeat;
+    background-size: 10px 15px;
+    background-position: right center;
+    margin: 0;
+}
+
+.careful {
+    padding: 0 20px;
+    margin-top: 20px;
+}
+
+.careful .careful-img {
+    width: 18px;
+    height: 18px;
+    vertical-align: sub;
+    margin-right:10px;
+}
+.careful span a{
+    margin-left:10px;
+    color:black;
+}
+.careful button{
+     margin:20px 0;
+     border-radius: 20px;
+    width:100%;
+    height:50px;
+    display:block;
+}
+.careful button.disable{
+    border:2px solid #cacaca;
+    color: #cacaca;
+    border-radius: 20px;
+
+   
+    background: #f0f0f6;
+}
+.careful button.able{
+     border:2px solid #3397cc;
+    color: white;
+    
+    
+    background: #3397cc;
+}
+
+/*代办详情页*/
+.daiban{
+    text-align: center;
+    padding:20px 20px;
+    background: white;
+}
+.daiban .card-img{
+    width:90%;
+    
+}
+.daiban div{
+    text-align: left;
+    margin-top:10px;
+}
+.daiban div h2{
+    color:#000000;
+    margin:0;
+    font-weight: normal;
+    font-size: 1.3em;
+}
+.daiban div p{
+    color:#4a4a4a;
+    margin:0;
+    font-size: 1.0em;
+    margin-bottom:5px;
+}
+.daiban div span{
+    border:1px solid #36b8fd;
+    padding:1px 5px;
+    color: #36b8fd;
+}
+.daiban-box{
+    margin-top: 20px;
+    padding:0px 0px;
+    background: white;
+}
+.daiban-box .box-title{
+    border-bottom: 1px solid #a5a5a5;
+    height:50px;
+    line-height: 50px;
+}
+.daiban-box .box-title span{
+    padding:0 20px;
+    color:#4a4a4a;
+    font-size: 1.2em;
+}
+.daiban-box .box-text{
+    padding:10px 20px;
+    font-size: 1.1em;
+}
+.daiban-box .box-text div{
+    margin:10px 0;
+}
+.daiban-box .box-text span{
+    margin-left:20px;
+    color:#adadad;
+}
+.daiban-box .box-text p{
+    display: inline-block;
+    width:20%;
+    margin:0;
+    color:#000000;
+}
+.daiban-box .box-text span b{
+    font-weight: normal;
+    display:block;
+    font-size: 1.0em;
+}
+.daiban-box2 .box-text span{
+    color:#000000;
+}
+.daiban-box2 .box-text span b{
+    color:#adadad;
+}
+.daiban-box3 .box-text span{
+    margin:0;
+}
+.daiban-box3 .row{
+    position: relative;
+}
+.daiban-box3 .box-text  img{
+        position: absolute;
+    left: 25%;
+    top: 3%;
+    width: 25%;
+    display: inline-block;
+}
+
+.shanghu{
+    margin-top:20px;
+    background: white;
+    padding:10px 20px;
+}
+.shanghu .row .person{
+    width:100%;
+}
+.shanghu .row h2{
+    margin:0;
+    margin-top: 0.5em;
+    font-size: 1.2em;
+    color:#000000;
+    font-weight: normal;
+}
+.shanghu .row p{
+    margin:0;
+    font-size: 1.1em;
+    margin-top:0.5em
+}
+.shanghu .row .star{
+    width:50%;
+}
+a.phone{
+    display:block;
+    width:100%;
+    background: linear-gradient(to top,#2f8aba,#51acdd);
+    height:3em;
+    line-height: 3em;
+    color:white;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+/*二手车详情页*/
+.car-main{
+
+}
+.car-main .banner img{
+    width:100%;
+}
+.swiper-container{
+    position:relative;
+}
+.shadow-name{
+    padding:3px 10px;
+    font-size: 1em;
+    color:white;
+    background: rgba(0, 0, 0, 0.5);
+    display: inline-block;
+    position:absolute;
+        bottom: 1em;
+    left: 0.54em;
+    z-index: 999;
+}
+.shadow p{
+    margin:0;
+}
+
+.shadow-number{
+    padding:3px 10px;
+    font-size: 1em;
+    color:white;
+    background: rgba(0, 0, 0, 0.5);
+    display: inline-block;
+    position:absolute;
+    bottom: 1em;
+    right: 1em;
+    z-index: 999;
+}
+
+.car-main{
+
+}
+.car-main p{
+    margin:0;
+}
+.car-main .title{
+    padding:1em 1.5em;
+    position: relative;
+    background: white;
+    border:1px solid #eeeeee;
+}
+.car-main .title h1{
+    font-size: 1.3em;
+    color:#000000;
+    font-weight: normal;
+    margin:0;
+        max-width: 16em;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.car-main .title .love {
+    width: 25px;
+    height: 23px;
+    background: url(./../img/love-2.png) no-repeat;
+    background-size: 25px 23px;
+    position: absolute;
+    right: 2em;
+    top: 1em;
+    height: 25px!important;
+}
+.car-main .title .love.active{
+     width: 25px;
+    height: 23px;
+    background: url(./../img/love-1.png) no-repeat;
+    background-size: 25px 23px;
+    position: absolute;
+    right: 2em;
+    top: 1em;
+    height: 25px!important;
+}
+.car-main .title2{
+     padding:0.5em 1.5em;
+    position: relative;
+    background: white;
+    white-space: nowrap;
+}
+.car-main .title2 h1{
+    font-size: 1.3em;
+    color:#f9712c;
+    font-weight: normal;
+    margin:0;
+    max-width: 10em;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: inline;
+}
+.car-main .title2 h1 span{
+    color:#757575;
+    font-size: 0.8em;
+    
+}
+.car-main .title2 span.span2{
+    margin-left:3em;
+    max-width: 5em;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+   
+}
+
+.car-text{
+    background: white;
+    margin-top:20px;
+}
+.car-text .text-title{
+    padding: 0.8em 1em;
+    border:1px solid #eeeeee;
+}
+.car-text .text-title span{
+    padding-left:1.6em;
+    color:black;
+    font-size: 1.1em;
+    background: url(./../img/icon-remen.png) no-repeat;
+    background-size: 1em 1.1em;
+    background-position: center left;
+}
+.car-text .car-instruction{
+    padding:0.8em 2em;
+    border:1px solid #eeeeee;
+}
+.car-text .car-instruction p{
+    font-size: 1.2em;
+    color:black;
+}
+.car-text .car-instruction span{
+    font-size: 1.1em;
+}
+.car-text .car-img{
+    padding:0.8em 1em;
+    border:1px solid #eeeeee;
+}
+.car-text .car-img img{
+    width:100%;
+}
+.car-text .car-img p{
+     font-size: 1.2em;
+    color:black;
+}
+.car-text .car-img span{
+    font-size: 1.1em;
+}
+
+/*上传图片*/
+.excel-box .img-box{
+    float:left;
+    position: relative;
+}
+.excel-box .img-box img{
+    width:100%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.excel-box .img-box .file{
+    display:inline-block;
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    opacity: 0;
+}
+.jinrong-excel1 .excel-box2 div{
+    border-bottom:0;
+}
+.jinrong-excel1 .excel-box2 div .tip{
+    font-size: 0.8em;
+}
+.excel-box3 .img-box img{
+    width:100%;
+    border-radius: 0px;
+    overflow: hidden;
+}
+.excel-box3 div b{
+    font-weight: normal;
+    color:black;
+}
+.excel-box3 .img-box .file{
+    display:inline-block;
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    opacity: 0;
+}
+
+/*个人页面*/
+.geren{
+    display:none;
+}
+.geren.show{
+    display:block;
+}
+.geren .shop-top{
+    border-bottom:1px solid #eee;
+    padding-bottom:1em;
+    position:relative;
+}
+.geren .shop-top .shop-right .icon-right{
+    position:absolute;
+    right:0;
+    top:0;
+}
+.geren  .text{
+    overflow: hidden;
+}
+.geren  .text p{
+    margin:0;
+    margin-top:1em;
+    
+    float:right;
+    color:#4d4d4d;
+}
+.geren  .text p img{
+    width:0.5em;
+    margin-left:1em;
+}
+.geren a{
+    color:inherit;
+    display:block;
+    margin-bottom:1em;
+}
+.geren-footer{
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    text-align: center;
+    height:4em;
+    line-height: 4em;
+    color:white;
+    background: linear-gradient(to top,#428aaf,#75bce2);
+}
+.geren-footer span.active{
+    background: linear-gradient(to top,#3f7fa1,#69a9cb)
+}
+.text2 span{
+    display:block;
+    text-align: left;
+    height:2em;
+    line-height: 2em;
+    color:#4d4d4d;
+}
+
+
+.shop2 .shop-box{
+    padding:15px 20px;
+}
+.shop2 .shop-box a{
+    color:inherit;
+    display: block;
+}
+.shop2 .shop-box .shop-top{
+    overflow: hidden;
+    background: url(./../img/icon-right.png)  no-repeat;
+    background-size: 17px 23px;
+    background-position: center right;
+
+}
+.shop2 .shop-box .shop-top .shop-left{
+    float: left;
+    /*width:20%;*/
+    /*margin-right: 10px;*/
+}
+.shop2 .shop-box .shop-top .shop-left img{
+   display: inline-block;
+    width: 100%;
+    /* height: 60px; */
+    border-radius: 0;
+    float: left;
+
+}
+.shop2 .shop-box .shop-top .shop-right{
+    /*margin-left:10px;*/
+    /*float:left;*/
+}
+.shop2 .shop-box .shop-top .shop-right img{
+    height:15px;
+    display:block;
+}
+.shop2 .shop-box .shop-top .shop-right h2{
+    font-size: 18px;
+    font-weight: normal;
+    margin:0;
+    display:-webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp: 1;
+}
+.shop2 .shop-box .shop-top .shop-right  p{
+     display:-webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp: 1;
+}
+.shop2 .shop-box .shop-top .shop-right span{
+    color:#6f6f6f;
+}
+.shop2 .shop-bottom{
+    margin-top:10px;
+}
+.shop2 p{
+    margin:0;
+}
+.shop-car .shop-box .shop-top .shop-right b {
+    color: #fc9323;
+    position: absolute;
+    right: 1px;
+    bottom: 1px;
+    font-size: 16px;
+}
+#dingdan3 .shop-box{
+    margin-bottom: 1em;
+}
+#dingdan3 .shop-box .shop-top .shop-left img{
+    width:100%;
+    border-radius: 0px;
+}
+#dingdan3 .shop-box .shop-top .shop-right p{
+    margin:0;
+}
+#dingdan3 .shanghu{
+    margin:0;
+    padding:1em 0 0 0;
+    position: relative;
+}
+#dingdan3 .shanghu .row h2{
+    margin:0;
+    font-size: 1.2em;
+    color:#838080;
+}
+#dingdan3 .shanghu .row h2 span{
+    color:black;
+}
+#dingdan3 .shanghu .row p{
+    font-size: 0.6em;
+    color:#838080;
+}
+#dingdan3 .shanghu .row .star{
+    width:30%;
+}
+#dingdan3 .shanghu .icon-right{
+    position: absolute;
+    right:0;
+    top:1em;
+    width:0.8em;
+}
+#dingdan3 .shop-box .shop-top .shop-right h2{
+    font-size: 1.2em;
+}
+#dingdan3 .shop-box .shop-top .shop-right p{
+    font-size: 0.8em;
+}
+#dingdan3  .shop-box{
+    padding-bottom:0.2em;
+}
+#dingdan4 .car-jindu{
+    padding:1em 0;
+    text-align: center;
+}
+#dingdan4 .car-jindu img{
+    width:80%;
+}
+#dingdan4 .car-jindu .jindu-text{
+    font-size: 0.8em;
+}
+#dingdan4 .car-jindu .jindu-text2{
+    font-size: 1em;
+    margin-top:0.5em;
+    color:#838080;
+}
+
+#dingdan4 .shop-box2{
+    background: url(./../img/qipao.png) no-repeat;
+    background-size: 100% 100%;
+}
+#dingdan4 .car-message h2{
+    margin:0;
+    font-size: 1.2em;
+    font-weight: normal;
+}
+#dingdan4 .car-message span{
+    display: block;
+    color:#707070;
+    margin-top:0.5em;
+}
+.shoucang .box{
+    background: white;
+    position:relative;
+    padding:0.5em;
+    padding-left:5em;
+    padding-bottom:1em;
+    margin-top:1em;
+     color:#717171;
+}
+.shoucang .box img{
+    position: absolute;
+    width: 2.5em;
+    left: 1.5em;
+    top: 1em;
+}
+.shoucang .box .p1{
+    border-bottom:1px solid #717171;
+}
+.shoucang .box .p1 .left{
+    font-size: 1.2em;
+    color:black;
+}
+.shoucang .box .p1 .shanchu{
+    float:right;
+    margin-left:2em;
+    margin-right:1em;
+}
+.shoucang .box .p1 .right{
+    float:right;
+}
+.shoucang .box .read{
+    position: absolute;
+    left:1em;
+    bottom:0.5em;
+}
+.shoucang .box .car{
+    position: absolute;
+    right:1em;
+    bottom:0.5em;
+}
+
+/*设置*/
+.shezhi{
+    background: white;
+    padding:1em 0;
+    padding-left: 2em;
+    color:#4d4d4d;
+    margin-top:1em;
+}
+.shezhi p{
+    margin:0;
+    padding:1em 0;
+    font-size: 1.1em;
+    border-bottom: 1px solid #eeeeee;
+}
+.exit2{
+    background: white;
+    padding:0.5em 2em;
+    text-align: center;
+     margin-top:1em;
+     font-size: 1.4em;
+    
+}
+.exit2 p{
+    color:#4d4d4d;
+    margin:0;
+}

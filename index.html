@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <title>My App</title>
+  <link rel="stylesheet" href="css/framework7.ios.min.css">
+  <link rel="stylesheet" href="css/framework7.ios.colors.min.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body>
+  <!-- Status bar overlay for fullscreen mode-->
+  <div class="statusbar-overlay"></div>
+  <!-- Panels overlay-->
+  <div class="panel-overlay"></div>
+  <!-- Left panel with reveal effect-->
+  <div class="panel panel-left panel-reveal">
+    <div class="content-block">
+      <p></p>
+    </div>
+  </div>
+  <!-- Right panel with cover effect-->
+  <div class="panel panel-right panel-cover">
+    <div class="content-block">
+      <p></p>
+    </div>
+  </div>
+  <!-- Views-->
+  <div class="views">
+    <!-- Your main view, should have "view-main" class-->
+    <div class="view view-main">
+      <!-- Top Navbar-->
+      <div class="navbar hide">
+        <div class="navbar-inner">
+          <!-- We have home navbar without left link-->
+          <input class="left dizhi" placeholder="选择城市" readonly id="picker-dependent"></input>
+          <span class="icon-dizhi"></span>
+          <div class="center sliding">
+            <form class="searchbar ">
+              <div class="searchbar-input">
+                <input type="search" class="search" placeholder="商户名称/交易金额">
+                <a href="#" class="searchbar-clear"></a>
+              </div>
+              <a href="#" class="searchbar-cancel">Cancel</a>
+            </form>
+          </div>
+          <div class="right">
+            <!-- Right link contains only icon - additional "icon-only" class-->
+            <a href="#" class="link icon-only open-panel icon"><span class="badge bg-red">3</span> <i class="icon icon-bars"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="clear">
+
+      </div>
+
+      <div class="login-screen">
+        <!-- Default view-page layout -->
+        <div class="view">
+          <div class="page white">
+            <!-- page-content has additional login-screen content -->
+            <div class=" login-screen-content">
+              <a class="zhuce external" href="#"><span >注册</span></a> 
+              <div class="login-screen-title"><img class="img2" src="./img/start2.png" alt=""></div>
+              <!-- Login form -->
+              <form>
+                <div class="list-block">
+                  <ul>
+                    <li class="item-content">
+                      <div class="item-inner">
+                        <div class="item-title label">用户名</div>
+                        <div class="item-input">
+                          <input type="text" name="username" placeholder="刘德华">
+                        </div>
+                      </div>
+                    </li>
+                    <li class="item-content">
+                      <div class="item-inner">
+                        <div class="item-title label">手机号</div>
+                        <div class="item-input">
+                          <input type="text" name="phone" placeholder="13977778888">
+                        </div>
+                      </div>
+                    </li>
+                    <li class="item-content">
+                      <div class="item-inner">
+                        <div class="item-title label">验证码</div>
+                        <div class="item-input">
+                          <input type="text" name="idcode" placeholder="">
+                        </div>
+                      </div>
+                    </li>
+                    <div class="idcode">
+                      <p>获取验证码 <span>60s</span></p>
+                    </div>
+                  </ul>
+                </div>
+                <div class="list-block">
+                  <ul>
+                    <li>
+                      <a href="#" class="item-link list-button list-login">登录</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="meiti">
+                  <img src="./img/meiti-weixin.png" alt="">
+                  <img src="./img/meiti-qq.png" alt="">
+                  <img src="./img/meiti-sina.png" alt="">
+                </div>
+                <div class="login-message">
+                  <img src="./img/careful.png" alt="">
+                  <span>登录/注册既即视为同意用户服务协议</span>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-all tab-0 show">
+        <img src="./img/start0.png" alt="">
+      </div>
+      <div class="tab-all tab-1  ">
+        <div class="main">
+
+          <div class="page-content">
+            <!-- Slider -->
+            <div class="swiper-container">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="./img/banner-1.png" alt=""></div>
+                <div class="swiper-slide"><img src="./img/banner-2.png" alt=""></div>
+                <div class="swiper-slide"><img src="./img/banner-3.png" alt=""></div>
+                <div class="swiper-slide"><img src="./img/banner-4.png" alt=""></div>
+              </div>
+              <div class="swiper-pagination"></div>
+
+            </div>
+          </div>
+          <div class="notice">
+            <a href="#">
+              <i><img src="./img/notice-icon.png" alt=""></i>
+              <p>您附近有一家新商户已上架，点击查看详情 >></p>
+            </a>
+
+          </div>
+
+          <div class="box-main">
+            <div class="box box1">
+              <h2>金融通</h2>
+              <p>谁都不能阻止我们挣钱。<br> 申请贷款，发放贷款，海量客户，交互体验。
+              </p>
+              <img class="box-right" src="./img/icon-right.png" alt="">
+            </div>
+            <div class="box box2">
+              <h2>信用卡</h2>
+              <p>我的信用卡，保护自身的装甲。<br>信用卡代办、信用卡代还业务，海量信息尽在E家
+              </p>
+              <img class="box-right" src="./img/icon-right.png" alt="">
+            </div>
+            <div class="box box3">
+              <h2>二手车</h2>
+              <p>二手车一样强，革命路上奔小康。<br> 买卖二手车，就上融信E家，直接对接商户。
+              </p>
+              <img class="box-right" src="./img/icon-right.png" alt="">
+            </div>
+          </div>
+
+          <div class="box-title">
+            <i></i>
+            <h2>热门商户</h2>
+          </div>
+          <div class="shop">
+            <div class="shop-box">
+              <a class="external" href="./金融详情页.html">
+                <div class="shop-top">
+                  <div class="shop-left">
+                    <img src="./img/img-1.png" alt="">
+                  </div>
+                  <div class="shop-right">
+                    <h2>及贷-闪电下款</h2>
+                    <span>参考额度:10000-20000</span>
+                    <span>32541人已放款</span>
+                    <img src="./img/star-1.png" alt="">
+                  </div>
+                </div>
+              </a>
+              <div class="shop-bottom">
+                <span>线上全自动审核放款，20000元内即时到账</span>
+              </div>
+            </div>
+            <div class="shop-box">
+              <a class="external" href="./金融详情页.html">
+                <div class="shop-top">
+                  <div class="shop-left">
+                    <img src="./img/img-1.png" alt="">
+                  </div>
+                  <div class="shop-right">
+                    <h2>及贷-闪电下款</h2>
+                    <span>参考额度:10000-20000</span>
+                    <span>32541人已放款</span>
+                    <img src="./img/star-1.png" alt="">
+                  </div>
+                </div>
+              </a>
+              <div class="shop-bottom">
+                <span>线上全自动审核放款，20000元内即时到账</span>
+              </div>
+            </div>
+            <div class="shop-box">
+              <a class="external" href="./金融详情页.html">
+                <div class="shop-top">
+                  <div class="shop-left">
+                    <img src="./img/img-1.png" alt="">
+                  </div>
+                  <div class="shop-right">
+                    <h2>及贷-闪电下款</h2>
+                    <span>参考额度:10000-20000</span>
+                    <span>32541人已放款</span>
+                    <img src="./img/star-1.png" alt="">
+                  </div>
+                </div>
+              </a>
+              <div class="shop-bottom">
+                <span>线上全自动审核放款，20000元内即时到账</span>
+              </div>
+            </div>
+            <div class="shop-box">
+              <a class="external" href="./金融详情页.html">
+                <div class="shop-top">
+                  <div class="shop-left">
+                    <img src="./img/img-1.png" alt="">
+                  </div>
+                  <div class="shop-right">
+                    <h2>及贷-闪电下款</h2>
+                    <span>参考额度:10000-20000</span>
+                    <span>32541人已放款</span>
+                    <img src="./img/star-1.png" alt="">
+                  </div>
+                </div>
+              </a>
+              <div class="shop-bottom">
+                <span>线上全自动审核放款，20000元内即时到账</span>
+              </div>
+            </div>
+            <div class="shop-box">
+              <a class="external" href="./金融详情页.html">
+                <div class="shop-top">
+                  <div class="shop-left">
+                    <img src="./img/img-1.png" alt="">
+                  </div>
+                  <div class="shop-right">
+                    <h2>及贷-闪电下款</h2>
+                    <span>参考额度:10000-20000</span>
+                    <span>32541人已放款</span>
+                    <img src="./img/star-1.png" alt="">
+                  </div>
+                </div>
+              </a>
+              <div class="shop-bottom">
+                <span>线上全自动审核放款，20000元内即时到账</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-all tab-2">
+        <div class="jinrong-title">
+          <div class="title-box title-box1">
+            <img src="./img/jinrong-icon1.png" alt="">
+            <p>小额贷</p>
+          </div>
+          <div class="title-box title-box2">
+            <img src="./img/jinrong-icon2.png" alt="">
+            <p>抵押贷</p>
+          </div>
+          <div class="title-box title-box3">
+            <img src="./img/jinrong-icon3.png" alt="">
+            <p>信用贷</p>
+          </div>
+          <div class="title-box title-box4">
+            <img src="./img/jinrong-icon4.png" alt="">
+            <p>全部商家</p>
+          </div>
+        </div>
+        <div class="notice">
+          <a href="#">
+            <i><img src="./img/notice-icon.png" alt=""></i>
+            <p>您附近有一家新商户已上架，点击查看详情 >></p>
+          </a>
+
+        </div>
+
+        <div class="sort">
+          <div class="sort-box">
+            <span>综合排序</span>
+          </div>
+          <div class="sort-box">
+            <span>热度最高</span>
+          </div>
+          <div class="sort-box">
+            <span>距离最近</span>
+          </div>
+          <div class="sort-box">
+            <span>评分最高</span>
+          </div>
+        </div>
+
+        <div class="box-title">
+          <i></i>
+          <h2>综合排序</h2>
+        </div>
+
+        <div class="shop">
+          <div class="shop-box">
+            <a class="external" href="./金融详情页.html">
+              <div class="shop-top">
+                <div class="shop-left">
+                  <img src="./img/img-1.png" alt="">
+                </div>
+                <div class="shop-right">
+                  <h2>及贷-闪电下款</h2>
+                  <span>参考额度:10000-20000</span>
+                  <span>32541人已放款</span>
+                  <img src="./img/star-1.png" alt="">
+                </div>
+              </div>
+            </a>
+            <div class="shop-bottom">
+              <span>线上全自动审核放款，20000元内即时到账</span>
+            </div>
+          </div>
+          <div class="shop-box">
+            <a class="external" href="./金融详情页.html">
+              <div class="shop-top">
+                <div class="shop-left">
+                  <img src="./img/img-1.png" alt="">
+                </div>
+                <div class="shop-right">
+                  <h2>及贷-闪电下款</h2>
+                  <span>参考额度:10000-20000</span>
+                  <span>32541人已放款</span>
+                  <img src="./img/star-1.png" alt="">
+                </div>
+              </div>
+            </a>
+            <div class="shop-bottom">
+              <span>线上全自动审核放款，20000元内即时到账</span>
+            </div>
+          </div>
+          <div class="shop-box">
+            <a class="external" href="./金融详情页.html">
+              <div class="shop-top">
+                <div class="shop-left">
+                  <img src="./img/img-1.png" alt="">
+                </div>
+                <div class="shop-right">
+                  <h2>及贷-闪电下款</h2>
+                  <span>参考额度:10000-20000</span>
+                  <span>32541人已放款</span>
+                  <img src="./img/star-1.png" alt="">
+                </div>
+              </div>
+            </a>
+            <div class="shop-bottom">
+              <span>线上全自动审核放款，20000元内即时到账</span>
+            </div>
+          </div>
+          <div class="shop-box">
+            <a class="external" href="./金融详情页.html">
+              <div class="shop-top">
+                <div class="shop-left">
+                  <img src="./img/img-1.png" alt="">
+                </div>
+                <div class="shop-right">
+                  <h2>及贷-闪电下款</h2>
+                  <span>参考额度:10000-20000</span>
+                  <span>32541人已放款</span>
+                  <img src="./img/star-1.png" alt="">
+                </div>
+              </div>
+            </a>
+            <div class="shop-bottom">
+              <span>线上全自动审核放款，20000元内即时到账</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-all tab-3">
+
+
+        <div class="jinrong-title">
+          <div class="title-box credit">
+            <img src="./img/xinyongka1.png" alt="">
+            <p>信用卡代还</p>
+          </div>
+          <div class="title-box credit">
+            <img src="./img/xinyongka2.png" alt="">
+            <p>信用卡代办</p>
+          </div>
+
+        </div>
+        <div class="notice">
+          <a href="#">
+            <i><img src="./img/notice-icon.png" alt=""></i>
+            <p>您附近有一家新商户已上架，点击查看详情 >></p>
+          </a>
+
+        </div>
+        <div class="sort">
+          <div class="sort-box">
+            <span>综合排序</span>
+          </div>
+          <div class="sort-box">
+            <span>全部银行</span>
+          </div>
+          <div class="sort-box">
+            <span>按卡分类</span>
+          </div>
+          <div class="sort-box">
+            <span>按卡级别</span>
+          </div>
+        </div>
+
+
+
+
+        <div class="box-title">
+          <i></i>
+          <h2>综合排序</h2>
+        </div>
+        <div class="shop ">
+          <div class="shop-box credit-box">
+            <a class="external" href="./信用卡代还详情.html">
+              <div class="shop-top">
+                <div class="shop-left">
+                  <img src="./img/yinhangka.png" alt="">
+                </div>
+                <div class="shop-right">
+                  <h2>交通银行Y-POWER卡黑卡</h2>
+                  <p>取现额度:<span>信用额度100%</span></p>
+                  <p>免息期：<span> 最短25天，最长55天</span></p>
+                  <p>发卡组织：<span> 银联</span></p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="shop-box credit-box">
+            <a class="external" href="./信用卡代还详情.html">
+              <div class="shop-top">
+                <div class="shop-left">
+                  <img src="./img/yinhangka.png" alt="">
+                </div>
+                <div class="shop-right">
+                  <h2>交通银行Y-POWER卡黑卡</h2>
+                  <p>取现额度:<span>信用额度100%</span></p>
+                  <p>免息期：<span> 最短25天，最长55天</span></p>
+                  <p>发卡组织：<span> 银联</span></p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="shop-box credit-box">
+            <a class="external" href="./信用卡代还详情.html">
+              <div class="shop-top">
+                <div class="shop-left">
+                  <img src="./img/yinhangka.png" alt="">
+                </div>
+                <div class="shop-right">
+                  <h2>交通银行Y-POWER卡黑卡</h2>
+                  <p>取现额度:<span>信用额度100%</span></p>
+                  <p>免息期：<span> 最短25天，最长55天</span></p>
+                  <p>发卡组织：<span> 银联</span></p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="shop-box credit-box">
+            <a class="external" href="./信用卡代还详情.html">
+              <div class="shop-top">
+                <div class="shop-left">
+                  <img src="./img/yinhangka.png" alt="">
+                </div>
+                <div class="shop-right">
+                  <h2>交通银行Y-POWER卡黑卡</h2>
+                  <p>取现额度:<span>信用额度100%</span></p>
+                  <p>免息期：<span> 最短25天，最长55天</span></p>
+                  <p>发卡组织：<span> 银联</span></p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="shop-box credit-box">
+            <a class="external" href="./信用卡代还详情.html">
+              <div class="shop-top">
+                <div class="shop-left">
+                  <img src="./img/yinhangka.png" alt="">
+                </div>
+                <div class="shop-right">
+                  <h2>交通银行Y-POWER卡黑卡</h2>
+                  <p>取现额度:<span>信用额度100%</span></p>
+                  <p>免息期：<span> 最短25天，最长55天</span></p>
+                  <p>发卡组织：<span> 银联</span></p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+
+      </div>
+      <div class="tab-all tab-4">
+
+        <div class="main">
+
+          <div class="page-content">
+            <!-- Slider -->
+            <div class="swiper-container">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="./img/banner-car.png" alt=""></div>
+                <div class="swiper-slide"><img src="./img/banner-2.png" alt=""></div>
+                <div class="swiper-slide"><img src="./img/banner-3.png" alt=""></div>
+                <div class="swiper-slide"><img src="./img/banner-4.png" alt=""></div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+          <div class="notice">
+            <a href="#">
+              <i><img src="./img/notice-icon.png" alt=""></i>
+              <p>您附近有一家新商户已上架，点击查看详情 >></p>
+            </a>
+
+          </div>
+          <div class="car-choose">
+            <span>5万以下</span>
+            <span>5-10万</span>
+            <span>10-15万</span>
+            <span>15万以上</span>
+            <span>SUV</span>
+            <span>保卖车</span>
+            <span>准新车</span>
+            <span>急售车</span>
+            <div class="car-icon row">
+              <span><img src="./img/car-icon1.png" alt="">大众</span>
+              <span><img src="./img/car-icon2.png" alt="">现代</span>
+              <span><img src="./img/car-icon3.png" alt="">雪佛兰</span>
+              <span><img src="./img/car-icon4.png" alt="">福特</span>
+              <span><img src="./img/car-icon5.png" alt="">吉利</span>
+              <span><img src="./img/car-icon6.png" alt="">本田</span>
+              <span><img src="./img/car-icon7.png" alt="">哈弗</span>
+            </div>
+
+          </div>
+
+
+          <div class="box-title car-title">
+
+            <h2>查看本地优质车源</h2>
+          </div>
+          <div class="box-title car-title">
+
+            <h2>我要卖车 <span>|</span><a class="" href="./二手车估价.html">我要估价</a> </h2>
+          </div>
+          <div class="sort">
+            <div class="sort-box">
+              <span>综合排序</span>
+            </div>
+            <div class="sort-box">
+              <span>最新上架</span>
+            </div>
+            <div class="sort-box">
+              <span>保卖车辆</span>
+            </div>
+            <div class="sort-box">
+              <span>降价急售</span>
+            </div>
+          </div>
+          <div class="check">
+            <span class="check-box">
+              保卖车辆 &nbsp X
+            </span>
+            <span class="resetting">
+              <img src="./img/resetting.png" alt="">
+              <span>重置</span>
+            </span>
+          </div>
+          <div class="shop shop-car">
+            <div class="shop-box">
+              <div class="shop-top row">
+                <div class="shop-left col-25">
+                  <img src="./img/car.png" alt="">
+                </div>
+                <div class="shop-right col-75">
+                  <h2>奥迪A6L 2015款 TFSI 百万纪念智领型</h2>
+                  <p>行驶距离：<span>2.7万公里</span></p>
+                  <p>首次上牌：<span>2016年</span></p>
+                  <p>卖家信息：<span>商家</span></p>
+                  <b>31.98万</b>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+      <div class="tab-all tab-5 ">
+        <div class="main ">
+          <div class="page-content login">
+            <div>
+              <img src="./img/geren.png" alt="">
+            </div>
+            <div class="login-div2">
+              <a href="#">登录</a>
+              <span>|</span>
+              <a href="#">注册</a>
+            </div>
+          </div>
+          <div class="notice">
+            <a href="#">
+              <i><img src="./img/notice-icon.png" alt=""></i>
+              <p>您附近有一家新商户已上架，点击查看详情 >></p>
+            </a>
+          </div>
+          <div class="me">
+            <div class="me-box">
+              <div>
+                <a class="external" href="./个人页面全部订单.html">
+                  <img src="./img/me-icon1.png" alt="">
+                  <span>全部订单</span>
+                </a>
+              </div>
+            </div>
+            <div class="me-box">
+              <div>
+                <a class="external" href="./卖车进度.html">
+                  <img src="./img/me-icon3.png" alt="">
+                  <span>卖车进度</span>
+                </a>
+              </div>
+            </div>
+            <div class="me-box">
+              <div>
+                 <a class="external" href="./卖车进度.html">
+                <img src="./img/me-icon2.png" alt="">
+                <span>我的消息</span>
+                <i>3</i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="me">
+            <div class="me-box">
+              <div>
+                <img src="./img/me-icon4.png" alt="">
+                <span>我的收藏</span>
+              </div>
+            </div>
+            <div class="me-box">
+              <div>
+                 <a class="external" href="tel:1234567">
+                <img src="./img/me-icon5.png" alt="">
+                <span>联系客服</span>
+              </div>
+            </div>
+            <div class="me-box">
+              <div>
+                <a class="external" href="./卖车进度.html">
+                <img src="./img/me-icon6.png" alt="">
+                <span>设置</span>
+                 </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+
+
+      <!-- Bottom Toolbar-->
+      <div class="toolbar tabbar tabbar-labels hide">
+        <div class="toolbar-inner">
+          <a href="#tab1" class="tab-link tab-link1 active">
+            <i class="icon demo-icon-1"></i>
+            <span class="tabbar-label">首页</span>
+          </a>
+          <a href="#tab2" class="tab-link tab-link2">
+            <i class="icon demo-icon-2">
+                
+            </i>
+            <span class="tabbar-label">金融通</span>
+          </a>
+          <a href="#tab3" class="tab-link tab-link3">
+            <i class="icon demo-icon-3"></i>
+            <span class="tabbar-label">信用卡</span>
+          </a>
+          <a href="#tab4" class="tab-link tab-link4">
+            <i class="icon demo-icon-4"></i>
+            <span class="tabbar-label">二手车</span>
+          </a>
+          <a href="#tab4" class="tab-link tab-link5">
+            <i class="icon demo-icon-5">
+              <span class="badge bg-red">3</span>
+            </i>
+            <span class="tabbar-label">我的</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./js/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="js/framework7.min.js"></script>
+  <script type="text/javascript" src="js/my-app.js"></script>
+
+</body>
+
+</html>
