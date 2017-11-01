@@ -286,7 +286,9 @@ body {
     margin-top: 20px;
     font-size: 16px;
 }
-
+.excel-box :-moz-placeholder{
+    color:#b0b0b0;
+}
 .jinrong-excel1 .excel-box div {
     padding: 10px 0;
     border-bottom: 1px solid #f0f0f6;
@@ -932,4 +934,26 @@ a.phone{
 .exit2 p{
     color:#4d4d4d;
     margin:0;
+}
+
+/*注册*/
+.meiti{
+    display: block;
+    overflow: hidden;
+}
+.meiti img{
+    display:inline-block;
+    float:left;
+    width:15%;
+    margin-left:13%;
+    margin-top:10%;
+}
+.login-message{
+   display: bolck;
+   margin-top:5%;
+    color:#bdbcbc;
+    text-align: center;
+}
+.login-message img{
+    width:15px;
 }
