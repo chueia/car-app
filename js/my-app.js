@@ -486,8 +486,6 @@ $('.jinrong-excel1 .careful .external').on('touchend',function(){
                
                 if (obj.res.indexOf('成功') >= 0) {
                   window.history.back(-1); 
-                }else if(obj.res.indexOf('验证码输入不正确') >= 0){
-                    alert('验证码错误');
                 }
                 else{
                      alert(obj.res);
