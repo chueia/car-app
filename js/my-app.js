@@ -412,30 +412,50 @@ $('.geren-footer .dingdan4').on('touchend', function () {
 myApp.loginScreen();
 // 登录页面js
 $('.list-block .list-login').on('touchend', function () {
-    var url = '/LoginServlet';
-    $.ajax({
-        type: 'POST',
-        url: url,
-        data: {
-            'account':'sbhh' ,
-            'pass':'123456'
-        },
-        dataType: 'json',
-        cache: false,
-        success: function(account,pass){
-            alert(account);
-        },
-        error:function (XMLHttpRequest, textStatus, errorThrown) {      
-            alert("请求失败！");
-            console.log(XMLHttpRequest,textStatus,errorThrown);
-        }
-    });
+    var url = '/Rongxin/LoginServlet';
+    var account = $('.login-screen-content .phone').val();
+    var pass = $('.login-screen-content .password').val();
+    if (account == undefined || pass == undefined) {
+        alert('请输入手机号和密码');
+        return false;
+    } else if (!(/^1[34578]\d{9}$/.test(account))) {
+        alert('请输入正确的手机号');
+        return false;
+    } else {
+        $.ajax({
+            type: 'POST',
+            url: url,
+            data: {
+                'account': account,
+                'pass': pass,
+            },
+            dataType: 'json',
+            cache: false,
+            success: function (resu) {
+                var obj = eval(resu);
+                alert(obj.res);
+            },
+            error: function (resu) {
+                var obj = eval(resu);
+                alert(obj.res);
+
+            }
+        });
+        
+    }
+
     // myApp.closeModal();
     // $('.navbar').removeClass('hide');
     // $('.toolbar').removeClass('hide');
     // $('.tab-0').removeClass('show');
     // $('.tab-1').addClass('show');
 });
+// myApp.closeModal();
+// $('.navbar').removeClass('hide');
+// $('.toolbar').removeClass('hide');
+// $('.tab-0').removeClass('show');
+// $('.tab-1').addClass('show');
+
 // 二手车收藏JS
 $('.car-main .title i').on('touchend', function () {
 
