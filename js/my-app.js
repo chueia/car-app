@@ -80,19 +80,19 @@ var mySwiper = myApp.swiper('.swiper-container', {
 //     refreshRem();
 
 // })(window);
-var myApp = new Framework7(); 
- 
+var myApp = new Framework7();
+
 var mySwiper = myApp.swiper('.swiper-container', {
-  pagination: '.swiper-pagination',
-  paginationHide: false,
-  paginationClickable: true,
-  nextButton: '.swiper-button-next',
-  prevButton: '.swiper-button-prev',
-  initialSlide:0,
-  
-});     
+    pagination: '.swiper-pagination',
+    paginationHide: false,
+    paginationClickable: true,
+    nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev',
+    initialSlide: 0,
+
+});
 // var mySwiper = document.querySelector('.swiper-container').swiper
- 
+
 // // Now you can use all slider methods like
 // mySwiper.slideNext();
 // console.log(mySwiper.initialSlide);
@@ -141,7 +141,7 @@ var pickerDependent = myApp.picker({
     cols: [
         {
             textAlign: 'left',
-            values: ['北京', '天津', '上海', '重庆', '河北','山西','辽宁','吉林','黑龙江','江苏','浙江','安徽','福建','江西','山东','河南','湖北','湖南','广东','海南','四川','贵州','云南','陕西','甘肃','青海','内蒙古','广西','西藏','宁夏','香港','澳门','台湾'],
+            values: ['北京', '天津', '上海', '重庆', '河北', '山西', '辽宁', '吉林', '黑龙江', '江苏', '浙江', '安徽', '福建', '江西', '山东', '河南', '湖北', '湖南', '广东', '海南', '四川', '贵州', '云南', '陕西', '甘肃', '青海', '内蒙古', '广西', '西藏', '宁夏', '香港', '澳门', '台湾'],
             onChange: function (picker, country) {
                 if (picker.cols[1].replaceValues) {
                     picker.cols[1].replaceValues(city[country]);
@@ -239,37 +239,37 @@ var pickerDevice = myApp.picker({
 
 //还款方式
 var pickerDevice = myApp.picker({
-    input:'#repayment',
-    cols:[
+    input: '#repayment',
+    cols: [
         {
-            textAlign:'center',
-            values:['pos机还款','扫码还款']
+            textAlign: 'center',
+            values: ['pos机还款', '扫码还款']
         }
     ]
 });
 
 //还款日期js
 var today = new Date();
- 
+
 var pickerInline = myApp.picker({
     input: '#picker-date',
     container: '#picker-date-container',
     toolbar: false,
     rotateEffect: true,
- 
+
     value: [today.getMonth(), today.getDate(), today.getFullYear(), today.getHours(), (today.getMinutes() < 10 ? '0' + today.getMinutes() : today.getMinutes())],
- 
+
     onChange: function (picker, values, displayValues) {
-        var daysInMonth = new Date(picker.value[2], picker.value[0]*1 + 1, 0).getDate();
+        var daysInMonth = new Date(picker.value[2], picker.value[0] * 1 + 1, 0).getDate();
         if (values[1] > daysInMonth) {
             picker.cols[1].setValue(daysInMonth);
         }
     },
- 
+
     formatValue: function (p, values, displayValues) {
         return displayValues[0] + ' ' + values[1] + ', ' + values[2] + ' ' + values[3] + ':' + values[4];
     },
- 
+
     cols: [
         // Months
         {
@@ -279,7 +279,7 @@ var pickerInline = myApp.picker({
         },
         // Days
         {
-            values: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31],
+            values: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31],
         },
         // Years
         {
@@ -316,10 +316,10 @@ var pickerInline = myApp.picker({
             })(),
         }
     ]
-});    
+});
 var calendarDefault = myApp.calendar({
     input: '#calendar-default',
-});   
+});
 
 // 标签页切换js
 $(".toolbar .tab-link").on('touchstart', function () {
@@ -380,19 +380,19 @@ $('.box-main .box3').on('touchend', function () {
 //订单页模拟点击
 $('.geren-footer .dingdan1').on('touchend', function () {
     $('#dingdan1').addClass('show').siblings().removeClass('show');
-   $('.dingdan1').addClass('active').siblings().removeClass('active');
+    $('.dingdan1').addClass('active').siblings().removeClass('active');
 });
 $('.geren-footer .dingdan2').on('touchend', function () {
     $('#dingdan2').addClass('show').siblings().removeClass('show');
-   $('.dingdan2').addClass('active').siblings().removeClass('active');
+    $('.dingdan2').addClass('active').siblings().removeClass('active');
 });
 $('.geren-footer .dingdan3').on('touchend', function () {
     $('#dingdan3').addClass('show').siblings().removeClass('show');
-   $('.dingdan3').addClass('active').siblings().removeClass('active');
+    $('.dingdan3').addClass('active').siblings().removeClass('active');
 });
 $('.geren-footer .dingdan4').on('touchend', function () {
     $('#dingdan4').addClass('show').siblings().removeClass('show');
-   $('.dingdan4').addClass('active').siblings().removeClass('active');
+    $('.dingdan4').addClass('active').siblings().removeClass('active');
 });
 // 首页载入代码
 
@@ -401,20 +401,40 @@ $('.geren-footer .dingdan4').on('touchend', function () {
 //         alert(1)
 //     },2000);
 // }
-$(document).on('touchend', '.tab-0', function () {
-    setTimeout(function(){
-        myApp.loginScreen();
-    },500)
-    
-})
 
+
+// $(document).on('touchend', '.tab-0', function () {
+//     setTimeout(function(){
+//         myApp.loginScreen();
+//     },500)
+
+// })
+myApp.loginScreen();
 // 登录页面js
 $('.list-block .list-login').on('touchend', function () {
-    myApp.closeModal();
-    $('.navbar').removeClass('hide');
-    $('.toolbar').removeClass('hide');
-    $('.tab-0').removeClass('show');
-    $('.tab-1').addClass('show');
+    var url = '/LoginServlet';
+    $.ajax({
+        type: 'POST',
+        url: url,
+        data: {
+            'account':'sbhh' ,
+            'pass':'123456'
+        },
+        dataType: 'json',
+        cache: false,
+        success: function(account,pass){
+            alert(account);
+        },
+        error:function (XMLHttpRequest, textStatus, errorThrown) {      
+            alert("请求失败！");
+            console.log(XMLHttpRequest,textStatus,errorThrown);
+        }
+    });
+    // myApp.closeModal();
+    // $('.navbar').removeClass('hide');
+    // $('.toolbar').removeClass('hide');
+    // $('.tab-0').removeClass('show');
+    // $('.tab-1').addClass('show');
 });
 // 二手车收藏JS
 $('.car-main .title i').on('touchend', function () {
@@ -426,7 +446,9 @@ $('.car-main .title i').on('touchend', function () {
     }
 
 });
+
+// AJAX
+
 // 表单验证js
-$(document)
 
 
