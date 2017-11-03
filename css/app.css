@@ -1,6 +1,9 @@
 *{
     box-sizing: border-box;
 }
+a{
+    color:inherit;
+}
 /*选择字体*/
 .picker-3d .picker-item{
     font-family: "微软雅黑"!important;

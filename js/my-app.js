@@ -413,8 +413,8 @@ myApp.loginScreen();
 // 登录页面js
 $('.list-block .list-login').on('touchend', function () {
     var url = '/Rongxin/LoginServlet';
-    var account = $('.login-screen-content .phone').val();
-    var pass = $('.login-screen-content .password').val();
+    var account = $('.login-screen-content .phone').val();//手机号
+    var pass = $('.login-screen-content .password').val();//密码
     if (account == undefined || pass == undefined) {
         alert('请输入手机号和密码');
         return false;
@@ -433,7 +433,16 @@ $('.list-block .list-login').on('touchend', function () {
             cache: false,
             success: function (resu) {
                 var obj = eval(resu);
-                alert(obj.res);
+               
+                if (obj.res.indexOf('成功') >= 0) {
+                    myApp.closeModal();
+                    $('.navbar').removeClass('hide');
+                    $('.toolbar').removeClass('hide');
+                    $('.tab-0').removeClass('show');
+                    $('.tab-1').addClass('show');
+                }else{
+                     alert(obj.res);
+                }
             },
             error: function (resu) {
                 var obj = eval(resu);
@@ -441,20 +450,54 @@ $('.list-block .list-login').on('touchend', function () {
 
             }
         });
-        
     }
-
-    // myApp.closeModal();
-    // $('.navbar').removeClass('hide');
-    // $('.toolbar').removeClass('hide');
-    // $('.tab-0').removeClass('show');
-    // $('.tab-1').addClass('show');
 });
-// myApp.closeModal();
-// $('.navbar').removeClass('hide');
-// $('.toolbar').removeClass('hide');
-// $('.tab-0').removeClass('show');
-// $('.tab-1').addClass('show');
+//注册页面JS
+$('.jinrong-excel1 .careful .external').on('touchend',function(){
+    var url = '/Rongxin/Regit';
+    var nickname = $('.jinrong-excel1 .nickname').val();//昵称
+    var account = $('.jinrong-excel1 .phone').val();//手机号
+    var pass = $('.jinrong-excel1 .password').val();//密码
+    var pass2 = $('.jinrong-excel1 .password2').val();//确认密码
+    var yanzheng = $('.jinrong-excel1 .yanzheng').val();//验证码
+    if (account == undefined || pass == undefined || nickname == undefined || pass2 == undefined ||yanzheng == undefined) {
+        alert('请填写完整');
+    }else if(!(/^1[34578]\d{9}$/.test(account))){
+         alert('请输入正确的手机号');
+        return false;
+    }
+    else if(pass != pass2){
+        alert('密码不一致');
+        return false;
+    }else{
+           $.ajax({
+            type: 'POST',
+            url: url,
+            data: {
+                'nickname':nickname,
+                'account': account,
+                'pass': pass,
+                'yanzheng':yanzheng
+            },
+            dataType: 'json',
+            cache: false,
+            success: function (resu) {
+                var obj = eval(resu);
+               
+                if (obj.res.indexOf('成功') >= 0) {
+                   
+                }else{
+                     alert(obj.res);
+                }
+            },
+            error: function (resu) {
+                var obj = eval(resu);
+                alert(obj.res);
+
+            }
+        });
+    }
+});
 
 // 二手车收藏JS
 $('.car-main .title i').on('touchend', function () {

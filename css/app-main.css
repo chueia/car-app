@@ -315,6 +315,9 @@ body {
     margin-top: 20px;
     
 }
+.careful a{
+    display:block;
+}
 .careful button{
     font-size: 1.2em;
 }
