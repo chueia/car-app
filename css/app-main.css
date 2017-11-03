@@ -313,8 +313,11 @@ body {
 .careful {
     padding: 0 20px;
     margin-top: 20px;
+    
 }
-
+.careful button{
+    font-size: 1.2em;
+}
 .careful .careful-img {
     width: 18px;
     height: 18px;
@@ -956,4 +959,16 @@ a.phone{
 }
 .login-message img{
     width:15px;
+}
+.yanzheng{
+    float:right;
+    padding:0.5em  1em;
+    border:1px solid #eeeeee;
+    background: white;
+    margin:1em 0;
+    border-radius: 10px;
+    font-size: 1.2em;
+}
+.yanzheng i{
+    color:#fb9393;
 }

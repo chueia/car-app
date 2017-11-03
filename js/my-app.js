@@ -426,6 +426,7 @@ $('.car-main .title i').on('touchend', function () {
     }
 
 });
-//二手车数字js（日嘛几个banner都不一样)
+// 表单验证js
+$(document)
 
 
