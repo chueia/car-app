@@ -524,27 +524,24 @@ $('.jinrong-excel1 .yanzheng').on('touchend', function () {
                 cache: false,
                 success: function (resu) {
                     var obj = eval(resu);
+                    var timer = setInterval(function () {
+                        time--;
+                        if (time <= 0) {
+                            $('.jinrong-excel1 .yanzheng').removeClass('timeuse');
+                            time = 60;
+                            $('.jinrong-excel1 .yanzheng i').text(time);
+                            clearInterval(timer);
 
-                   
-                        var time = $('.jinrong-excel1 .yanzheng i').val();
-                        var timer = setInterval(function () {
-                            time--;
-                            if (time <= 0) {
-                                $('.jinrong-excel1 .yanzheng').removeClass('timeuse');
-                                time = 60;
-                                $('.jinrong-excel1 .yanzheng i').text(time);
-                                clearInterval(timer);
+                        }
+                        else {
+                            $('.jinrong-excel1 .yanzheng i').text(time);
+                        }
 
-                            }
-                            else {
-                                $('.jinrong-excel1 .yanzheng i').text(time);
-                            }
+                    }, 1000);
 
-                        }, 1000);
+                },
 
-                    },
-                    
-               
+
                 error: function (resu) {
                     var obj = eval(resu);
                     alert(obj.res);
