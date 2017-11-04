@@ -459,7 +459,8 @@ $('.jinrong-excel1 .careful .external').on('touchend', function () {
     var account = $('.jinrong-excel1 .phone').val();//手机号
     var pass = $('.jinrong-excel1 .password').val();//密码
     var pass2 = $('.jinrong-excel1 .password2').val();//确认密码
-    var yanzheng = $('.jinrong-excel1 .yanzheng').val();//验证码
+    var yanzheng = $('.jinrong-excel1 .yanzheng i').text();//验证码
+    console.log(yanzheng)
     if (account == undefined || pass == undefined || nickname == undefined || pass2 == undefined || yanzheng == undefined) {
         alert('请填写完整');
     } else if (!(/^1[34578]\d{9}$/.test(account))) {
@@ -470,6 +471,7 @@ $('.jinrong-excel1 .careful .external').on('touchend', function () {
         alert('密码不一致');
         return false;
     } else {
+        
         $.ajax({
             type: 'POST',
             url: url,
@@ -477,13 +479,13 @@ $('.jinrong-excel1 .careful .external').on('touchend', function () {
                 'nickname': nickname,
                 'account': account,
                 'pass': pass,
-                'yanzheng': yanzheng
+                'code': yanzheng,
             },
             dataType: 'json',
             cache: false,
             success: function (resu) {
                 var obj = eval(resu);
-                
+              
                 if (obj.res.indexOf('成功') >= 0) {
                     window.history.back(-1);
                 }
