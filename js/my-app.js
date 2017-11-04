@@ -508,21 +508,8 @@ $('.jinrong-excel1 .yanzheng').on('touchend', function () {
         var account = $('.jinrong-excel1 .phone').val();//手机号
         var time = $('.jinrong-excel1 .yanzheng i').html();
         $(this).addClass('timeuse');
-        var timer = setInterval(function () {
-            time--;
-            if (time <= 0) {
-                $('.jinrong-excel1 .yanzheng').removeClass('timeuse');
-                time = 60;
-                $('.jinrong-excel1 .yanzheng i').text(time);
-                clearInterval(timer);
 
-            }
-            else {
-                $('.jinrong-excel1 .yanzheng i').text(time);
-            }
-
-        }, 1000);
-        if (account == undefined||account == "") {
+        if (account == undefined || account == "") {
             alert('请输入手机号');
             return false;
         } else {
@@ -540,9 +527,19 @@ $('.jinrong-excel1 .yanzheng').on('touchend', function () {
 
                     if (obj.res.indexOf('成功') >= 0) {
                         var time = $('.jinrong-excel1 .yanzheng i').val();
-                        setTimeout(function () {
+                        var timer = setInterval(function () {
                             time--;
-                            $('.jinrong-excel1 .yanzheng i').text(time);
+                            if (time <= 0) {
+                                $('.jinrong-excel1 .yanzheng').removeClass('timeuse');
+                                time = 60;
+                                $('.jinrong-excel1 .yanzheng i').text(time);
+                                clearInterval(timer);
+
+                            }
+                            else {
+                                $('.jinrong-excel1 .yanzheng i').text(time);
+                            }
+
                         }, 1000);
 
                     }
