@@ -483,7 +483,7 @@ $('.jinrong-excel1 .careful .external').on('touchend', function () {
             cache: false,
             success: function (resu) {
                 var obj = eval(resu);
-
+                
                 if (obj.res.indexOf('成功') >= 0) {
                     window.history.back(-1);
                 }
