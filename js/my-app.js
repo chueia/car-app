@@ -525,7 +525,7 @@ $('.jinrong-excel1 .yanzheng').on('touchend', function () {
                 success: function (resu) {
                     var obj = eval(resu);
 
-                    if (obj.res.indexOf('成功') >= 0) {
+                   
                         var time = $('.jinrong-excel1 .yanzheng i').val();
                         var timer = setInterval(function () {
                             time--;
@@ -542,11 +542,9 @@ $('.jinrong-excel1 .yanzheng').on('touchend', function () {
 
                         }, 1000);
 
-                    }
-                    else {
-                        alert(obj.res);
-                    }
-                },
+                    },
+                    
+               
                 error: function (resu) {
                     var obj = eval(resu);
                     alert(obj.res);
