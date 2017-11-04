@@ -403,13 +403,12 @@ $('.geren-footer .dingdan4').on('touchend', function () {
 // }
 
 
-// $(document).on('touchend', '.tab-0', function () {
-//     setTimeout(function(){
-//         myApp.loginScreen();
-//     },500)
-
-// })
-myApp.loginScreen();
+$(document).on('touchend', '.tab-0', function () {
+    setTimeout(function(){
+        myApp.loginScreen();
+    },500)
+})
+//myApp.loginScreen();
 // 登录页面js
 $('.list-block .list-login').on('touchend', function () {
     var url = '/Rongxin/LoginServlet';
@@ -487,7 +486,7 @@ $('.jinrong-excel1 .careful .external').on('touchend', function () {
                 var obj = eval(resu);
               
                 if (obj.res.indexOf('成功') >= 0) {
-                    window.history.back(-1);
+                    myApp.loginScreen();
                 }
                 else {
                     alert(obj.res);
