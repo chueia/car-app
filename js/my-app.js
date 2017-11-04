@@ -404,9 +404,9 @@ $('.geren-footer .dingdan4').on('touchend', function () {
 
 
 $(document).on('touchend', '.tab-0', function () {
-    setTimeout(function(){
+    setTimeout(function () {
         myApp.loginScreen();
-    },500)
+    }, 500)
 })
 //myApp.loginScreen();
 // 登录页面js
@@ -452,7 +452,8 @@ $('.list-block .list-login').on('touchend', function () {
     }
 });
 //注册页面JS
-$('.jinrong-excel1 .careful .external').on('touchend', function () {
+$('.jinrong-excel1 .careful ').on('touchend', function () {
+
     var url = '/Rongxin/Regit';
     var nickname = $('.jinrong-excel1 .nickname').val();//昵称
     var account = $('.jinrong-excel1 .phone').val();//手机号
@@ -470,7 +471,7 @@ $('.jinrong-excel1 .careful .external').on('touchend', function () {
         alert('密码不一致');
         return false;
     } else {
-        
+
         $.ajax({
             type: 'POST',
             url: url,
@@ -484,8 +485,10 @@ $('.jinrong-excel1 .careful .external').on('touchend', function () {
             cache: false,
             success: function (resu) {
                 var obj = eval(resu);
-              
+
                 if (obj.res.indexOf('成功') >= 0) {
+                    window.event.returnValue = false;
+                    window.location.href = "http://113.10.177.174:8080/";
                     myApp.loginScreen();
                 }
                 else {
