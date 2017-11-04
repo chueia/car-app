@@ -522,7 +522,7 @@ $('.jinrong-excel1 .yanzheng').on('touchend', function () {
             }
 
         }, 1000);
-        if (account == undefined) {
+        if (account == undefined||account == "") {
             alert('请输入手机号');
             return false;
         } else {
