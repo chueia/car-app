@@ -505,7 +505,7 @@ $('.jinrong-excel1 .yanzheng').on('touchend', function () {
         alert('请稍后再试');
     } else {
         var url = '/Rongxin/SendServlet';
-        var account = $('.jinrong-excel1 .yanzheng').val();
+        var account = $('.jinrong-excel1 .phone').val();//手机号
         var time = $('.jinrong-excel1 .yanzheng i').html();
         $(this).addClass('timeuse');
         var timer = setInterval(function () {
@@ -523,7 +523,7 @@ $('.jinrong-excel1 .yanzheng').on('touchend', function () {
 
         }, 1000);
         if (account == undefined) {
-            alert('请输入验证码');
+            alert('请输入手机号');
             return false;
         } else {
             $.ajax({
