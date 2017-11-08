@@ -236,7 +236,16 @@ var pickerDevice = myApp.picker({
         }
     ]
 });
-
+//发布方式
+var pickerDevice = myApp.picker({
+    input: '#fabu',
+    cols: [
+        {
+            textAlign: 'center',
+            values: ['二手车', '金融通','信用卡代办','信用卡代垫']
+        }
+    ]
+});
 //还款方式
 var pickerDevice = myApp.picker({
     input: '#repayment',
@@ -569,7 +578,8 @@ $('.car-main .title i').on('touchend', function () {
 
 });
 
-// AJAX
+// 发布
+
 
 // 表单验证js
 
