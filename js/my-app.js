@@ -236,6 +236,26 @@ var pickerDevice = myApp.picker({
         }
     ]
 });
+// 车辆档位
+var pickerDevice = myApp.picker({
+    input: '#dangwei',
+    cols: [
+        {
+            textAlign: 'center',
+            values: ['自动', '手动' ]
+        }
+    ]
+});
+//贷款类型
+var pickerDevice = myApp.picker({
+    input: '#jr-leixing',
+    cols: [
+        {
+            textAlign: 'center',
+            values: ['小额贷', '信用贷','抵押贷' ]
+        }
+    ]
+});
 //发布方式
 var pickerDevice = myApp.picker({
     input: '#fabu',

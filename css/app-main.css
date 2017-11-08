@@ -975,3 +975,45 @@ a.phone{
 .yanzheng i{
     color:#fb9393;
 }
+
+
+/* 发布页面重置 */
+.fabu{
+    display:none;
+}
+.fabu.show{
+    display:block;
+}
+.excel-box .right{
+    float:right;
+    color:black;
+}
+.fabu .item-inner textarea{
+    border:0;
+    width:100%;
+    resize: none;
+}
+.careful .zhiqingshu{
+    display:inline-block;
+    color:#36b8fd
+}
+.excel-box .jine{
+    width:20%;
+    border:1px solid #328dbd !important;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 0px #328dbd;
+    padding:0 0.5em;
+}
+.excel-box .jine1{
+    
+}
+.excel-box .right2{
+    float:right;
+    width:2em;
+    display: inline-block;
+    border:1px solid #666;
+    vertical-align: middle;
+   
+    margin:0 0.5em;
+    margin-top:0.5em;
+}
