@@ -242,7 +242,7 @@ var pickerDevice = myApp.picker({
     cols: [
         {
             textAlign: 'center',
-            values: ['自动', '手动' ]
+            values: ['自动', '手动']
         }
     ]
 });
@@ -252,7 +252,7 @@ var pickerDevice = myApp.picker({
     cols: [
         {
             textAlign: 'center',
-            values: ['小额贷', '信用贷','抵押贷' ]
+            values: ['小额贷', '信用贷', '抵押贷']
         }
     ]
 });
@@ -262,7 +262,7 @@ var pickerDevice = myApp.picker({
     cols: [
         {
             textAlign: 'center',
-            values: ['二手车', '金融通','信用卡代办','信用卡代垫']
+            values: ['二手车', '金融通', '信用卡代办', '信用卡代垫']
         }
     ]
 });
@@ -444,10 +444,10 @@ $('.list-block .list-login').on('touchend', function () {
     var account = $('.login-screen-content .phone').val();//手机号
     var pass = $('.login-screen-content .password').val();//密码
     if (account == undefined || pass == undefined) {
-        myApp.alert('请输入手机号和密码','融信E家');
+        myApp.alert('请输入手机号和密码', '融信E家');
         return false;
     } else if (!(/^1[34578]\d{9}$/.test(account))) {
-        myApp.alert('请输入正确的手机号','融信E家');
+        myApp.alert('请输入正确的手机号', '融信E家');
         return false;
     } else {
         $.ajax({
@@ -469,12 +469,12 @@ $('.list-block .list-login').on('touchend', function () {
                     $('.tab-0').removeClass('show');
                     $('.tab-1').addClass('show');
                 } else {
-                    myApp.alert(obj.res,'融信E家');
+                    myApp.alert(obj.res, '融信E家');
                 }
             },
             error: function (resu) {
                 var obj = eval(resu);
-                myApp.alert(obj.res,'融信E家');
+                myApp.alert(obj.res, '融信E家');
 
             }
         });
@@ -482,7 +482,7 @@ $('.list-block .list-login').on('touchend', function () {
 });
 //注册页面JS
 $('.jinrong-excel1 .careful ').on('touchend', function () {
-    
+
     var url = '/Rongxin/Regit';
     var nickname = $('.jinrong-excel1 .nickname').val();//昵称
     var account = $('.jinrong-excel1 .phone').val();//手机号
@@ -491,13 +491,13 @@ $('.jinrong-excel1 .careful ').on('touchend', function () {
     var yanzheng = $('.jinrong-excel1 .yanzheng1 ').val();//验证码
     console.log(yanzheng)
     if (account == undefined || pass == undefined || nickname == undefined || pass2 == undefined || yanzheng == undefined) {
-        myApp.alert('请填写完整','融信E家');
+        myApp.alert('请填写完整', '融信E家');
     } else if (!(/^1[34578]\d{9}$/.test(account))) {
-        myApp.alert('请输入正确的手机号','融信E家');
+        myApp.alert('请输入正确的手机号', '融信E家');
         return false;
     }
     else if (pass != pass2) {
-        myApp.alert('密码不一致','融信E家');
+        myApp.alert('密码不一致', '融信E家');
         return false;
     } else {
 
@@ -521,12 +521,12 @@ $('.jinrong-excel1 .careful ').on('touchend', function () {
                     myApp.loginScreen();
                 }
                 else {
-                    myApp.alert(obj.res,'融信E家');
+                    myApp.alert(obj.res, '融信E家');
                 }
             },
             error: function (resu) {
                 var obj = eval(resu);
-                myApp.alert(obj.res,'融信E家');
+                myApp.alert(obj.res, '融信E家');
 
             }
         });
@@ -535,7 +535,7 @@ $('.jinrong-excel1 .careful ').on('touchend', function () {
 //验证码收发js
 $('.jinrong-excel1 .yanzheng').on('touchend', function () {
     if ($(this).hasClass('timeuse')) {
-        myApp.alert('请稍后再试','融信E家');
+        myApp.alert('请稍后再试', '融信E家');
     } else {
         var url = '/Rongxin/SendServlet';
         var account = $('.jinrong-excel1 .phone').val();//手机号
@@ -543,7 +543,7 @@ $('.jinrong-excel1 .yanzheng').on('touchend', function () {
         $(this).addClass('timeuse');
 
         if (account == undefined || account == "") {
-            myApp.alert('请输入手机号','融信E家');
+            myApp.alert('请输入手机号', '融信E家');
             return false;
         } else {
             $.ajax({
@@ -577,7 +577,7 @@ $('.jinrong-excel1 .yanzheng').on('touchend', function () {
 
                 error: function (resu) {
                     var obj = eval(resu);
-                    myApp.alert(obj.res,'融信E家');
+                    myApp.alert(obj.res, '融信E家');
 
                 }
             })
@@ -598,9 +598,30 @@ $('.car-main .title i').on('touchend', function () {
 
 });
 
-// 发布
-
-
+// 发布切换
+$(document).on('change', '.fabu-title #fabu', function () {
+    var name = $('#fabu').val();
+    //console.log(name)
+    switch (name) {
+        case "二手车":
+            $('.fabu1').addClass('show').siblings().removeClass('show');
+            break;
+        case "金融通":
+            $('.fabu2').addClass('show').siblings().removeClass('show');
+            break;
+        case "信用卡代办":
+            $('.fabu3').addClass('show').siblings().removeClass('show');
+            break;
+        case "信用卡代垫":
+            $('.fabu4').addClass('show').siblings().removeClass('show');
+            break;
+    }
+})
+//发布数据提取
+$('.ershouche .able').on('click', function(){
+    var formData = myApp.formToJSON('#form-rsc');
+    alert(JSON.stringify(formData));
+  });
 // 表单验证js
 
 

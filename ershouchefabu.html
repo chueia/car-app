@@ -20,167 +20,167 @@
                 </div>
                 <p>发布</p>
             </div>
-            <div class="jinrong-message">
-                <span></span>
-            </div>
-            <div class="excel-box">
+
+            <div class="excel-box fabu-title">
                 <div>
                     <span>我要发布</span>
                     <input type="text" placeholder="二手车" class="choose" id="fabu">
                 </div>
             </div>
-            <div class="fabu fabu1 ">
-                <div class="excel-box">
-                    <div>
-                        <span class="">您的车型</span>
-                        <input class=" car-chexing" type="text" placeholder="">
-                    </div>
-                    <div>
-                        <span class="">行驶里程</span>
-                        <span class="right">万公里</span>
-                        <input class="car-licheng" type="text" placeholder="" id="">
-
-                    </div>
-                    <div>
-                        <span class="">首次上牌时间</span>
-                        <input class="car-shijian" type="text" placeholder="" readonly id="calendar-default">
-                    </div>
-
-                    <div>
-                        <span class="">上牌城市</span>
-                        <input class="choose car-chengshi" placeholder="" readonly id="picker-dependent"></input>
-                    </div>
-                    <div>
-                        <span class="">车辆档位</span>
-                        <input class="choose car-dangwei" type="text" placeholder="" id="dangwei">
-                    </div>
-                    <div>
-                        <span class="">车辆排量</span>
-                        <input class="car-pailiang" type="text" placeholder="">
-                    </div>
-                    <div>
-                        <span class="">过户次数</span>
-                        <input class="car-cishu" type="text" placeholder="">
-                    </div>
-                </div>
-                <div class="excel-box">
-                    <div class="item-inner">
-                        <div class="item-title label">车辆详情</div>
-                        <div class="item-input">
-                            <textarea></textarea>
-                        </div>
-                    </div>
-                    <div class="excel-box excel-box2">
-                        <div>
-                            <span>车源图片 </span>
-                        </div>
-                        <div class="row">
-                            <div class="img-box col-25">
-                                <img src="./img/img-1.jpg" alt="">
-                            </div>
-                            <div class="img-box col-25">
-                                <img src="./img/img-1.jpg" alt="">
-                            </div>
-                            <div class="img-box col-25">
-                                <img src="./img/img-1.jpg" alt="">
-                            </div>
-                            <div class="img-box col-25">
-                                <img src="./img/img-1.jpg" alt="">
-                            </div>
-                            <div class="img-box col-25">
-                                <img src="./img/img-1.jpg" alt="">
-                            </div>
-                            <div class="img-box col-25">
-                                <img src="./img/img-1.jpg" alt="">
-                            </div>
-                            <div class="img-box col-25">
-                                <img src="./img/img-1.jpg" alt="">
-                            </div>
-                            <div class="img-box col-25">
-                                <img src="./img/img-tianjia.png" alt="">
-                                <input class="file" type="file" />
-                            </div>
-
-                        </div>
-                        <div>
-                            <span class="tip">点击更换图片，共15张，至少6张。图片更多，更容易被出售哦。</span>
-                        </div>
-
-                    </div>
-
-                    <div class="excel-box excel-box3">
-                        <div class="row">
-                            <div class="img-box col-100">
-                                <img src="./img/car-1.jpg" alt="">
-                            </div>
-                            <div>
-                                <span>
-                                    <b>正侧：</b>漆面完整保持较好，车身结构无修复。</span>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="img-box col-100">
-                                <img src="./img/car-1.jpg" alt="">
-                            </div>
-                            <div>
-                                <span>
-                                    <b>正前：</b>添加一张车辆正前视角图片/填写备注</span>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="img-box col-100">
-                                <img src="./img/img-tianjia2.png" alt="">
-                                <input class="file" type="file">
-                            </div>
-                            <div>
-                                <span>
-                                    <b>正背：</b> 添加一张车辆正背视角图片/填写备注</span>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="img-box col-100">
-                                <img src="./img/img-tianjia2.png" alt="">
-                                <input class="file" type="file">
-                            </div>
-                            <div>
-                                <span>
-                                    <b>前内饰：</b> 添加一张车辆正背视角图片/填写备注</span>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="img-box col-100">
-                                <img src="./img/img-tianjia2.png" alt="">
-                                <input class="file" type="file">
-                            </div>
-                            <div>
-                                <span>
-                                    <b>后内饰：</b> 添加一张车辆正背视角图片/填写备注</span>
-                            </div>
-                        </div>
-
-
-                    </div>
-
+            <div class="fabu fabu1 show">
+                <form id="form-esc" action="">
                     <div class="excel-box">
                         <div>
-                            <span>期望售价
-                                <input type="text" placeholder="万元">
-                            </span>
+                            <span class="">您的车型</span>
+                            <input class=" car-chexing" name="car-chexing" type="text" placeholder="">
+                        </div>
+                        <div>
+                            <span class="">行驶里程</span>
+                            <span class="right">万公里</span>
+                            <input class="car-licheng" type="text" name="car-licheng" placeholder="" id="">
+
+                        </div>
+                        <div>
+                            <span class="">首次上牌时间</span>
+                            <input class="car-shijian" type="text" name="car-shijian" placeholder="" readonly id="calendar-default">
+                        </div>
+
+                        <div>
+                            <span class="">上牌城市</span>
+                            <input class="choose car-chengshi" name="car-chengshi" placeholder="" readonly id="picker-dependent"></input>
+                        </div>
+                        <div>
+                            <span class="">车辆档位</span>
+                            <input class="choose car-dangwei" name="car-dangwei" type="text" placeholder="" id="dangwei">
+                        </div>
+                        <div>
+                            <span class="">车辆排量</span>
+                            <input class="car-pailiang" name="pailiang" type="text" placeholder="">
+                        </div>
+                        <div>
+                            <span class="">过户次数</span>
+                            <input class="car-cishu" name="car-cishu" type="text" placeholder="">
                         </div>
                     </div>
+                    <div class="excel-box">
+                        <div class="item-inner">
+                            <div class="item-title label">车辆详情</div>
+                            <div class="item-input">
+                                <textarea name="car-xiangqing"></textarea>
+                            </div>
+                        </div>
+                        <div class="excel-box excel-box2">
+                            <div>
+                                <span>车源图片 </span>
+                            </div>
+                            <div class="row">
+                                <div class="img-box col-25">
+                                    <img src="./img/img-1.jpg" alt="">
+                                </div>
+                                <div class="img-box col-25">
+                                    <img src="./img/img-1.jpg" alt="">
+                                </div>
+                                <div class="img-box col-25">
+                                    <img src="./img/img-1.jpg" alt="">
+                                </div>
+                                <div class="img-box col-25">
+                                    <img src="./img/img-1.jpg" alt="">
+                                </div>
+                                <div class="img-box col-25">
+                                    <img src="./img/img-1.jpg" alt="">
+                                </div>
+                                <div class="img-box col-25">
+                                    <img src="./img/img-1.jpg" alt="">
+                                </div>
+                                <div class="img-box col-25">
+                                    <img src="./img/img-1.jpg" alt="">
+                                </div>
+                                <div class="img-box col-25">
+                                    <img src="./img/img-tianjia.png" alt="">
+                                    <input class="file" name="file1" type="file" />
+                                </div>
 
-                    <div class="careful">
-                        <img class="careful-img" src="./img/careful.png" alt="">
-                        <span>我已阅读并同意
-                            <a class="zhiqingshu" href="#">借款发布知情书</a>
-                        </span>
-                        <button class="able">
-                            提交审核
-                        </button>
+                            </div>
+                            <div>
+                                <span class="tip">点击更换图片，共15张，至少6张。图片更多，更容易被出售哦。</span>
+                            </div>
+
+                        </div>
+
+                        <div class="excel-box excel-box3">
+                            <div class="row">
+                                <div class="img-box col-100">
+                                    <img src="./img/car-1.jpg" alt="">
+                                </div>
+                                <div>
+                                    <span>
+                                        <b>正侧：</b>漆面完整保持较好，车身结构无修复。</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="img-box col-100">
+                                    <img src="./img/car-1.jpg" alt="">
+                                </div>
+                                <div>
+                                    <span>
+                                        <b>正前：</b>添加一张车辆正前视角图片/填写备注</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="img-box col-100">
+                                    <img src="./img/img-tianjia2.png" alt="">
+                                    <input class="file" name="file2" type="file">
+                                </div>
+                                <div>
+                                    <span>
+                                        <b>正背：</b> 添加一张车辆正背视角图片/填写备注</span>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="img-box col-100">
+                                    <img src="./img/img-tianjia2.png" alt="">
+                                    <input class="file" name="file3" type="file">
+                                </div>
+                                <div>
+                                    <span>
+                                        <b>前内饰：</b> 添加一张车辆正背视角图片/填写备注</span>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="img-box col-100">
+                                    <img src="./img/img-tianjia2.png" alt="">
+                                    <input class="file" name="file4" type="file">
+                                </div>
+                                <div>
+                                    <span>
+                                        <b>后内饰：</b> 添加一张车辆正背视角图片/填写备注</span>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <div class="excel-box">
+                            <div>
+                                <span>期望售价
+                                    <input type="text" name="car-shoujia" placeholder="万元">
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="careful ershouche">
+                            <img class="careful-img" src="./img/careful.png" alt="">
+                            <span>我已阅读并同意
+                                <a class="zhiqingshu" href="#">借款发布知情书</a>
+                            </span>
+                            <button class="able">
+                                提交审核
+                            </button>
+                        </div>
                     </div>
-                </div>
+                </form>
             </div>
 
 
@@ -233,9 +233,12 @@
                 </div>
             </div>
 
-            <div class="fabu fabu3 show">
+            <div class="fabu fabu3 ">
                 <div class="excel-box">
-                    
+                    <div>
+                        <img class="xyk-up" src="./img/xyk-up.png" alt="">
+                        <input class="file" name="file" type="file">
+                    </div>
                 </div>
                 <div class="excel-box">
                     <div>
@@ -271,6 +274,43 @@
                             提交审核
                         </button>
                     </div>
+                </div>
+            </div>
+
+            <div class="fabu fabu4 ">
+                <div class="excel-box">
+
+                    <div>
+                        <span>借贷金额</span>
+                        <input type="text" name='jiedai1' class="jine1 jine">
+                        <span class="right2"></span>
+                        <input type="text" name='jiedai2' class="jine2 jine">
+                    </div>
+
+                    <div>
+                        <span class="">手续费率</span>
+                        <input name="jd-feilv" type="text" placeholder="">
+                    </div>
+
+                </div>
+                <div class="excel-box">
+                    <div class="item-inner">
+                        <div class="item-title label">申请条件</div>
+                        <div class="item-input">
+                            <textarea class="jr-tiaojian"></textarea>
+                        </div>
+                    </div>
+                    <div class="item-inner">
+                        <div class="item-title label">产品详情</div>
+                        <div class="item-input">
+                            <textarea class="jr-xiangqing"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="careful careful-jd">
+                    <button class="able">
+                        提交审核
+                    </button>
                 </div>
             </div>
 
