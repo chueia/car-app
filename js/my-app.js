@@ -489,7 +489,7 @@ $('.jinrong-excel1 .careful ').on('touchend', function () {
     var pass = $('.jinrong-excel1 .password').val();//密码
     var pass2 = $('.jinrong-excel1 .password2').val();//确认密码
     var yanzheng = $('.jinrong-excel1 .yanzheng1 ').val();//验证码
-    console.log(yanzheng)
+    // console.log(yanzheng)
     if (account == undefined || pass == undefined || nickname == undefined || pass2 == undefined || yanzheng == undefined) {
         myApp.alert('请填写完整', '融信E家');
     } else if (!(/^1[34578]\d{9}$/.test(account))) {
@@ -619,9 +619,75 @@ $(document).on('change', '.fabu-title #fabu', function () {
 })
 //发布数据提取
 $('.ershouche .able').on('click', function(){
-    var formData = myApp.formToJSON('#form-rsc');
-    alert(JSON.stringify(formData));
-  });
+    var url = '/Rongxin/AddDetailServlet';
+    var detailtype = $('#fabu').val();//发布类型
+    var cartype = $('.fabu .car-chexing').val();//车型
+    var actual = $('.fabu .car-licheng').val();//行驶里程
+    var cardtime = $('.fabu .car-shijian').val();//上牌时间
+    var city = $('.fabu .car-chengshi').val();//上牌城市
+    var stall = $('.fabu .car-dangwei').val();//车辆档位
+    var displacement = $('.fabu .car-pailiang').val();//车辆排量
+    var transfer = $('.fabu .car-cishu').val();//过户次数
+    // var emission = $('.fabu .car-licheng').val();//排放标准
+    var details = $('.fabu .car-xiangqing').val();//车辆详情
+    var source_img = $('.fabu .file1').val();//车源图片
+    var positive = $('.fabu .file5').val();//正侧
+    var front = $('.fabu .file6').val();//正前
+    var back = $('.fabu .file2').val();//正背
+    var front_trim = $('.fabu .file3').val();//前内饰
+    var back_trim = $('.fabu .file4').val();//后内饰
+    var price	 = $('.fabu .car-shoujia').val();//期望售价
+    if (cartype == undefined || actual == undefined || cardtime == undefined || city == undefined || stall == undefined || displacement == undefined
+        ||transfer == undefined|| details == undefined|| source_img == undefined|| positive == undefined|| front == undefined|| back == undefined
+        || front_trim == undefined|| froback_trimnt == undefined|| back_trim == undefined|| price == undefined) {
+        myApp.alert('请填写完整', '融信E家');
+    
+    } else {
+
+        $.ajax({
+            type: 'POST',
+            url: url,
+            data: {
+                detailtype:detailtype,
+                cartype:cartype,
+                actual:actual,
+                cardtime:cardtime,
+                city:city,
+                stall:stall,
+                displacement:displacement,
+                transfer:transfer,
+                details:details,
+                source_img:source_img,
+                positive:positive,
+                front:front,
+                back:back,
+                front_trim:front_trim,
+                back_trim:back_trim,
+                price:price,
+            },
+            dataType: 'json',
+            cache: false,
+            success: function (resu) {
+                var obj = eval(resu);
+
+                if (obj.res.indexOf('成功') >= 0) {
+                    window.event.returnValue = false;
+                    myApp.alert('提交成功，正在审核', '融信E家');
+                }
+                else {
+                    myApp.alert(obj.res, '融信E家');
+                }
+            },
+            error: function (resu) {
+                var obj = eval(resu);
+                myApp.alert(obj.res, '融信E家');
+
+            }
+        });
+    }
+
+    
+});
 // 表单验证js
 
 
