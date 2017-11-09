@@ -618,7 +618,7 @@ $(document).on('change', '.fabu-title #fabu', function () {
     }
 })
 //二手车发布表单提交js
-$('.ershouche .able').on('click', function(){
+$('.ershouche .able').on('click', function () {
     var url = '/Rongxin/AddDetailServlet';
     var detailtype = $('#fabu').val();//发布类型
     var cartype = $('.fabu .car-chexing').val();//车型
@@ -630,37 +630,37 @@ $('.ershouche .able').on('click', function(){
     var transfer = $('.fabu .car-cishu').val();//过户次数
     // var emission = $('.fabu .car-licheng').val();//排放标准
     var details = $('.fabu .car-xiangqing').val();//车辆详情
-    var source_img = $('.fabu .file1').val();//车源图片
-    var positive = $('.fabu .file5').val();//正侧
-    var front = $('.fabu .file6').val();//正前
-    var back = $('.fabu .file2').val();//正背   
-    var front_trim = $('.fabu .file3').val();//前内饰
-    var back_trim = $('.fabu .file4').val();//后内饰
-    var price	 = $('.fabu .car-shoujia').val();//期望售价
+    // var source_img = $('.fabu .file1').val();//车源图片
+    // var positive = $('.fabu .file5').val();//正侧
+    // var front = $('.fabu .file6').val();//正前
+    // var back = $('.fabu .file2').val();//正背   
+    // var front_trim = $('.fabu .file3').val();//前内饰
+    // var back_trim = $('.fabu .file4').val();//后内饰
+    // var price	 = $('.fabu .car-shoujia').val();//期望售价
     if (cartype == undefined || actual == undefined || cardtime == undefined || city == undefined || stall == undefined || displacement == undefined
-        ||transfer == undefined|| details == undefined|| price == undefined) {
+        || transfer == undefined || details == undefined || price == undefined) {
         myApp.alert('请填写完整', '融信E家');
     } else {
         $.ajax({
             type: 'POST',
             url: url,
             data: {
-                detailtype:detailtype,
-                cartype:cartype,
-                actual:actual,
-                cardtime:cardtime,
-                city:city,
-                stall:stall,
-                displacement:displacement,
-                transfer:transfer,
-                details:details,
-                source_img:source_img,
-                positive:positive,
-                front:front,
-                back:back,
-                front_trim:front_trim,
-                back_trim:back_trim,
-                price:price,
+                detailtype: detailtype,
+                cartype: cartype,
+                actual: actual,
+                cardtime: cardtime,
+                city: city,
+                stall: stall,
+                displacement: displacement,
+                transfer: transfer,
+                details: details,
+                source_img: source_img,
+                positive: positive,
+                front: front,
+                back: back,
+                front_trim: front_trim,
+                back_trim: back_trim,
+                price: price,
             },
             dataType: 'json',
             cache: false,
@@ -684,7 +684,7 @@ $('.ershouche .able').on('click', function(){
     }
 });
 //金融贷款表单提交JS
-$('.careful-jr .able').on('click', function(){
+$('.careful-jr .able').on('click', function () {
     var url = '/Rongxin/AddDetailServlet';
     var detailtype = $('#fabu').val();//发布类型
     var loantype = $('.fabu2 .jr-leixing').val();//贷款类型
@@ -696,24 +696,24 @@ $('.careful-jr .able').on('click', function(){
     var lendingtime = $('.fabu2 .jr-shijian').val();//最快放款时间
     var apply = $('.fabu2 .jr-tiaojian').val();//申请条件
     var product = $('.fabu2 .jr-xiangqing').val();//产品详情
-    if (loantype == undefined  ||money_max == undefined ||money_min == undefined ||term_max == undefined ||term_min == undefined ||interest == undefined 
-        ||lendingtime == undefined ||apply == undefined ||product == undefined ) {
+    if (loantype == undefined || money_max == undefined || money_min == undefined || term_max == undefined || term_min == undefined || interest == undefined
+        || lendingtime == undefined || apply == undefined || product == undefined) {
         myApp.alert('请填写完整', '融信E家');
     } else {
         $.ajax({
             type: 'POST',
             url: url,
             data: {
-                detailtype:detailtype,
-                loantype:loantype,
-                money_max:money_max,
-                money_min:money_min,
-                term_max:term_max,
-                term_min:term_min,
-                interest:interest,
-                lendingtime:lendingtime,
-                apply:apply,
-                product:product,
+                detailtype: detailtype,
+                loantype: loantype,
+                money_max: money_max,
+                money_min: money_min,
+                term_max: term_max,
+                term_min: term_min,
+                interest: interest,
+                lendingtime: lendingtime,
+                apply: apply,
+                product: product,
             },
             dataType: 'json',
             cache: false,
@@ -736,7 +736,7 @@ $('.careful-jr .able').on('click', function(){
     }
 });
 //信用卡代垫表单提交js
-$('.careful-jd .able').on('click', function(){
+$('.careful-jd .able').on('click', function () {
     var url = '/Rongxin/AddDetailServlet';
     var detailtype = $('#fabu').val();//发布类型
     var money_max = $('.fabu4 .jine1').val();//最大金额
@@ -745,20 +745,20 @@ $('.careful-jd .able').on('click', function(){
     var apply = $('.fabu4 .jr-tiaojian').val();//申请条件
     var product = $('.fabu4 .jr-xiangqing').val();//产品详情
 
-    if (money_max == undefined  ||money_min == undefined ||interest == undefined ||apply == undefined ||product == undefined 
-        ) {
+    if (money_max == undefined || money_min == undefined || interest == undefined || apply == undefined || product == undefined
+    ) {
         myApp.alert('请填写完整', '融信E家');
     } else {
         $.ajax({
             type: 'POST',
             url: url,
             data: {
-                detailtype:detailtype,
-                money_max:money_max,
-                money_min:money_min,
-                interest:interest,
-                apply:apply,
-                product:product,
+                detailtype: detailtype,
+                money_max: money_max,
+                money_min: money_min,
+                interest: interest,
+                apply: apply,
+                product: product,
             },
             dataType: 'json',
             cache: false,
@@ -782,5 +782,50 @@ $('.careful-jd .able').on('click', function(){
     }
 });
 
+//图片上传载入JS
+$(document).on('change', '.fabu1 .file1', function () {
+    //alert($(this).val());
+    function getObjectURL(file) {
+        var url = null;
+        if (window.createObjectURL != undefined) { // basic
+            url = window.createObjectURL(file);
+        } else if (window.URL != undefined) { // mozilla(firefox)
+            url = window.URL.createObjectURL(file);
+        } else if (window.webkitURL != undefined) { // webkit or chrome
+            url = window.webkitURL.createObjectURL(file);
+        }
+        return url;
+    }
+    var objUrl = getObjectURL(this.files[0]);
+    console.log("objUrl = " + objUrl);
+    var html = '<div class="img-box col-25"><img src="' + objUrl + '" alt=""></div>'
+    $(this).parent().parent().prepend(html);
 
+    var source_img = $('.fabu .file1').val();
+    $.ajax({
+        type: 'POST',
+        url: url,
+        data: {
+            source_img:source_img,
+        },
+        dataType: 'json',
+        cache: false,
+        success: function (resu) {
+            var obj = eval(resu);
+
+            if (obj.res.indexOf('成功') >= 0) {
+                window.event.returnValue = false;
+                myApp.alert('提交成功，正在审核', '融信E家');
+            }
+            else {
+                myApp.alert(obj.res, '融信E家');
+            }
+        },
+        error: function (resu) {
+            var obj = eval(resu);
+            myApp.alert(obj.res, '融信E家');
+        }
+    });
+
+})
 
