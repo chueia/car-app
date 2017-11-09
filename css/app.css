@@ -156,8 +156,8 @@ i.demo-icon-5 {
     vertical-align: middle;
 }
 .box-main{
-    padding:5px 20px;
-    background: linear-gradient(to top, #dfdede,#fefefe );
+    padding:1px 5px;
+    background: #c6c6c6;
     
 }
 .box-main .box{
@@ -170,7 +170,7 @@ i.demo-icon-5 {
     background: linear-gradient(#FDFDFD,#EFEFEF, #DFDFDF);
     padding: 0.4em 1em;
     margin: 0.4em 0em;
-    box-shadow: 0px 2px 6px #000;
+    box-shadow: 0px 0px 3px #888;
 }
 .box-main .box a{
     color:inherit;
@@ -190,7 +190,7 @@ i.demo-icon-5 {
     width:17px;
     height:23px;
     position:absolute;
-    right:0;
+    right:1em;
     top:40%;
 }
 .swiper-wrapper .swiper-slide img{
@@ -239,8 +239,11 @@ i.demo-icon-5 {
 }
 .shop .shop-box .shop-top .shop-left{
     float: left;
-    /*width:20%;*/
-    /*margin-right: 10px;*/
+    
+}
+.tab-1 .shop .shop-box .shop-top .shop-left{
+    width:17%;
+    margin-right: 10px;
 }
 .shop .shop-box .shop-top .shop-left img{
    display: inline-block;
