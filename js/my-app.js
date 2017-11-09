@@ -617,7 +617,7 @@ $(document).on('change', '.fabu-title #fabu', function () {
             break;
     }
 })
-//发布数据提取
+//二手车发布表单提交js
 $('.ershouche .able').on('click', function(){
     var url = '/Rongxin/AddDetailServlet';
     var detailtype = $('#fabu').val();//发布类型
@@ -640,9 +640,7 @@ $('.ershouche .able').on('click', function(){
     if (cartype == undefined || actual == undefined || cardtime == undefined || city == undefined || stall == undefined || displacement == undefined
         ||transfer == undefined|| details == undefined|| price == undefined) {
         myApp.alert('请填写完整', '融信E家');
-    
     } else {
-
         $.ajax({
             type: 'POST',
             url: url,
@@ -684,8 +682,106 @@ $('.ershouche .able').on('click', function(){
             }
         });
     }
+});
+//金融贷款表单提交JS
+$('.careful-jr .able').on('click', function(){
+    var url = '/Rongxin/AddDetailServlet';
+    var detailtype = $('#fabu').val();//发布类型
+    var loantype = $('.fabu2 .jr-leixing').val();//贷款类型
+    var money_max = $('.fabu2 .jine1').val();//最大金额
+    var money_min = $('.fabu2 .jine2').val();//最小金额
+    var term_max = $('.fabu2 .qixian1').val();//最大期限
+    var term_min = $('.fabu2 .qixian2').val();//最小期限
+    var interest = $('.fabu2 .jr-lilv').val();//利率
+    var lendingtime = $('.fabu2 .jr-shijian').val();//最快放款时间
+    var apply = $('.fabu2 .jr-tiaojian').val();//申请条件
+    var product = $('.fabu2 .jr-xiangqing').val();//产品详情
+    if (loantype == undefined  ||money_max == undefined ||money_min == undefined ||term_max == undefined ||term_min == undefined ||interest == undefined 
+        ||lendingtime == undefined ||apply == undefined ||product == undefined ) {
+        myApp.alert('请填写完整', '融信E家');
+    } else {
+        $.ajax({
+            type: 'POST',
+            url: url,
+            data: {
+                detailtype:detailtype,
+                loantype:loantype,
+                money_max:money_max,
+                money_min:money_min,
+                term_max:term_max,
+                term_min:term_min,
+                interest:interest,
+                lendingtime:lendingtime,
+                apply:apply,
+                product:product,
+            },
+            dataType: 'json',
+            cache: false,
+            success: function (resu) {
+                var obj = eval(resu);
 
-    
+                if (obj.res.indexOf('成功') >= 0) {
+                    window.event.returnValue = false;
+                    myApp.alert('提交成功，正在审核', '融信E家');
+                }
+                else {
+                    myApp.alert(obj.res, '融信E家');
+                }
+            },
+            error: function (resu) {
+                var obj = eval(resu);
+                myApp.alert(obj.res, '融信E家');
+
+            }
+        });
+    }
+});
+//信用卡代垫表单提交js
+$('.careful-jd .able').on('click', function(){
+    var url = '/Rongxin/AddDetailServlet';
+    var detailtype = $('#fabu').val();//发布类型
+    var money_max = $('.fabu4 .jine1').val();//最大金额
+    var money_min = $('.fabu4 .jine2').val();//最小金额
+    var interest = $('.fabu4 .jd-feilv').val();//手续费率
+    var apply = $('.fabu4 .jr-tiaojian').val();//申请条件
+    var product = $('.fabu4 .jr-xiangqing').val();//产品详情
+
+    if (money_max == undefined  ||money_min == undefined ||interest == undefined ||apply == undefined ||product == undefined 
+        ) {
+        myApp.alert('请填写完整', '融信E家');
+    } else {
+        $.ajax({
+            type: 'POST',
+            url: url,
+            data: {
+                detailtype:detailtype,
+                money_max:money_max,
+            
+                money_min:money_min,
+                interest:interest,
+                apply:apply,
+                product:product,
+            },
+            dataType: 'json',
+            cache: false,
+            success: function (resu) {
+                var obj = eval(resu);
+
+                if (obj.res.indexOf('成功') >= 0) {
+                    window.event.returnValue = false;
+                    myApp.alert('提交成功，正在审核', '融信E家');
+                }
+                else {
+                    myApp.alert(obj.res, '融信E家');
+                }
+            },
+            error: function (resu) {
+                var obj = eval(resu);
+                myApp.alert(obj.res, '融信E家');
+
+            }
+        });
+    }
 });
 // 表单验证js
 
