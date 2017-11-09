@@ -481,7 +481,7 @@ $('.list-block .list-login').on('touchend', function () {
     }
 });
 //注册页面JS
-$('.jinrong-excel1 .careful ').on('touchend', function () {
+$('.jinrong-excel1 .careful-zhuce ').on('touchend', function () {
 
     var url = '/Rongxin/Regit';
     var nickname = $('.jinrong-excel1 .nickname').val();//昵称
@@ -731,7 +731,6 @@ $('.careful-jr .able').on('click', function(){
             error: function (resu) {
                 var obj = eval(resu);
                 myApp.alert(obj.res, '融信E家');
-
             }
         });
     }
@@ -756,7 +755,6 @@ $('.careful-jd .able').on('click', function(){
             data: {
                 detailtype:detailtype,
                 money_max:money_max,
-            
                 money_min:money_min,
                 interest:interest,
                 apply:apply,
@@ -783,6 +781,6 @@ $('.careful-jd .able').on('click', function(){
         });
     }
 });
-// 表单验证js
+
 
 
