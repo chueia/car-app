@@ -633,13 +633,12 @@ $('.ershouche .able').on('click', function(){
     var source_img = $('.fabu .file1').val();//车源图片
     var positive = $('.fabu .file5').val();//正侧
     var front = $('.fabu .file6').val();//正前
-    var back = $('.fabu .file2').val();//正背
+    var back = $('.fabu .file2').val();//正背   
     var front_trim = $('.fabu .file3').val();//前内饰
     var back_trim = $('.fabu .file4').val();//后内饰
     var price	 = $('.fabu .car-shoujia').val();//期望售价
     if (cartype == undefined || actual == undefined || cardtime == undefined || city == undefined || stall == undefined || displacement == undefined
-        ||transfer == undefined|| details == undefined|| source_img == undefined|| positive == undefined|| front == undefined|| back == undefined
-        || front_trim == undefined|| froback_trimnt == undefined|| back_trim == undefined|| price == undefined) {
+        ||transfer == undefined|| details == undefined|| price == undefined) {
         myApp.alert('请填写完整', '融信E家');
     
     } else {
