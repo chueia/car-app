@@ -801,7 +801,8 @@ $(document).on('change', '.fabu1 .file1', function () {
     var html = '<div class="img-box col-25"><img src="' + objUrl + '" alt=""></div>'
     $(this).parent().parent().prepend(html);
 
-    var source_img = $('.fabu .file1').val();
+    var source_img =  new FormData($( "#uploadForm1" )); 
+    console.log(source_img);
     $.ajax({
         type: 'POST',
         url: url,
@@ -815,7 +816,7 @@ $(document).on('change', '.fabu1 .file1', function () {
 
             if (obj.res.indexOf('成功') >= 0) {
                 window.event.returnValue = false;
-                myApp.alert('提交成功，正在审核', '融信E家');
+                //myApp.alert('提交成功，正在审核', '融信E家');
             }
             else {
                 myApp.alert(obj.res, '融信E家');
