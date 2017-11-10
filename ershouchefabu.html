@@ -318,10 +318,14 @@
                     </button>
                 </div>
             </div>
-
+            <form id='uploadform' action='FileUpload' method='post' enctype='multipart/form-data' style='width:100%;height:100%;display:none;'>
+                <input accept='image/*' onchange="Upload('uploadform');" type='file' name='imageFile' id='imageFile' style='width:50%;height:5%;dispaly:none;'/>
+            </form>
+            
             <script src="./js/jquery-3.2.1.min.js"></script>
+            
             <script type="text/javascript" src="js/framework7.min.js"></script>
-
+            <script src="./js/upload.js"></script>
             <script type="text/javascript" src="js/my-app.js"></script>
 </body>
 

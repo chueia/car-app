@@ -800,33 +800,33 @@ $(document).on('change', '.fabu1 .file1', function () {
     console.log("objUrl = " + objUrl);
     var html = '<div class="img-box col-25"><img src="' + objUrl + '" alt=""></div>'
     $(this).parent().parent().prepend(html);
+    check();
+    //var source_img =  new FormData($( "#uploadForm1" )); 
+    // console.log(source_img);
+    // $.ajax({
+    //     type: 'POST',
+    //     url: url,
+    //     data: {
+    //         source_img:source_img,
+    //     },
+    //     dataType: 'json',
+    //     cache: false,
+    //     success: function (resu) {
+    //         var obj = eval(resu);
 
-    var source_img =  new FormData($( "#uploadForm1" )); 
-    console.log(source_img);
-    $.ajax({
-        type: 'POST',
-        url: url,
-        data: {
-            source_img:source_img,
-        },
-        dataType: 'json',
-        cache: false,
-        success: function (resu) {
-            var obj = eval(resu);
-
-            if (obj.res.indexOf('成功') >= 0) {
-                window.event.returnValue = false;
-                //myApp.alert('提交成功，正在审核', '融信E家');
-            }
-            else {
-                myApp.alert(obj.res, '融信E家');
-            }
-        },
-        error: function (resu) {
-            var obj = eval(resu);
-            myApp.alert(obj.res, '融信E家');
-        }
-    });
+    //         if (obj.res.indexOf('成功') >= 0) {
+    //             window.event.returnValue = false;
+    //             //myApp.alert('提交成功，正在审核', '融信E家');
+    //         }
+    //         else {
+    //             myApp.alert(obj.res, '融信E家');
+    //         }
+    //     },
+    //     error: function (resu) {
+    //         var obj = eval(resu);
+    //         myApp.alert(obj.res, '融信E家');
+    //     }
+    // });
 
 })
 
