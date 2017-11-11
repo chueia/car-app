@@ -8,6 +8,7 @@ var $$=function(id){
   
 	
 	function Upload(controlid){
+		alert(123)
 		var alerthtml="<div style='height:30px;width:98%;margin-top:50px;margin-left:1%;margin-bottom:50px;text-align:center;'><div style='width:0px;height:30px;background-color:green;' id='progress'></div><span id='progresspercent'></span></div>";
 		MaskDiv(1,alerthtml,"上传进度显示","300","210");
 	    var form = new FormData($$(controlid));
