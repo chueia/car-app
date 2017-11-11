@@ -7,11 +7,10 @@ var $$=function(id){
 	
   
 	
-	function Upload(controlid){
-		alert(123)
+	function Upload(controlid,obj,type){
 		var alerthtml="<div style='height:30px;width:98%;margin-top:50px;margin-left:1%;margin-bottom:50px;text-align:center;'><div style='width:0px;height:30px;background-color:green;' id='progress'></div><span id='progresspercent'></span></div>";
 		MaskDiv(1,alerthtml,"上传进度显示","300","210");
-	    var form = new FormData($$(controlid));
+	    var form = new FormData(document.getElementById(controlid));
 	    var req = new XMLHttpRequest();
 	    if(req==null){
 	    	alert("浏览器不支持");
@@ -25,16 +24,21 @@ var $$=function(id){
 			//判断数据是否传送完成
 			if (req.readyState == 4 && req.status == 200) {//判断http交互是否成功
 				var json=eval('('+req.responseText+')');
-				var fileid=json.res;
-				console.log(fileid);
+				var fileurl=json.res;
+				if(type==1){
+					var html="<div class='img-box col-25'><img src='"+fileurl+"' alt=''></div>";
+					obj.parentNode.parentNode.parentNode.innerHTML=html+obj.parentNode.parentNode.parentNode.innerHTML;
+				}else if(type==2){
+					obj.parentNode.parentNode.children[0].src=fileurl;
+				}
 			}
 		};
 		req.upload.onprogress=function (ev){
 	    //console.log(ev);控制台打印progress { target: XMLHttpRequestUpload, isTrusted: true, lengthComputable: true,<br> //loaded: 15020, total: 15020, eventPhase: 0, bubbles: false, cancelable: false, defaultPrevented: false, <br>//timeStamp: 1445144855459000, originalTarget: XMLHttpRequestUpload }
 	    	 if(ev.lengthComputable){
-	    	     var precent=100 * ev.loaded/ev.total;
-	    		$$('progress').style.width=precent+'%';
-	     	    $$('progresspercent').innerHTML=Math.floor(precent)+'%';
+	    	    var precent=100 * ev.loaded/ev.total;
+	    		document.getElementById('progress').style.width=precent+'%';
+	     	    document.getElementById('progresspercent').innerHTML=Math.floor(precent)+'%';
 	     		if(precent==100){
 	     			setTimeout("CloseMask()",1000);
 	     		}
@@ -47,11 +51,11 @@ var $$=function(id){
 	function CloseMask(type){
 		if(type==2){//发送请求，当前页返回到上一页
 			//sendRequest("parameter=15&paramLength=2");
-			removeElement($$("alert"));
-			removeElement($$("bigalert"));
+			removeElement(document.getElementById("alert"));
+			removeElement(document.getElementById("bigalert"));
 		}else{
-			removeElement($$("alert"));
-			removeElement($$("bigalert"));
+			removeElement(document.getElementById("alert"));
+			removeElement(document.getElementById("bigalert"));
 		}
 	}
 	
@@ -80,7 +84,7 @@ var $$=function(id){
 			cloud_alert.style.width=width+"px";
 			cloud_alert.style.height=height+"px";
 			cloud_alert.style.position="fixed";
-			cloud_alert.style.left="1%";
+			cloud_alert.style.left=alertleft+"px";
 			cloud_alert.style.top=alerttop+"px";
 			cloud_alert.style.backgroundColor="white";
 			cloud_alert.style.borderRadius="15px";
