@@ -461,8 +461,15 @@ $('.list-block .list-login').on('touchend', function () {
             cache: false,
             success: function (resu) {
                 var obj = eval(resu);
-
                 if (obj.res.indexOf('成功') >= 0) {
+                	document.cookie="userinfo="+obj.userinfo;
+                	if(getUserinfo("username")!=""&&getUserinfo("username")!=null){
+                		document.getElementById("user").innerHTML="<a>"+getUserinfo("username")+"</a>";
+                	}else if(getUserinfo("nickname")!=""&&getUserinfo("nickname")!=null){
+                		document.getElementById("user").innerHTML="<a>"+getUserinfo("nickname")+"</a>";
+                	}else if(getUserinfo("account")!=""&&getUserinfo("account")!=null){
+                		document.getElementById("user").innerHTML="<a>"+getUserinfo("account")+"</a>";
+                	}
                     myApp.closeModal();
                     $('.navbar').removeClass('hide');
                     $('.toolbar').removeClass('hide');
@@ -482,7 +489,6 @@ $('.list-block .list-login').on('touchend', function () {
 });
 //注册页面JS
 $('.jinrong-excel1 .careful-zhuce ').on('touchend', function () {
-
     var url = '/Rongxin/Regit';
     var nickname = $('.jinrong-excel1 .nickname').val();//昵称
     var account = $('.jinrong-excel1 .phone').val();//手机号
@@ -598,6 +604,28 @@ $('.car-main .title i').on('touchend', function () {
 
 });
 
+//获取cookie中存的用户信息
+function getUserinfo(name){
+	 var cookie=document.cookie;
+	 if(cookie!=null){
+	    var userinfo=cookie.split("=")[1];
+	    var arr_user=userinfo.split(";");
+	    if(arr_user.length>3){
+	    	if(name=="userid"){
+	    		return arr_user[0];
+	    	}else if(name=="username"){
+	    		return arr_user[1];
+	    	}else if(name=="account"){
+	    		return arr_user[2];
+	    	}else if(name=="nickname"){
+	    		return arr_user[3];
+	    	}
+	    }else{
+	    	return null;
+	    }
+	 }
+}
+
 // 发布切换
 $(document).on('change', '.fabu-title #fabu', function () {
     var name = $('#fabu').val();
@@ -620,6 +648,7 @@ $(document).on('change', '.fabu-title #fabu', function () {
 //二手车发布表单提交js
 $('.ershouche .able').on('click', function () {
     var url = '/Rongxin/AddDetailServlet';
+    var userid=getUserinfo("userid");
     var detailtype = $('#fabu').val();//发布类型
     var cartype = $('.fabu .car-chexing').val();//车型
     var actual = $('.fabu .car-licheng').val();//行驶里程
@@ -645,6 +674,7 @@ $('.ershouche .able').on('click', function () {
             type: 'POST',
             url: url,
             data: {
+            	userid:userid,
                 detailtype: detailtype,
                 cartype: cartype,
                 actual: actual,
@@ -686,6 +716,7 @@ $('.ershouche .able').on('click', function () {
 //金融贷款表单提交JS
 $('.careful-jr .able').on('click', function () {
     var url = '/Rongxin/AddDetailServlet';
+    var userid=getUserinfo("userid");
     var detailtype = $('#fabu').val();//发布类型
     var loantype = $('.fabu2 .jr-leixing').val();//贷款类型
     var money_max = $('.fabu2 .jine1').val();//最大金额
@@ -704,6 +735,7 @@ $('.careful-jr .able').on('click', function () {
             type: 'POST',
             url: url,
             data: {
+            	userid:userid,
                 detailtype: detailtype,
                 loantype: loantype,
                 money_max: money_max,
@@ -738,6 +770,7 @@ $('.careful-jr .able').on('click', function () {
 //信用卡代垫表单提交js
 $('.careful-jd .able').on('click', function () {
     var url = '/Rongxin/AddDetailServlet';
+    var userid=getUserinfo("userid");
     var detailtype = $('#fabu').val();//发布类型
     var money_max = $('.fabu4 .jine1').val();//最大金额
     var money_min = $('.fabu4 .jine2').val();//最小金额
@@ -753,6 +786,7 @@ $('.careful-jd .able').on('click', function () {
             type: 'POST',
             url: url,
             data: {
+            	userid:userid,
                 detailtype: detailtype,
                 money_max: money_max,
                 money_min: money_min,
@@ -800,33 +834,33 @@ $(document).on('change', '.fabu1 .file1', function () {
     console.log("objUrl = " + objUrl);
     var html = '<div class="img-box col-25"><img src="' + objUrl + '" alt=""></div>'
     $(this).parent().parent().prepend(html);
-    check();
-    //var source_img =  new FormData($( "#uploadForm1" )); 
-    // console.log(source_img);
-    // $.ajax({
-    //     type: 'POST',
-    //     url: url,
-    //     data: {
-    //         source_img:source_img,
-    //     },
-    //     dataType: 'json',
-    //     cache: false,
-    //     success: function (resu) {
-    //         var obj = eval(resu);
 
-    //         if (obj.res.indexOf('成功') >= 0) {
-    //             window.event.returnValue = false;
-    //             //myApp.alert('提交成功，正在审核', '融信E家');
-    //         }
-    //         else {
-    //             myApp.alert(obj.res, '融信E家');
-    //         }
-    //     },
-    //     error: function (resu) {
-    //         var obj = eval(resu);
-    //         myApp.alert(obj.res, '融信E家');
-    //     }
-    // });
+    var source_img =  new FormData($( "#uploadForm1" )); 
+    console.log(source_img);
+    $.ajax({
+        type: 'POST',
+        url: url,
+        data: {
+            source_img:source_img,
+        },
+        dataType: 'json',
+        cache: false,
+        success: function (resu) {
+            var obj = eval(resu);
+
+            if (obj.res.indexOf('成功') >= 0) {
+                window.event.returnValue = false;
+                //myApp.alert('提交成功，正在审核', '融信E家');
+            }
+            else {
+                myApp.alert(obj.res, '融信E家');
+            }
+        },
+        error: function (resu) {
+            var obj = eval(resu);
+            myApp.alert(obj.res, '融信E家');
+        }
+    });
 
 })
 

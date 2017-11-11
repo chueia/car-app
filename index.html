@@ -13,6 +13,9 @@
 </head>
 
 <body>
+	<form id='uploadform' action='FileUpload' method='post' enctype='multipart/form-data' style='width:100%;height:100%;display:none;'>
+	<input accept='image/*' onchange="Upload('uploadform');" type='file' name='imageFile' id='imageFile' style='width:50%;height:5%;dispaly:none;'/>
+</form>
   <!-- Status bar overlay for fullscreen mode-->
   <div class="statusbar-overlay"></div>
   <!-- Panels overlay-->
@@ -695,7 +698,7 @@
             <div>
               <img src="./img/geren.png" alt="">
             </div>
-            <div class="login-div2">
+            <div id="user" class="login-div2">
               <a href="#">登录</a>
               <span>|</span>
               <a href="#">注册</a>
@@ -712,7 +715,7 @@
           <div class="me">
             <div class="me-box">
               <div>
-                <a class="external" href="./个人页面全部订单.html">
+                <a class="external" href="./gerendingdan.html">
                   <img src="./img/me-icon1.png" alt="">
                   <span>全部订单</span>
                 </a>
@@ -720,9 +723,9 @@
             </div>
             <div class="me-box">
               <div>
-                <a class="external" href="./maichejindu.html">
+                <a class="external" href="./ershouchefabu.html">
                   <img src="./img/me-icon3.png" alt="">
-                  <span>卖车进度</span>
+                  <span>我要发布</span>
                 </a>
               </div>
             </div>
@@ -730,7 +733,7 @@
               <div>
                 <a class="external" href="./maichejindu.html">
                   <img src="./img/me-icon2.png" alt="">
-                  <span>我的消息</span>
+                  <span>买车进度</span>
                   <i>3</i>
                 </a>
               </div>
@@ -753,7 +756,7 @@
             </div>
             <div class="me-box">
               <div>
-                <a class="external" href="./maichejindu.html">
+                <a class="external" href="./shezhi.html">
                   <img src="./img/me-icon6.png" alt="">
                   <span>设置</span>
                 </a>
