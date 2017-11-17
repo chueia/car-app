@@ -66,7 +66,7 @@
 
       </div>
 
-      <!-- <div class="login-screen" style="">
+      <div class="login-screen" style="">
        
         <div class="view">
           <div class="page white">
@@ -109,8 +109,7 @@
                         </label>
                       </div>
                     </li>
-                    <a class="external right" href="./wangjimima.html">忘记密码?</a>
-
+					<a class="external right" href="./wangjimima.html">忘记密码?</a>
                   </ul>
                 </div>
                 <div class="list-block">
@@ -133,11 +132,11 @@
             </div>
           </div>
         </div>
-      </div> -->
-      <!-- <div class="tab-all tab-0 show">
+      </div>
+      <div class="tab-all tab-0 show">
         <img src="./img/start0.png" alt="">
-      </div> -->
-      <div class="tab-all tab-1  show">
+      </div>
+      <div class="tab-all tab-1">
         <div class="main">
 
           <div class="page-content">
@@ -238,16 +237,16 @@
         </div>
 
         <div class="sort">
-          <div class="sort-box">
+          <div class="sort-box" onclick="get('Moneyshop','金融通','','detailid');">
             <span>综合排序</span>
           </div>
-          <div class="sort-box">
+          <div class="sort-box" onclick="get('Moneyshop','金融通','','detailid');">
             <span>热度最高</span>
           </div>
-          <div class="sort-box">
+          <div class="sort-box" onclick="get('Moneyshop','金融通','','detailid');">
             <span>距离最近</span>
           </div>
-          <div class="sort-box">
+          <div class="sort-box" onclick="get('Moneyshop','金融通','','detailid');">
             <span>评分最高</span>
           </div>
         </div>
@@ -286,16 +285,16 @@
 
         </div>
         <div class="sort">
-          <div class="sort-box">
+          <div class="sort-box" onclick="get('xinyongshop','信用卡','','detailid');">
             <span>综合排序</span>
           </div>
-          <div class="sort-box">
+          <div class="sort-box" onclick="get('xinyongshop','信用卡','','detailid');">
             <span>全部银行</span>
           </div>
-          <div class="sort-box">
+          <div class="sort-box" onclick="get('xinyongshop','信用卡','','detailid');">
             <span>按卡分类</span>
           </div>
-          <div class="sort-box">
+          <div class="sort-box" onclick="get('xinyongshop','信用卡','','detailid');">
             <span>按卡级别</span>
           </div>
         </div>
@@ -378,12 +377,6 @@
             </div>
 
           </div>
-
-
-          <div class="box-title car-title">
-
-            <h2>查看本地优质车源</h2>
-          </div>
           <div class="box-title car-title">
 
             <h2><a class="" href="./ershouchefabu.html">我要卖车</a>
@@ -393,15 +386,15 @@
           </div>
           <div class="sort">
             <div class="sort-box">
-              <span>综合排序</span>
+              <span onclick="getTwoCar('carshop','二手车','','','','detailid');">综合排序</span>
             </div>
-            <div class="sort-box">
+            <div class="sort-box" onclick="getTwoCar('carshop','二手车','','','','createtime');">
               <span>最新上架</span>
             </div>
-            <div class="sort-box">
+            <div class="sort-box" onclick="getTwoCar('carshop','二手车','','','','detailid');">
               <span>保卖车辆</span>
             </div>
-            <div class="sort-box">
+            <div class="sort-box" onclick="getTwoCar('carshop','二手车','','','','detailid');">
               <span>降价急售</span>
             </div>
           </div>
@@ -429,14 +422,37 @@
       <div class="tab-all tab-5 ">
         <div class="main ">
           <div class="page-content login">
-            <div>
-              <img src="./img/geren.png" alt="" onclick="location.href='./gerenjianjie.html'">
-            </div>
-            <div id="user" class="login-div2">
-              <a href="#">登录</a>
-              <span>|</span>
-              <a href="#">注册</a>
-            </div>
+            <script type="text/javascript">
+            	var storage=window.localStorage;
+            	if(storage!=null&&storage.getItem("head_url")!=null&&storage.getItem("head_url")!=""){
+            		document.writeln("<div>");
+            		document.writeln("<img id=\"head_url\" src=\""+storage.getItem("head_url")+"\" alt=\"\" onclick=\"location.href='./gerenjianjie.html'\">");
+            		document.writeln("</div>");
+            	}else{
+            		document.writeln("<div>");
+            		document.writeln("<img id=\"head_url\" src=\"./img/geren.png\" alt=\"\" onclick=\"location.href='./gerenjianjie.html'\">");
+            		document.writeln("</div>");
+            	}
+            	if(storage!=null&&storage.getItem("username")!=null&&storage.getItem("username")!=""){
+            		document.writeln("<div id=\"user\" class=\"login-div2\">");
+            		document.writeln("<a href=\"#\">"+storage.getItem("username")+"</a>");
+            		document.writeln("</div>");
+            	}else if(storage!=null&&storage.getItem("nickname")!=null&&storage.getItem("nickname")!=""){
+            		document.writeln("<div id=\"user\" class=\"login-div2\">");
+            		document.writeln("<a href=\"#\">"+storage.getItem("nickname")+"</a>");
+            		document.writeln("</div>");
+            	}else if(storage!=null&&storage.getItem("account")!=null&&storage.getItem("account")!=""){
+            		document.writeln("<div id=\"user\" class=\"login-div2\">");
+            		document.writeln("<a href=\"#\">"+storage.getItem()+"</a>");
+            		document.writeln("</div>");
+            	}else{
+            		document.writeln("<div id=\"user\" class=\"login-div2\">");
+            		document.writeln("<a href=\"#\">登录</a>");
+            		document.writeln("<span>|</span>");
+            		document.writeln("<a href=\"#\">注册</a>");
+            		document.writeln("</div>");
+            	}
+            </script>
           </div>
           <div class="notice">
             <a href="#">

@@ -13,60 +13,15 @@
 
 <body>
     <div class="view-main jinrong-excel1">
-        <div class="main">
-            <div class="main-title">
-                <div class="exit" onclick='javascript:history.back(-1)'>
-                    <img src="./img/exit.png" alt="">
-                </div>
-                <p>个人信息</p>
-            </div>
-            <div class="excel-box">
-                <div>
-                    <span class="">昵称</span>
-                    <input type="text" placeholder="刘德华">
-                </div>
-            </div>
-            <div class="excel-box">
-                <div>
-                    <span class="">头像</span>
-                    <div class="geren" style="border-bottom:0">
-                        <img src="./img/moren-img.png" alt="">
-                        <form id="uploadform" action="FileUpload" method="post" enctype="multipart/form-data" >
-                            <input class="file file1" accept="image/*" multiple onchange="Upload('uploadform',this,3);" type="file" name="imageFile"
-                                id="imageFile" >
-                        </form>
-                    </div>
-                </div>
-                <div>
-                    <span class="">个人简介</span>
-                    <input type="text">
-                </div>
-            </div>
+     <script src="./js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="js/framework7.min.js"></script>
 
-            <div class="excel-box">
-                <a href="./shenfenzheng.html" class="external">
-                    
-                    <div>
-                        <span class="">身份证认证</span>
-                        <img class="icon-right" src="./img/icon-right.png" alt="">
-                    </div>
-                </a>
-                <a href="./yingyezhizhao.html" class="external">
-                    <div>
-                        <span class="">营业执照认证</span>
-                        <img class="icon-right" src="./img/icon-right.png" alt="">
-                    </div>
-                </a>
-            </div>
-           
-            <div class="excel-box">
-                <div>
-                    <span>
-                        注册时间
-                    </span>
-                    <span class="right">2017-10-09</span>
-                </div>
-            </div>
+        <script type="text/javascript" src="js/my-app.js"></script>
+        <script type="text/javascript" src="./js/upload.js"></script>
+        <div id="gereninfo" class="main">
+            <script type="text/javascript">
+            	Gerenjianjie("gereninfo");
+            </script>
             <div class="careful">
                 <button class="able">
                     确定
@@ -76,11 +31,7 @@
         </div>
 
 
-        <script src="./js/jquery-3.2.1.min.js"></script>
-        <script type="text/javascript" src="js/framework7.min.js"></script>
-
-        <script type="text/javascript" src="js/my-app.js"></script>
-        <script type="text/javascript" src="./js/upload.js"></script>
+       
 </body>
 
 </html>

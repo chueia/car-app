@@ -10,14 +10,15 @@
 	
 	
 	//首页商家预览
-	function get(id,detailtype,locatype){
+	function get(id,detailtype,locatype,detailid){
 		var url="/Rongxin/GetDetailServlet";
     	$.ajax({
             type: 'POST',
             url: url,
             data: {
             	'detailtype':detailtype,
-            	'locatype':locatype
+            	'locatype':locatype,
+            	'detailid':detailid
             },
             dataType: 'json',
             cache: false,
@@ -36,7 +37,7 @@
                 						html+="<img src=\""+arr_culoum[1]+"\" alt=\"\">"
                 					html+="</div>"
                 					html+="<div class=\"shop-right\">"
-                						html+="<h2>"+arr_culoum[0]+"</h2>"
+                						html+="<h2>"+arr_culoum[34]+"</h2>"
                 						html+="<span>参考额度:"+arr_culoum[20]+"-"+arr_culoum[21]+"</span>"
                 						html+="<span>32541人已放款</span>"
                 						html+="<img src=\"./img/star-1.png\" alt=\"\">"
@@ -58,7 +59,7 @@
 	}
 	
 	//二手车信息
-	function getTwoCar(id,detailtype,locatype,price,pinpai){
+	function getTwoCar(id,detailtype,locatype,price,pinpai,ordertype){
 		var url="/Rongxin/GetDetailServlet";
     	$.ajax({
             type: 'POST',
@@ -67,7 +68,8 @@
             	'detailtype':detailtype,
             	'locatype':locatype,
             	'price':price,
-            	'pinpai':pinpai
+            	'pinpai':pinpai,
+            	'detailid':ordertype
             },
             dataType: 'json',
             cache: false,
@@ -78,7 +80,7 @@
                 	var arr_data=obj.res.split(Separator(2));
                 	for(var i=0;i<arr_data.length;i++){
                 		var arr_culoum=arr_data[i].split(Separator(1));
-                		html+="<a href=\"./ershouchexiangqing.html?detailid="+arr_culoum[2]+"\">";
+                		html+="<a class=\"external\" href=\"./ershouchexiangqing.html?detailid="+arr_culoum[2]+"\">";
                 		html+="<div class=\"shop-box\">";
                 		html+="<div class=\"shop-top row\">";
                 		html+="<div class=\"shop-left col-25\">";
@@ -110,6 +112,27 @@
         });
 	}
 	
+	//收藏订单
+	function Colltion(){
+		var storage=window.localStorage;
+		var userid=storage.getItem("userid");
+		var detailid=location.href.split("?")[1].split("=")[1];
+		var url="/Rongxin/ColltionServlet";
+    	$.ajax({
+            type: 'POST',
+            url: url,
+            data: {
+            	'userid':userid,
+            	'detailid':detailid,
+            },
+            dataType: 'json',
+            cache: false,
+            success: function (resu) {
+            	
+            }
+        });
+	}
+	
 	function Upload(controlid,obj,type){
 		var storage=window.localStorage;
 		var alerthtml="<div style='height:30px;width:98%;margin-top:50px;margin-left:1%;margin-bottom:50px;text-align:center;'><div style='width:0px;height:30px;background-color:green;' id='progress'></div><span id='progresspercent'></span></div>";
@@ -136,7 +159,7 @@
 					obj.parentNode.parentNode.children[0].src=fileurl;
 				}else if(type==3){
 					obj.parentNode.parentNode.children[0].src=fileurl;
-					var userid=stotage.getItem("userid");
+					var userid=storage.getItem("userid");
 					var url="/Rongxin/AddHeadServlet";
 					$.ajax({
 			            type: 'POST',
@@ -318,8 +341,8 @@
                         html+="<img src=\""+arr_culoum[1]+"\" alt=\"\">";
                         html+="</div>";
                         html+="<div class=\"shop-right\">";
-                        html+="<h2>"+arr_culoum[0]+"</h2>";
-                        html+="<i class=\"love active\" alt=\"\"></i>";
+                        html+="<h2>"+arr_culoum[34]+"</h2>";
+                        html+="<i class=\"love active\" alt=\"\" onclick=\"Colltion();\"></i>";
                         html+="<br>";
                         html+="<span class=\"distance\">2km</span>";
                         html+="<span class=\"numbers\">351444人已放款</span>";
@@ -385,6 +408,44 @@
         });
 	}
 	
+	//获取用户信息
+	function getUser(id){
+		var storage=window.localStorage;
+		var userid=storage.getItem("userid");
+		var url="/Rongxin/GetUserServlet";
+    	$.ajax({
+            type: 'POST',
+            url: url,
+            data: {
+            	'userid':userid
+            },
+            dataType: 'json',
+            cache: false,
+            success: function (resu) {
+                var obj = eval(resu);
+                var html="";
+                if (obj.res!="") {
+                	var arr_data=obj.res.split(Separator(2));
+                	html+="<div>";
+                	html+="<span class=\"\">本人姓名</span>";
+                	html+="<span style=\"float:right;\">"+arr_data[1]+"</span>";
+                	html+="</div>";
+                	html+="<div>";
+                	html+="<span class=\"\">身份证号</span>";
+                	html+="<span style=\"float:right;\">"+arr_data[2]+"</span>";
+                	html+="</div>";
+                	html+="<div>";
+                	html+="<span class=\"\">电话</span>";
+                	html+="<span style=\"float:right;\">"+arr_data[0]+"</span>";
+                	html+="</div>";
+                } else {
+                    //myApp.alert(obj.res, '融信E家');
+                }
+                document.getElementById(id).innerHTML=document.getElementById(id).children[0].outerHTML+html;
+            }
+        });
+	}
+	//获取汽车详情
 	function GetCarXiangqing(id){
 		var url="/Rongxin/GetDetailServlet";
 		var detailid=location.href.split("?")[1].split("=")[1];
@@ -463,4 +524,61 @@
                 document.getElementById(id).innerHTML=document.getElementById(id).children[0].outerHTML+html;
             }
         });
+	}
+	
+	
+	//个人简介
+	function Gerenjianjie(id){
+		var storage=window.localStorage;
+		var nickname=storage.getItem("nickname");
+		var createtime=storage.getItem("createtime");
+		var html="";
+		html+="<div class=\"main-title\">";
+		html+="<div class=\"exit\" onclick='javascript:history.back(-1)'>";
+		html+="<img src=\"./img/exit.png\" alt=\"\">";
+		html+="</div>";
+		html+="<p>个人信息</p>";
+		html+="</div>";
+		html+="<div class=\"excel-box\">";
+		html+="<div>";
+		html+="<span class=\"\">昵称</span>";
+		html+="<input type=\"text\" placeholder=\""+nickname+"\">";
+		html+="</div>";
+		html+="</div>";
+		html+="<div class=\"excel-box\">";
+		html+="<div>";
+		html+="<span class=\"\">头像</span>";
+		html+="<div class=\"geren\" style=\"border-bottom:0\">";
+		html+="<img src=\"./img/moren-img.png\" alt=\"\">";
+		html+="<form id=\"uploadform\" action=\"FileUpload\" method=\"post\" enctype=\"multipart/form-data\" >";
+		html+="<input class=\"file file1\" accept=\"image/*\" multiple onchange=\"Upload('uploadform',this,3);\" type=\"file\" name=\"imageFile\" id=\"imageFile\" >";
+        html+="</form>";
+        html+="</div>";
+        html+="</div>";
+        html+="<div>";
+        html+="<span class=\"\">个人简介</span>";
+        html+="<input type=\"text\">";
+        html+="</div>";
+    	html+="</div>";
+    	html+="<div class=\"excel-box\">";
+        html+="<a href=\"./shenfenzheng.html\" class=\"external\">";
+        html+="<div>";
+        html+="<span class=\"\">身份证认证</span>";
+        html+="<img class=\"icon-right\" src=\"./img/icon-right.png\" alt=\"\">";
+        html+="</div>";
+        html+="</a>";
+        html+="<a href=\"./yingyezhizhao.html\" class=\"external\">";
+        html+="<div>";
+        html+="<span class=\"\">营业执照认证</span>";
+        html+="<img class=\"icon-right\" src=\"./img/icon-right.png\" alt=\"\">";
+        html+="</div>";
+        html+="</a>";
+    	html+="</div>";
+   		html+="<div class=\"excel-box\">";
+        html+="<div>";
+        html+="<span>注册时间</span>";
+        html+="<span class=\"right\">"+createtime.split(" ")[0]+"</span>";
+        html+="</div>";
+    	html+="</div>";
+    	document.getElementById(id).innerHTML=html;
 	}

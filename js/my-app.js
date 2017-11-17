@@ -495,20 +495,17 @@ $('.list-block .list-login').on('touchend', function () {
                 	storage.setItem("username", obj.userinfo.split(";")[1]);
                 	storage.setItem("account", obj.userinfo.split(";")[2]);
                 	storage.setItem("nickname", obj.userinfo.split(";")[3]);
-                	//document.cookie="userinfo="+obj.userinfo;
-//                	if(getUserinfo("username")!=""&&getUserinfo("username")!=null){
-//                		$("#user").innerHTML="<a>"+getUserinfo("username")+"</a>";
-//                	}else if(getUserinfo("nickname")!=""&&getUserinfo("nickname")!=null){
-//                		$("#user").innerHTML="<a>"+getUserinfo("nickname")+"</a>";
-//                	}else if(getUserinfo("account")!=""&&getUserinfo("account")!=null){
-//                		$("#user").innerHTML="<a>"+getUserinfo("account")+"</a>";
-//                	}
+                	storage.setItem("head_url", obj.userinfo.split(";")[4]);
+                	storage.setItem("createtime", obj.userinfo.split(";")[5]);
                 	if(obj.userinfo.split(";")[1]!=""&&obj.userinfo.split(";")[1]!=null){
                 		$("#user").text(obj.userinfo.split(";")[1]);
                 	}else if(obj.userinfo.split(";")[3]!=""&&obj.userinfo.split(";")[3]!=null){
                 		$("#user").text(obj.userinfo.split(";")[3]);
                 	}else if(obj.userinfo.split(";")[2]!=""&&obj.userinfo.split(";")[2]!=null){
                 		$("#user").text(obj.userinfo.split(";")[2]);
+                	}
+                	if(obj.userinfo.split(";")[4]!=""&&obj.userinfo.split(";")[4]!=null){
+                		$("#head_url").src=obj.userinfo.split(";")[4];
                 	}
                     myApp.closeModal();
                     $('.navbar').removeClass('hide');
