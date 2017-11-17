@@ -1,13 +1,117 @@
 /**
  * 
  */
-var $$=function(id){
-		return document.getElementById(id);
+	
+	//拆分符号
+	function Separator(type){
+		var array = ["aadc0", "Qlcc=", "3aOk=", "RQ7U=","LSko=","L7ZY=","0IUU=","U2Fsd"]; 
+		return array[type-1];
 	}
 	
-  
+	
+	//首页商家预览
+	function get(id,detailtype,locatype){
+		var url="/Rongxin/GetDetailServlet";
+    	$.ajax({
+            type: 'POST',
+            url: url,
+            data: {
+            	'detailtype':detailtype,
+            	'locatype':locatype
+            },
+            dataType: 'json',
+            cache: false,
+            success: function (resu) {
+                var obj = eval(resu);
+                var html="";
+                if (obj.res!="") {
+                	
+                	var arr_data=obj.res.split(Separator(2));
+                	for(var i=0;i<arr_data.length;i++){
+                		var arr_culoum=arr_data[i].split(Separator(1));
+                		html+="<div class=\"shop-box\">"
+                			html+="<a class=\"external\" href=\"./jinrongxiangqing.html?detailid="+arr_culoum[2]+"\">"
+                				html+="<div class=\"shop-top\">"
+                					html+="<div class=\"shop-left\">"
+                						html+="<img src=\""+arr_culoum[1]+"\" alt=\"\">"
+                					html+="</div>"
+                					html+="<div class=\"shop-right\">"
+                						html+="<h2>"+arr_culoum[0]+"</h2>"
+                						html+="<span>参考额度:"+arr_culoum[20]+"-"+arr_culoum[21]+"</span>"
+                						html+="<span>32541人已放款</span>"
+                						html+="<img src=\"./img/star-1.png\" alt=\"\">"
+                					html+="</div>"
+                				html+="</div>"
+                		   html+="</a>"
+                		   html+="<div class=\"shop-bottom\">"
+	                		   html+="<span>"+arr_culoum[24]+"</span>"
+	                	   html+="</div>"
+                		html+="</div>";
+                	}
+                	
+                } else {
+                    //myApp.alert(obj.res, '融信E家');
+                }
+                document.getElementById(id).innerHTML=html;
+            }
+        });
+	}
+	
+	//二手车信息
+	function getTwoCar(id,detailtype,locatype,price,pinpai){
+		var url="/Rongxin/GetDetailServlet";
+    	$.ajax({
+            type: 'POST',
+            url: url,
+            data: {
+            	'detailtype':detailtype,
+            	'locatype':locatype,
+            	'price':price,
+            	'pinpai':pinpai
+            },
+            dataType: 'json',
+            cache: false,
+            success: function (resu) {
+                var obj = eval(resu);
+                var html="";
+                if (obj.res!="") {
+                	var arr_data=obj.res.split(Separator(2));
+                	for(var i=0;i<arr_data.length;i++){
+                		var arr_culoum=arr_data[i].split(Separator(1));
+                		html+="<a href=\"./ershouchexiangqing.html?detailid="+arr_culoum[2]+"\">";
+                		html+="<div class=\"shop-box\">";
+                		html+="<div class=\"shop-top row\">";
+                		html+="<div class=\"shop-left col-25\">";
+                		html+="<img src=\""+arr_culoum[1]+"\" alt=\"\">";
+                		html+="</div>";
+                		html+="<div class=\"shop-right col-75\">";
+                		html+="<h2>"+arr_culoum[4]+"</h2>";
+                		html+="<p>行驶距离：";
+                		html+=" <span>"+arr_culoum[5]+"万公里</span>";
+                		html+="</p>";
+                		html+="<p>首次上牌：";
+                		html+="<span>"+arr_culoum[7]+"年</span>";
+                		html+="</p>";
+                		html+="<p>卖家信息：";
+                		html+="<span>商家</span>";
+                		html+="</p>";
+                		html+="<b>"+arr_culoum[19]+"万</b>";
+                		html+="</div>";
+                		html+="</div>";
+                		html+="</div>";
+                		html+="</a>";
+                	}
+                	
+                } else {
+                    //myApp.alert(obj.res, '融信E家');
+                }
+                document.getElementById(id).innerHTML=html;
+            }
+        });
+	}
 	
 	function Upload(controlid,obj,type){
+		var storage=window.localStorage;
 		var alerthtml="<div style='height:30px;width:98%;margin-top:50px;margin-left:1%;margin-bottom:50px;text-align:center;'><div style='width:0px;height:30px;background-color:green;' id='progress'></div><span id='progresspercent'></span></div>";
 		MaskDiv(1,alerthtml,"上传进度显示","300","210");
 	    var form = new FormData(document.getElementById(controlid));
@@ -30,9 +134,26 @@ var $$=function(id){
 					obj.parentNode.parentNode.parentNode.innerHTML=html+obj.parentNode.parentNode.parentNode.innerHTML;
 				}else if(type==2){
 					obj.parentNode.parentNode.children[0].src=fileurl;
+				}else if(type==3){
+					obj.parentNode.parentNode.children[0].src=fileurl;
+					var userid=stotage.getItem("userid");
+					var url="/Rongxin/AddHeadServlet";
+					$.ajax({
+			            type: 'POST',
+			            url: url,
+			            data: {
+			            	'userid':userid,
+			            	'headurl':fileurl
+			            },
+			            dataType: 'json',
+			            cache: false,
+			            success: function (resu) {
+			                var obj = eval(resu);
+			            }
+					});
 				}
 			}
-		};
+		}
 		req.upload.onprogress=function (ev){
 	    //console.log(ev);控制台打印progress { target: XMLHttpRequestUpload, isTrusted: true, lengthComputable: true,<br> //loaded: 15020, total: 15020, eventPhase: 0, bubbles: false, cancelable: false, defaultPrevented: false, <br>//timeStamp: 1445144855459000, originalTarget: XMLHttpRequestUpload }
 	    	 if(ev.lengthComputable){
@@ -165,9 +286,181 @@ var $$=function(id){
 	}
 	function check(){
 		//alert($$("uploadform").children[0]);
-		$$("imageFile").click();
+		document.getElementById("imageFile").click();
 	}
 	
 	function removeElement(obj){
 		return document.body.removeChild(obj);
+	}
+	
+	//获取金融详情
+	function GetXiangQing(id){
+		var url="/Rongxin/GetDetailServlet";
+		var detailid=location.href.split("?")[1].split("=")[1];
+    	$.ajax({
+            type: 'POST',
+            url: url,
+            data: {
+            	'detailid':detailid
+            },
+            dataType: 'json',
+            cache: false,
+            success: function (resu) {
+                var obj = eval(resu);
+                var html="";
+                if (obj.res!="") {
+                	var arr_data=obj.res.split(Separator(2));
+                	for(var i=0;i<arr_data.length;i++){
+                		var arr_culoum=arr_data[i].split(Separator(1));
+                		html+="<div class=\"shop-box\">";
+                        html+="<div class=\"shop-top\">";
+                        html+="<div class=\"shop-left\">";
+                        html+="<img src=\""+arr_culoum[1]+"\" alt=\"\">";
+                        html+="</div>";
+                        html+="<div class=\"shop-right\">";
+                        html+="<h2>"+arr_culoum[0]+"</h2>";
+                        html+="<i class=\"love active\" alt=\"\"></i>";
+                        html+="<br>";
+                        html+="<span class=\"distance\">2km</span>";
+                        html+="<span class=\"numbers\">351444人已放款</span>";
+                        html+="<img src=\"./img/star-5.png\" alt=\"\">";
+                        html+="</div>";
+                        html+="</div>";
+                        html+="<div class=\"text\">";
+                        html+="<p>线上全自动审核放款，20000元内即时到账。</p>";
+                        html+="</div>";
+                        html+="</div>";
+                        html+="<div class=\"choose\">";
+                        html+="<div class=\"choose-box\">";
+                        html+="<span>借款金额("+arr_culoum[22]+"-"+arr_culoum[23]+")</span>";
+                        html+="<input id=\"choose-gold\" type=\"text\" readonly placeholder=\"1000\">";
+                        html+="</div>";
+                        html+="<div class=\"choose-box\">";
+                        html+="<span>分期期限("+arr_culoum[24]+"个月）</span>";
+                        html+="<input id=\"choose-bystages\" type=\"text\" readonly placeholder=\"1\">";
+                        html+="</div>";
+                        html+="</div>";
+                        html+="<div class=\"text1\">";
+                        html+="<div class=\"text1-box\">";
+                        html+="<span>1000</span>";
+                        html+="<p>每月还款</p>";
+                        html+="</div>";
+                        html+="<div class=\"text1-box\">";
+                        html+="<span>"+arr_culoum[25]+"</span>";
+                        html+="<p>参考月利率</p>";
+                        html+="</div>";
+                        html+="<div class=\"text1-box\">";
+                        html+="<span>"+arr_culoum[26]+"min</span>";
+                        html+="<p>最快放款时间</p>";
+                        html+="</div>";
+                        html+="</div>";
+                        html+="<div class=\"details\">";
+                        html+="<div class=\"details-title\">";
+                        html+="<p>产品详情</p>";
+                        html+="</div>";
+                        html+="<div class=\"details-main\">";
+                        html+="<div class=\"conditions\">";
+                        html+="<i></i><span>申请条件</span>";
+                        html+="<p>"+arr_culoum[27]+"</p>";
+                        html+="</div>";
+                        html+="<div class=\"conditions introduction\">";
+                        html+="<i></i><span>产品介绍</span>";
+                        html+="<p>"+arr_culoum[28]+"</p>";
+                        html+="</p>";
+                        html+="</div>";
+                        html+="</div>";
+                        html+="</div>";
+                        html+="<div class=\"button\" >";
+                        html+="<a href=\"./jinrongdaikuan.html\" class=\"external\">";
+                        html+="<p>立即申请</p>";
+                        html+="</a>";
+                        html+="</div>";
+                	}
+                	
+                } else {
+                    //myApp.alert(obj.res, '融信E家');
+                }
+                document.getElementById(id).innerHTML=html;
+            }
+        });
+	}
+	
+	function GetCarXiangqing(id){
+		var url="/Rongxin/GetDetailServlet";
+		var detailid=location.href.split("?")[1].split("=")[1];
+    	$.ajax({
+            type: 'POST',
+            url: url,
+            data: {
+            	'detailid':detailid
+            },
+            dataType: 'json',
+            cache: false,
+            success: function (resu) {
+                var obj = eval(resu);
+                var html="";
+                if (obj.res!="") {
+                	var arr_data=obj.res.split(Separator(2));
+                	for(var i=0;i<arr_data.length;i++){
+                		var arr_culoum=arr_data[i].split(Separator(1));
+                		var arr_img=arr_culoum[13].split(";");
+                		html+="<div class=\"banner\">";
+                        html+="<div class=\"swiper-container\">";
+                        html+="<div class=\"swiper-wrapper\">";
+                        for(var j=0;j<arr_img.length;j++){
+                        	html+="<div class=\"swiper-slide\"><img src=\""+arr_img[j]+"\" alt=\"\"></div>";
+                        }
+                        html+="</div>";
+                        html+="<div class=\"swiper-button-prev\"></div>";
+                        html+="<div class=\"swiper-button-next\"></div>";
+                        html+="<div class=\"shadow shadow-name\">";
+                        html+="<p>恩施|2017-09-28发布</p>";
+                        html+="</div>";
+                        html+="<div class=\"shadow shadow-number\">";
+                        html+="<p>1/"+arr_img.length+"</p>";
+                        html+="</div>";
+                        html+="</div>";
+                        html+="</div>";
+                        html+="<div class=\"title\">";
+                        html+="<h1>"+arr_culoum[4]+"</h1>";
+                        html+="<i class=\"love\"></i>";
+                        html+="</div>";
+                        html+="<div class=\"title2\">";
+                        html+="<h1>"+arr_culoum[19]+"万<span>(包含过户费)</span></h1>";
+                        html+="<span class=\"span2\">比新车省：113.49万</span>";
+                        html+="</div>";
+                        html+="<div class=\"car-text\">";
+                        html+="<div class=\"text-title\">";
+                        html+="<span>车辆详情</span>";
+                        html+="</div>";
+                        html+="<div class=\"car-instruction row\">";
+                        html+="<p class=\"col-20\">说明：</p>";
+                        html+="<span class=\"col-80\">"+arr_culoum[12]+"</span>";
+                        html+="</div>";
+                        html+="<div class=\"car-img\">";
+                        html+="<img src=\""+arr_culoum[14]+"\" alt=\"\">";
+                        html+="<div class=\"row\">";
+                        html+="<p class=\"col-20\">正侧</p>";
+                        html+="<span class=\"col-80\">";
+                        html+="漆面完整保持较好，车身结构无修复。";
+                        html+="</span>";
+                        html+="</div>";
+                        html+="</div>";
+                        html+="<div class=\"car-img\">";
+                        html+="<img src=\""+arr_culoum[15]+"\" alt=\"\">";
+                        html+="<div class=\"row\">";
+                        html+="<p class=\"col-20\">正前</p>";
+                        html+="<span class=\"col-80\">";
+                        html+="挡泥板、保险杠完好，大灯清晰。";
+                        html+="</span>";
+                        html+="</div>";
+                        html+="</div>";
+                	}
+                	
+                } else {
+                    //myApp.alert(obj.res, '融信E家');
+                }
+                document.getElementById(id).innerHTML=document.getElementById(id).children[0].outerHTML+html;
+            }
+        });
 	}

@@ -438,16 +438,43 @@ $(document).on('touchend', '.tab-0', function () {
     }, 500)
 })
 //myApp.loginScreen();
+
+function CheckUser(){
+	var storage=window.localStorage;
+	var userid=storage.getItem("userid");
+	var url="/Rongxin/CheckLoginServlet";
+	$.ajax({
+        type: 'POST',
+        url: url,
+        data: {
+            'userid': userid
+        },
+        dataType: 'json',
+        cache: false,
+        success: function (resu) {
+            var obj = eval(resu);
+            console.log(obj.res);
+            if (obj.res.indexOf('1') >= 0) {
+            	myApp.closeModal();
+                $('.navbar').removeClass('hide');
+                $('.toolbar').removeClass('hide');
+                $('.tab-0').removeClass('show');
+                $('.tab-1').addClass('show');
+            } 
+        }
+    });
+}
+
 // 登录页面js
 $('.list-block .list-login').on('touchend', function () {
     var url = '/Rongxin/LoginServlet';
     var account = $('.login-screen-content .phone').val();//手机号
     var pass = $('.login-screen-content .password').val();//密码
     if (account == undefined || pass == undefined) {
-        myApp.alert('请输入手机号和密码', '融信E家');
+        myApp.alert('请输入手机号和密码', '金牛金融');
         return false;
     } else if (!(/^1[34578]\d{9}$/.test(account))) {
-        myApp.alert('请输入正确的手机号', '融信E家');
+        myApp.alert('请输入正确的手机号', '金牛金融');
         return false;
     } else {
         $.ajax({
@@ -462,13 +489,26 @@ $('.list-block .list-login').on('touchend', function () {
             success: function (resu) {
                 var obj = eval(resu);
                 if (obj.res.indexOf('成功') >= 0) {
-                	document.cookie="userinfo="+obj.userinfo;
-                	if(getUserinfo("username")!=""&&getUserinfo("username")!=null){
-                		document.getElementById("user").innerHTML="<a>"+getUserinfo("username")+"</a>";
-                	}else if(getUserinfo("nickname")!=""&&getUserinfo("nickname")!=null){
-                		document.getElementById("user").innerHTML="<a>"+getUserinfo("nickname")+"</a>";
-                	}else if(getUserinfo("account")!=""&&getUserinfo("account")!=null){
-                		document.getElementById("user").innerHTML="<a>"+getUserinfo("account")+"</a>";
+                	console.log(obj.userinfo);
+                	var storage=window.localStorage;
+                	storage.setItem("userid", obj.userinfo.split(";")[0]);
+                	storage.setItem("username", obj.userinfo.split(";")[1]);
+                	storage.setItem("account", obj.userinfo.split(";")[2]);
+                	storage.setItem("nickname", obj.userinfo.split(";")[3]);
+                	//document.cookie="userinfo="+obj.userinfo;
+//                	if(getUserinfo("username")!=""&&getUserinfo("username")!=null){
+//                		$("#user").innerHTML="<a>"+getUserinfo("username")+"</a>";
+//                	}else if(getUserinfo("nickname")!=""&&getUserinfo("nickname")!=null){
+//                		$("#user").innerHTML="<a>"+getUserinfo("nickname")+"</a>";
+//                	}else if(getUserinfo("account")!=""&&getUserinfo("account")!=null){
+//                		$("#user").innerHTML="<a>"+getUserinfo("account")+"</a>";
+//                	}
+                	if(obj.userinfo.split(";")[1]!=""&&obj.userinfo.split(";")[1]!=null){
+                		$("#user").text(obj.userinfo.split(";")[1]);
+                	}else if(obj.userinfo.split(";")[3]!=""&&obj.userinfo.split(";")[3]!=null){
+                		$("#user").text(obj.userinfo.split(";")[3]);
+                	}else if(obj.userinfo.split(";")[2]!=""&&obj.userinfo.split(";")[2]!=null){
+                		$("#user").text(obj.userinfo.split(";")[2]);
                 	}
                     myApp.closeModal();
                     $('.navbar').removeClass('hide');
@@ -476,12 +516,12 @@ $('.list-block .list-login').on('touchend', function () {
                     $('.tab-0').removeClass('show');
                     $('.tab-1').addClass('show');
                 } else {
-                    myApp.alert(obj.res, '融信E家');
+                    myApp.alert(obj.res, '金牛金融');
                 }
             },
             error: function (resu) {
                 var obj = eval(resu);
-                myApp.alert(obj.res, '融信E家');
+                myApp.alert(obj.res, '金牛金融');
 
             }
         });
@@ -497,13 +537,13 @@ $('.jinrong-excel1 .careful-zhuce ').on('touchend', function () {
     var yanzheng = $('.jinrong-excel1 .yanzheng1 ').val();//验证码
     // console.log(yanzheng)
     if (account == undefined || pass == undefined || nickname == undefined || pass2 == undefined || yanzheng == undefined) {
-        myApp.alert('请填写完整', '融信E家');
+        myApp.alert('请填写完整', '金牛金融');
     } else if (!(/^1[34578]\d{9}$/.test(account))) {
-        myApp.alert('请输入正确的手机号', '融信E家');
+        myApp.alert('请输入正确的手机号', '金牛金融');
         return false;
     }
     else if (pass != pass2) {
-        myApp.alert('密码不一致', '融信E家');
+        myApp.alert('密码不一致', '金牛金融');
         return false;
     } else {
 
@@ -527,12 +567,12 @@ $('.jinrong-excel1 .careful-zhuce ').on('touchend', function () {
                     myApp.loginScreen();
                 }
                 else {
-                    myApp.alert(obj.res, '融信E家');
+                    myApp.alert(obj.res, '金牛金融');
                 }
             },
             error: function (resu) {
                 var obj = eval(resu);
-                myApp.alert(obj.res, '融信E家');
+                myApp.alert(obj.res, '金牛金融');
 
             }
         });
@@ -541,7 +581,7 @@ $('.jinrong-excel1 .careful-zhuce ').on('touchend', function () {
 //验证码收发js
 $('.jinrong-excel1 .yanzheng').on('touchend', function () {
     if ($(this).hasClass('timeuse')) {
-        myApp.alert('请稍后再试', '融信E家');
+        myApp.alert('请稍后再试', '金牛金融');
     } else {
         var url = '/Rongxin/SendServlet';
         var account = $('.jinrong-excel1 .phone').val();//手机号
@@ -549,7 +589,7 @@ $('.jinrong-excel1 .yanzheng').on('touchend', function () {
         $(this).addClass('timeuse');
 
         if (account == undefined || account == "") {
-            myApp.alert('请输入手机号', '融信E家');
+            myApp.alert('请输入手机号', '金牛金融');
             return false;
         } else {
             $.ajax({
@@ -583,7 +623,7 @@ $('.jinrong-excel1 .yanzheng').on('touchend', function () {
 
                 error: function (resu) {
                     var obj = eval(resu);
-                    myApp.alert(obj.res, '融信E家');
+                    myApp.alert(obj.res, '金牛金融');
 
                 }
             })
@@ -593,6 +633,38 @@ $('.jinrong-excel1 .yanzheng').on('touchend', function () {
 
 
 });
+
+//退出登录
+function logout(){
+	var storage=window.localStorage;
+	var userid=storage.getItem("userid");
+	var url="/Rongxin/LogOutServlet"
+	 $.ajax({
+         type: 'POST',
+         url: url,
+         data: {
+             'userid': userid
+
+         },
+         dataType: 'json',
+         cache: false,
+         success: function (resu) {
+        	 var obj = eval(resu);
+        	 if(obj.res.indexOf("成功")>=0){
+        		storage.setItem("userid","");
+             	storage.setItem("username","");
+             	storage.setItem("account","");
+             	storage.setItem("nickname","");
+        	 }
+         },
+         error: function (resu) {
+             var obj = eval(resu);
+             myApp.alert(obj.res, '金牛金融');
+
+         }
+     })
+}
+
 // 二手车收藏JS
 $('.car-main .title i').on('touchend', function () {
 
@@ -607,7 +679,7 @@ $('.car-main .title i').on('touchend', function () {
 //获取cookie中存的用户信息
 function getUserinfo(name){
 	 var cookie=document.cookie;
-	 if(cookie!=null){
+	 if(cookie!=null&&cookie!=""){
 	    var userinfo=cookie.split("=")[1];
 	    var arr_user=userinfo.split(";");
 	    if(arr_user.length>3){
@@ -648,8 +720,10 @@ $(document).on('change', '.fabu-title #fabu', function () {
 //二手车发布表单提交js
 $('.ershouche .able').on('click', function () {
     var url = '/Rongxin/AddDetailServlet';
-    var userid=getUserinfo("userid");
+    var storage=window.localStorage;
+    var userid=storage.getItem("userid");
     var detailtype = $('#fabu').val();//发布类型
+    var pinpai = $('.fabu .car-pinpai').val();//车型
     var cartype = $('.fabu .car-chexing').val();//车型
     var actual = $('.fabu .car-licheng').val();//行驶里程
     var cardtime = $('.fabu .car-shijian').val();//上牌时间
@@ -668,7 +742,7 @@ $('.ershouche .able').on('click', function () {
     // var price	 = $('.fabu .car-shoujia').val();//期望售价
     if (cartype == undefined || actual == undefined || cardtime == undefined || city == undefined || stall == undefined || displacement == undefined
         || transfer == undefined || details == undefined || price == undefined) {
-        myApp.alert('请填写完整', '融信E家');
+        myApp.alert('请填写完整', '金牛金融');
     } else {
         $.ajax({
             type: 'POST',
@@ -676,6 +750,7 @@ $('.ershouche .able').on('click', function () {
             data: {
             	userid:userid,
                 detailtype: detailtype,
+                pinpai:pinpai,
                 cartype: cartype,
                 actual: actual,
                 cardtime: cardtime,
@@ -699,15 +774,15 @@ $('.ershouche .able').on('click', function () {
 
                 if (obj.res.indexOf('成功') >= 0) {
                     window.event.returnValue = false;
-                    myApp.alert('提交成功，正在审核', '融信E家');
+                    myApp.alert('提交成功，正在审核', '金牛金融');
                 }
                 else {
-                    myApp.alert(obj.res, '融信E家');
+                    myApp.alert(obj.res, '金牛金融');
                 }
             },
             error: function (resu) {
                 var obj = eval(resu);
-                myApp.alert(obj.res, '融信E家');
+                myApp.alert(obj.res, '金牛金融');
 
             }
         });
@@ -716,7 +791,8 @@ $('.ershouche .able').on('click', function () {
 //金融贷款表单提交JS
 $('.careful-jr .able').on('click', function () {
     var url = '/Rongxin/AddDetailServlet';
-    var userid=getUserinfo("userid");
+    var storage=window.localStorage;
+    var userid=storage.getItem("userid");
     var detailtype = $('#fabu').val();//发布类型
     var loantype = $('.fabu2 .jr-leixing').val();//贷款类型
     var money_max = $('.fabu2 .jine1').val();//最大金额
@@ -729,7 +805,7 @@ $('.careful-jr .able').on('click', function () {
     var product = $('.fabu2 .jr-xiangqing').val();//产品详情
     if (loantype == undefined || money_max == undefined || money_min == undefined || term_max == undefined || term_min == undefined || interest == undefined
         || lendingtime == undefined || apply == undefined || product == undefined) {
-        myApp.alert('请填写完整', '融信E家');
+        myApp.alert('请填写完整', '金牛金融');
     } else {
         $.ajax({
             type: 'POST',
@@ -754,15 +830,15 @@ $('.careful-jr .able').on('click', function () {
 
                 if (obj.res.indexOf('成功') >= 0) {
                     window.event.returnValue = false;
-                    myApp.alert('提交成功，正在审核', '融信E家');
+                    myApp.alert('提交成功，正在审核', '金牛金融');
                 }
                 else {
-                    myApp.alert(obj.res, '融信E家');
+                    myApp.alert(obj.res, '金牛金融');
                 }
             },
             error: function (resu) {
                 var obj = eval(resu);
-                myApp.alert(obj.res, '融信E家');
+                myApp.alert(obj.res, '金牛金融');
             }
         });
     }
@@ -770,7 +846,8 @@ $('.careful-jr .able').on('click', function () {
 //信用卡代垫表单提交js
 $('.careful-jd .able').on('click', function () {
     var url = '/Rongxin/AddDetailServlet';
-    var userid=getUserinfo("userid");
+    var storage=window.localStorage;
+    var userid=storage.getItem("userid");
     var detailtype = $('#fabu').val();//发布类型
     var money_max = $('.fabu4 .jine1').val();//最大金额
     var money_min = $('.fabu4 .jine2').val();//最小金额
@@ -780,7 +857,7 @@ $('.careful-jd .able').on('click', function () {
 
     if (money_max == undefined || money_min == undefined || interest == undefined || apply == undefined || product == undefined
     ) {
-        myApp.alert('请填写完整', '融信E家');
+        myApp.alert('请填写完整', '金牛金融');
     } else {
         $.ajax({
             type: 'POST',
@@ -801,15 +878,15 @@ $('.careful-jd .able').on('click', function () {
 
                 if (obj.res.indexOf('成功') >= 0) {
                     window.event.returnValue = false;
-                    myApp.alert('提交成功，正在审核', '融信E家');
+                    myApp.alert('提交成功，正在审核', '金牛金融');
                 }
                 else {
-                    myApp.alert(obj.res, '融信E家');
+                    myApp.alert(obj.res, '金牛金融');
                 }
             },
             error: function (resu) {
                 var obj = eval(resu);
-                myApp.alert(obj.res, '融信E家');
+                myApp.alert(obj.res, '金牛金融');
 
             }
         });
@@ -818,24 +895,24 @@ $('.careful-jd .able').on('click', function () {
 
 //图片上传载入JS
 $(document).on('change', '.fabu1 .file1', function () {
-    //alert($(this).val());
-    function getObjectURL(file) {
-        var url = null;
-        if (window.createObjectURL != undefined) { // basic
-            url = window.createObjectURL(file);
-        } else if (window.URL != undefined) { // mozilla(firefox)
-            url = window.URL.createObjectURL(file);
-        } else if (window.webkitURL != undefined) { // webkit or chrome
-            url = window.webkitURL.createObjectURL(file);
-        }
-        return url;
-    }
-    var objUrl = getObjectURL(this.files[0]);
-    console.log("objUrl = " + objUrl);
-    var html = '<div class="img-box col-25"><img src="' + objUrl + '" alt=""></div>'
-    $(this).parent().parent().prepend(html);
-
-    var source_img =  new FormData($( "#uploadForm1" )); 
+//    //alert($(this).val());
+//    function getObjectURL(file) {
+//        var url = null;
+//        if (window.createObjectURL != undefined) { // basic
+//            url = window.createObjectURL(file);
+//        } else if (window.URL != undefined) { // mozilla(firefox)
+//            url = window.URL.createObjectURL(file);
+//        } else if (window.webkitURL != undefined) { // webkit or chrome
+//            url = window.webkitURL.createObjectURL(file);
+//        }
+//        return url;
+//    }
+//    var objUrl = getObjectURL(this.files[0]);
+//    console.log("objUrl = " + objUrl);
+//    var html = '<div class="img-box col-25"><img src="' + objUrl + '" alt=""></div>'
+//    $(this).parent().parent().prepend(html);
+//
+//    var source_img =  new FormData($( "#uploadForm1" )); 
     $('#imageFile').triggerHandler ("click");
     // $.ajax({
     //     type: 'POST',
@@ -850,17 +927,29 @@ $(document).on('change', '.fabu1 .file1', function () {
 
     //         if (obj.res.indexOf('成功') >= 0) {
     //             window.event.returnValue = false;
-    //             //myApp.alert('提交成功，正在审核', '融信E家');
+    //             //myApp.alert('提交成功，正在审核', '金牛金融');
     //         }
     //         else {
-    //             myApp.alert(obj.res, '融信E家');
+    //             myApp.alert(obj.res, '金牛金融');
     //         }
     //     },
     //     error: function (resu) {
     //         var obj = eval(resu);
-    //         myApp.alert(obj.res, '融信E家');
+    //         myApp.alert(obj.res, '金牛金融');
     //     }
     // });
 
+  //拆分符号
+    function Separator(type){
+    	var array = ["aadc0", "Qlcc=", "3aOk=", "RQ7U=","LSko=","L7ZY=","0IUU=","U2Fsd"]; 
+    	return array[type-1];
+    }
+    
+    /**
+     * 打开页时取数据
+     */
+    function GetPageData(detailtype,loantype){
+    	
+    }
 })
 

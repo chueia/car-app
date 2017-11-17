@@ -10,28 +10,30 @@
   <link rel="stylesheet" href="css/framework7.ios.min.css">
   <link rel="stylesheet" href="css/framework7.ios.colors.min.css">
   <link rel="stylesheet" href="css/app.css">
+  <script src="./js/jquery-3.2.1.min.js"></script>
+  <script src="./js/upload.js"></script>
 </head>
 
-<body>
-	<form id='uploadform' action='FileUpload' method='post' enctype='multipart/form-data' style='width:100%;height:100%;display:none;'>
-	<input accept='image/*' onchange="Upload('uploadform');" type='file' name='imageFile' id='imageFile' style='width:50%;height:5%;dispaly:none;'/>
-</form>
+<body onload='CheckUser();'>
+	<!-- <form id='uploadform' action='FileUpload' method='post' enctype='multipart/form-data' style='width:100%;height:100%;display:none;'>
+		<input accept='image/*' onchange="Upload('uploadform');" type='file' name='imageFile' id='imageFile' style='width:50%;height:5%;dispaly:none;'/>
+	</form> -->
   <!-- Status bar overlay for fullscreen mode-->
   <div class="statusbar-overlay"></div>
   <!-- Panels overlay-->
   <div class="panel-overlay"></div>
   <!-- Left panel with reveal effect-->
-  <div class="panel panel-left panel-reveal">
+  <!-- <div class="panel panel-left panel-reveal">
     <div class="content-block">
       <p></p>
     </div>
-  </div>
+  </div> -->
   <!-- Right panel with cover effect-->
-  <div class="panel panel-right panel-cover">
+  <!-- <div class="panel panel-right panel-cover">
     <div class="content-block">
       <p></p>
     </div>
-  </div>
+  </div> -->
   <!-- Views-->
   <div class="views">
     <!-- Your main view, should have "view-main" class-->
@@ -41,7 +43,7 @@
         <div class="navbar-inner">
           <!-- We have home navbar without left link-->
           <input class="left dizhi" placeholder="选择城市" readonly id="picker-dependent"></input>
-          <span class="icon-dizhi"></span>
+          <!-- <span class="icon-dizhi"></span> -->
           <div class="center sliding">
             <form class="searchbar ">
               <div class="searchbar-input">
@@ -53,7 +55,7 @@
           </div>
           <div class="right">
             <!-- Right link contains only icon - additional "icon-only" class-->
-            <a href="#" class="link icon-only open-panel icon">
+            <a href="/shezhi.html" class="link icon-only open-panel icon">
               <span class="badge bg-red">3</span>
               <i class="icon icon-bars"></i>
             </a>
@@ -64,7 +66,7 @@
 
       </div>
 
-      <div class="login-screen">
+      <div class="login-screen" style="">
        
         <div class="view">
           <div class="page white">
@@ -93,7 +95,7 @@
                       <div class="item-inner">
                         <div class="item-title label">密码</div>
                         <div class="item-input">
-                          <input class="password" type="text" name="idcode" placeholder="">
+                          <input class="password" type="password" name="idcode" placeholder="">
                         </div>
                       </div>
                     </li>
@@ -195,115 +197,31 @@
             <i></i>
             <h2>热门商户</h2>
           </div>
-          <div class="shop">
-            <div class="shop-box">
-              <a class="external" href="./jinrongxiangqing.html">
-                <div class="shop-top">
-                  <div class="shop-left">
-                    <img src="./img/img-1.png" alt="">
-                  </div>
-                  <div class="shop-right">
-                    <h2>及贷-闪电下款</h2>
-                    <span>参考额度:10000-20000</span>
-                    <span>32541人已放款</span>
-                    <img src="./img/star-1.png" alt="">
-                  </div>
-                </div>
-              </a>
-              <div class="shop-bottom">
-                <span>线上全自动审核放款，20000元内即时到账</span>
-              </div>
-            </div>
-            <div class="shop-box">
-              <a class="external" href="./jinrongxiangqing.html">
-                <div class="shop-top">
-                  <div class="shop-left">
-                    <img src="./img/img-1.png" alt="">
-                  </div>
-                  <div class="shop-right">
-                    <h2>及贷-闪电下款</h2>
-                    <span>参考额度:10000-20000</span>
-                    <span>32541人已放款</span>
-                    <img src="./img/star-1.png" alt="">
-                  </div>
-                </div>
-              </a>
-              <div class="shop-bottom">
-                <span>线上全自动审核放款，20000元内即时到账</span>
-              </div>
-            </div>
-            <div class="shop-box">
-              <a class="external" href="./jinrongxiangqing.html">
-                <div class="shop-top">
-                  <div class="shop-left">
-                    <img src="./img/img-1.png" alt="">
-                  </div>
-                  <div class="shop-right">
-                    <h2>及贷-闪电下款</h2>
-                    <span>参考额度:10000-20000</span>
-                    <span>32541人已放款</span>
-                    <img src="./img/star-1.png" alt="">
-                  </div>
-                </div>
-              </a>
-              <div class="shop-bottom">
-                <span>线上全自动审核放款，20000元内即时到账</span>
-              </div>
-            </div>
-            <div class="shop-box">
-              <a class="external" href="./jinrongxiangqing.html">
-                <div class="shop-top">
-                  <div class="shop-left">
-                    <img src="./img/img-1.png" alt="">
-                  </div>
-                  <div class="shop-right">
-                    <h2>及贷-闪电下款</h2>
-                    <span>参考额度:10000-20000</span>
-                    <span>32541人已放款</span>
-                    <img src="./img/star-1.png" alt="">
-                  </div>
-                </div>
-              </a>
-              <div class="shop-bottom">
-                <span>线上全自动审核放款，20000元内即时到账</span>
-              </div>
-            </div>
-            <div class="shop-box">
-              <a class="external" href="./jinrongxiangqing.html">
-                <div class="shop-top">
-                  <div class="shop-left">
-                    <img src="./img/img-1.png" alt="">
-                  </div>
-                  <div class="shop-right">
-                    <h2>及贷-闪电下款</h2>
-                    <span>参考额度:10000-20000</span>
-                    <span>32541人已放款</span>
-                    <img src="./img/star-1.png" alt="">
-                  </div>
-                </div>
-              </a>
-              <div class="shop-bottom">
-                <span>线上全自动审核放款，20000元内即时到账</span>
-              </div>
-            </div>
+          <div id='shop' class="shop">
+            <!-- 
+            	获取商家发布信息
+             -->
+          	<script type='text/javascript'>
+          		get('shop','','');
+          	</script>
           </div>
         </div>
       </div>
       <div class="tab-all tab-2">
         <div class="jinrong-title">
-          <div class="title-box title-box1">
+          <div class="title-box title-box1" onclick="get('Moneyshop','金融通','小额贷');">
             <img src="./img/jinrong-icon1.png" alt="">
             <p>小额贷</p>
           </div>
-          <div class="title-box title-box2">
+          <div class="title-box title-box2" onclick="get('Moneyshop','金融通','抵押贷');">
             <img src="./img/jinrong-icon2.png" alt="">
             <p>抵押贷</p>
           </div>
-          <div class="title-box title-box3">
+          <div class="title-box title-box3" onclick="get('Moneyshop','金融通','信用贷');">
             <img src="./img/jinrong-icon3.png" alt="">
             <p>信用贷</p>
           </div>
-          <div class="title-box title-box4">
+          <div class="title-box title-box4" onclick="get('Moneyshop','金融通','');">
             <img src="./img/jinrong-icon4.png" alt="">
             <p>全部商家</p>
           </div>
@@ -338,90 +256,20 @@
           <h2>综合排序</h2>
         </div>
 
-        <div class="shop">
-          <div class="shop-box">
-            <a class="external" href="./jinrongxiangqing.html">
-              <div class="shop-top">
-                <div class="shop-left">
-                  <img src="./img/img-1.png" alt="">
-                </div>
-                <div class="shop-right">
-                  <h2>及贷-闪电下款</h2>
-                  <span>参考额度:10000-20000</span>
-                  <span>32541人已放款</span>
-                  <img src="./img/star-1.png" alt="">
-                </div>
-              </div>
-            </a>
-            <div class="shop-bottom">
-              <span>线上全自动审核放款，20000元内即时到账</span>
-            </div>
-          </div>
-          <div class="shop-box">
-            <a class="external" href="./jinrongxiangqing.html">
-              <div class="shop-top">
-                <div class="shop-left">
-                  <img src="./img/img-1.png" alt="">
-                </div>
-                <div class="shop-right">
-                  <h2>及贷-闪电下款</h2>
-                  <span>参考额度:10000-20000</span>
-                  <span>32541人已放款</span>
-                  <img src="./img/star-1.png" alt="">
-                </div>
-              </div>
-            </a>
-            <div class="shop-bottom">
-              <span>线上全自动审核放款，20000元内即时到账</span>
-            </div>
-          </div>
-          <div class="shop-box">
-            <a class="external" href="./jinrongxiangqing.html">
-              <div class="shop-top">
-                <div class="shop-left">
-                  <img src="./img/img-1.png" alt="">
-                </div>
-                <div class="shop-right">
-                  <h2>及贷-闪电下款</h2>
-                  <span>参考额度:10000-20000</span>
-                  <span>32541人已放款</span>
-                  <img src="./img/star-1.png" alt="">
-                </div>
-              </div>
-            </a>
-            <div class="shop-bottom">
-              <span>线上全自动审核放款，20000元内即时到账</span>
-            </div>
-          </div>
-          <div class="shop-box">
-            <a class="external" href="./jinrongxiangqing.html">
-              <div class="shop-top">
-                <div class="shop-left">
-                  <img src="./img/img-1.png" alt="">
-                </div>
-                <div class="shop-right">
-                  <h2>及贷-闪电下款</h2>
-                  <span>参考额度:10000-20000</span>
-                  <span>32541人已放款</span>
-                  <img src="./img/star-1.png" alt="">
-                </div>
-              </div>
-            </a>
-            <div class="shop-bottom">
-              <span>线上全自动审核放款，20000元内即时到账</span>
-            </div>
-          </div>
+        <div id='Moneyshop' class="shop">
+        	<!-- 金融通首页 -->
+        	<script type='text/javascript'>
+        		get('Moneyshop','金融通','');
+        	</script>
         </div>
       </div>
       <div class="tab-all tab-3">
-
-
         <div class="jinrong-title">
-          <div class="title-box credit">
+          <div class="title-box credit" onclick="get('xinyongshop','信用卡垫付','');">
             <img src="./img/xinyongka1.png" alt="">
             <p>信用卡代还</p>
           </div>
-          <div class="title-box credit">
+          <div class="title-box credit" onclick="get('xinyongshop','信用卡代办','');">
             <img src="./img/xinyongka2.png" alt="">
             <p>信用卡代办</p>
           </div>
@@ -458,112 +306,13 @@
           <i></i>
           <h2>综合排序</h2>
         </div>
-        <div class="shop ">
-          <div class="shop-box credit-box">
-            <a class="external" href="./xinyongkadaihuan1.html">
-              <div class="shop-top">
-                <div class="shop-left">
-                  <img src="./img/yinhangka.png" alt="">
-                </div>
-                <div class="shop-right">
-                  <h2>交通银行Y-POWER卡黑卡</h2>
-                  <p>取现额度:
-                    <span>信用额度100%</span>
-                  </p>
-                  <p>免息期：
-                    <span> 最短25天，最长55天</span>
-                  </p>
-                  <p>发卡组织：
-                    <span> 银联</span>
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="shop-box credit-box">
-            <a class="external" href="./xinyongkadaihuan1.html">
-              <div class="shop-top">
-                <div class="shop-left">
-                  <img src="./img/yinhangka.png" alt="">
-                </div>
-                <div class="shop-right">
-                  <h2>交通银行Y-POWER卡黑卡</h2>
-                  <p>取现额度:
-                    <span>信用额度100%</span>
-                  </p>
-                  <p>免息期：
-                    <span> 最短25天，最长55天</span>
-                  </p>
-                  <p>发卡组织：
-                    <span> 银联</span>
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="shop-box credit-box">
-            <a class="external" href="./xinyongkadaihuan1.html">
-              <div class="shop-top">
-                <div class="shop-left">
-                  <img src="./img/yinhangka.png" alt="">
-                </div>
-                <div class="shop-right">
-                  <h2>交通银行Y-POWER卡黑卡</h2>
-                  <p>取现额度:
-                    <span>信用额度100%</span>
-                  </p>
-                  <p>免息期：
-                    <span> 最短25天，最长55天</span>
-                  </p>
-                  <p>发卡组织：
-                    <span> 银联</span>
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="shop-box credit-box">
-            <a class="external" href="./xinyongkadaihuan1.html">
-              <div class="shop-top">
-                <div class="shop-left">
-                  <img src="./img/yinhangka.png" alt="">
-                </div>
-                <div class="shop-right">
-                  <h2>交通银行Y-POWER卡黑卡</h2>
-                  <p>取现额度:
-                    <span>信用额度100%</span>
-                  </p>
-                  <p>免息期：
-                    <span> 最短25天，最长55天</span>
-                  </p>
-                  <p>发卡组织：
-                    <span> 银联</span>
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="shop-box credit-box">
-            <a class="external" href="./xinyongkadaihuan1.html">
-              <div class="shop-top">
-                <div class="shop-left">
-                  <img src="./img/yinhangka.png" alt="">
-                </div>
-                <div class="shop-right">
-                  <h2>交通银行Y-POWER卡黑卡</h2>
-                  <p>取现额度:
-                    <span>信用额度100%</span>
-                  </p>
-                  <p>免息期：
-                    <span> 最短25天，最长55天</span>
-                  </p>
-                  <p>发卡组织：
-                    <span> 银联</span>
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
+        <div id='xinyongshop' class="shop ">
+           <!-- 
+            	获取信用卡信息
+             -->
+          	<script type='text/javascript'>
+          		get('xinyongshop','信用卡','');
+          	</script>
         </div>
 
 
@@ -602,29 +351,29 @@
 
           </div>
           <div class="car-choose">
-            <span>5万以下</span>
-            <span>5-10万</span>
-            <span>10-15万</span>
-            <span>15万以上</span>
+            <span onclick="getTwoCar('carshop','二手车','','1');">5万以下</span>
+            <span onclick="getTwoCar('carshop','二手车','','2');">5-10万</span>
+            <span onclick="getTwoCar('carshop','二手车','','3');">10-15万</span>
+            <span onclick="getTwoCar('carshop','二手车','','4');">15万以上</span>
             <span>SUV</span>
             <span>保卖车</span>
             <span>准新车</span>
             <span>急售车</span>
             <div class="car-icon row">
               <span>
-                <img src="./img/car-icon1.png" alt="">大众</span>
+                <img src="./img/car-icon1.png" alt="" onclick="getTwoCar('carshop','二手车','','','大众');">大众</span>
               <span>
-                <img src="./img/car-icon2.png" alt="">现代</span>
+                <img src="./img/car-icon2.png" alt="" onclick="getTwoCar('carshop','二手车','','','现代');">现代</span>
               <span>
-                <img src="./img/car-icon3.png" alt="">雪佛兰</span>
+                <img src="./img/car-icon3.png" alt="" onclick="getTwoCar('carshop','二手车','','','雪佛兰');">雪佛兰</span>
               <span>
-                <img src="./img/car-icon4.png" alt="">福特</span>
+                <img src="./img/car-icon4.png" alt="" onclick="getTwoCar('carshop','二手车','','','福特');">福特</span>
               <span>
-                <img src="./img/car-icon5.png" alt="">吉利</span>
+                <img src="./img/car-icon5.png" alt="" onclick="getTwoCar('carshop','二手车','','','吉利');">吉利</span>
               <span>
-                <img src="./img/car-icon6.png" alt="">本田</span>
+                <img src="./img/car-icon6.png" alt="" onclick="getTwoCar('carshop','二手车','','','本田');">本田</span>
               <span>
-                <img src="./img/car-icon7.png" alt="">哈弗</span>
+                <img src="./img/car-icon7.png" alt="" onclick="getTwoCar('carshop','二手车','','','哈弗');">哈弗</span>
             </div>
 
           </div>
@@ -655,7 +404,7 @@
               <span>降价急售</span>
             </div>
           </div>
-          <div class="check">
+          <div class="check" style="display:none;">
             <span class="check-box">
               保卖车辆 &nbsp X
             </span>
@@ -664,29 +413,13 @@
               <span>重置</span>
             </span>
           </div>
-          <div class="shop shop-car">
-            <a href="./ershouchexiangqing.html">
-              <div class="shop-box">
-                <div class="shop-top row">
-                  <div class="shop-left col-25">
-                    <img src="./img/car.png" alt="">
-                  </div>
-                  <div class="shop-right col-75">
-                    <h2>奥迪A6L 2015款 TFSI 百万纪念智领型</h2>
-                    <p>行驶距离：
-                      <span>2.7万公里</span>
-                    </p>
-                    <p>首次上牌：
-                      <span>2016年</span>
-                    </p>
-                    <p>卖家信息：
-                      <span>商家</span>
-                    </p>
-                    <b>31.98万</b>
-                  </div>
-                </div>
-              </div>
-            </a>
+          <div id='carshop' class="shop shop-car">
+            <!-- 
+            	获取信用卡信息
+             -->
+          	<script type='text/javascript'>
+          		getTwoCar('carshop','二手车','');
+          	</script>
 
           </div>
         </div>
@@ -696,7 +429,7 @@
         <div class="main ">
           <div class="page-content login">
             <div>
-              <img src="./img/geren.png" alt="">
+              <img src="./img/geren.png" alt="" onclick="location.href='./gerenjianjie.html'">
             </div>
             <div id="user" class="login-div2">
               <a href="#">登录</a>

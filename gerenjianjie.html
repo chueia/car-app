@@ -30,8 +30,13 @@
             </div>
            <div class="excel-box">
                 <div>
-                    <span class="">头像</span>
-                    <a href="#"> </a>
+                    <span class="" style="float:left;">头像</span>
+                     <div style="float:left;height:2em;">
+                    	<img src="./img/geren.png" alt="" style="width:100%;height:100%;">
+		                <form id="uploadform" action="FileUpload" method="post" enctype="multipart/form-data" style="width:100%;height:100%;">
+		                   <input class="file file1" accept="image/*" multiple onchange="Upload('uploadform',this,3);" type="file" name="imageFile" id="imageFile" style="width:50%;height:2em;opacity:0;position:absolute;left:25%;top:20px;">
+		               </form>
+		            <div>
                 </div>
            </div>
             <div class="careful">
