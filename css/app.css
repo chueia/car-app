@@ -648,3 +648,13 @@ i.icon.icon-bars{
    font-size: 1.2em;
     
 }
+
+.label-switch{
+    float:right;
+}
+.list-block .right{
+    float:right;
+    margin-right:10%;
+    margin-top:20px;
+    font-size: 12px;
+}
