@@ -15,7 +15,7 @@
 </head>
 
 <body onload='CheckUser();'>
-	<!-- <form id='uploadform' action='FileUpload' method='post' enctype='multipart/form-data' style='width:100%;height:100%;display:none;'>
+  <!-- <form id='uploadform' action='FileUpload' method='post' enctype='multipart/form-data' style='width:100%;height:100%;display:none;'>
 		<input accept='image/*' onchange="Upload('uploadform');" type='file' name='imageFile' id='imageFile' style='width:50%;height:5%;dispaly:none;'/>
 	</form> -->
   <!-- Status bar overlay for fullscreen mode-->
@@ -67,10 +67,10 @@
       </div>
 
       <div class="login-screen" style="">
-       
+
         <div class="view">
           <div class="page white">
-       
+
             <div class=" login-screen-content">
               <a class="zhuce external" href="./zhuce.html">
                 <span>注册</span>
@@ -78,11 +78,10 @@
               <div class="login-screen-title">
                 <img class="img2" src="./img/start2.png" alt="">
               </div>
-             
+
               <form>
                 <div class="list-block">
                   <ul>
-
                     <li class="item-content">
                       <div class="item-inner">
                         <div class="item-title label">手机号</div>
@@ -99,26 +98,36 @@
                         </div>
                       </div>
                     </li>
-                    <li class="item-content">
-                      <div class="item-title label">记住密码</div>
-                      <div class="item-input">
 
-                        <label class="label-switch">
-                          <input type="checkbox">
-                          <div class="checkbox"></div>
-                        </label>
-                      </div>
-                    </li>
-					<a class="external right" href="./wangjimima.html">忘记密码?</a>
+                    <a class="external right" href="./wangjimima.html">忘记密码?</a>
                   </ul>
                 </div>
                 <div class="list-block">
+                    <ul>
+                      <li class="item-content">
+                          <div class="item-inner">
+                        <div class="item-title label">记住密码</div>
+                        <div class="item-input">
+  
+                          <label class="label-switch">
+                            <input type="checkbox">
+                            <div class="checkbox"></div>
+                          </label>
+                        </div>
+                        </div>
+
+                      </li>
+                    </ul>
+                  </div>
+                <div class="list-block bg-normal">
                   <ul>
                     <li>
                       <a href="#" class="item-link list-button list-login">登录</a>
                     </li>
                   </ul>
                 </div>
+
+               
                 <div class="meiti">
                   <img src="./img/meiti-weixin.png" alt="">
                   <img src="./img/meiti-qq.png" alt="">
@@ -201,9 +210,9 @@
             <!-- 
             	获取商家发布信息
              -->
-          	<script type='text/javascript'>
-          		get('shop','','');
-          	</script>
+            <script type='text/javascript'>
+              get('shop', '', '');
+            </script>
           </div>
         </div>
       </div>
@@ -257,10 +266,10 @@
         </div>
 
         <div id='Moneyshop' class="shop">
-        	<!-- 金融通首页 -->
-        	<script type='text/javascript'>
-        		get('Moneyshop','金融通','');
-        	</script>
+          <!-- 金融通首页 -->
+          <script type='text/javascript'>
+            get('Moneyshop', '金融通', '');
+          </script>
         </div>
       </div>
       <div class="tab-all tab-3">
@@ -307,12 +316,12 @@
           <h2>综合排序</h2>
         </div>
         <div id='xinyongshop' class="shop ">
-           <!-- 
+          <!-- 
             	获取信用卡信息
              -->
-          	<script type='text/javascript'>
-          		get('xinyongshop','信用卡','');
-          	</script>
+          <script type='text/javascript'>
+            get('xinyongshop', '信用卡', '');
+          </script>
         </div>
 
 
@@ -379,7 +388,8 @@
           </div>
           <div class="box-title car-title">
 
-            <h2><a class="" href="./ershouchefabu.html">我要卖车</a>
+            <h2>
+              <a class="" href="./ershouchefabu.html">我要卖车</a>
               <span>|</span>
               <a class="" href="./ershouchegujia.html">我要估价</a>
             </h2>
@@ -411,9 +421,9 @@
             <!-- 
             	获取信用卡信息
              -->
-          	<script type='text/javascript'>
-          		getTwoCar('carshop','二手车','');
-          	</script>
+            <script type='text/javascript'>
+              getTwoCar('carshop', '二手车', '');
+            </script>
 
           </div>
         </div>
@@ -423,35 +433,35 @@
         <div class="main ">
           <div class="page-content login">
             <script type="text/javascript">
-            	var storage=window.localStorage;
-            	if(storage!=null&&storage.getItem("head_url")!=null&&storage.getItem("head_url")!=""){
-            		document.writeln("<div>");
-            		document.writeln("<img id=\"head_url\" src=\""+storage.getItem("head_url")+"\" alt=\"\" onclick=\"location.href='./gerenjianjie.html'\">");
-            		document.writeln("</div>");
-            	}else{
-            		document.writeln("<div>");
-            		document.writeln("<img id=\"head_url\" src=\"./img/geren.png\" alt=\"\" onclick=\"location.href='./gerenjianjie.html'\">");
-            		document.writeln("</div>");
-            	}
-            	if(storage!=null&&storage.getItem("username")!=null&&storage.getItem("username")!=""){
-            		document.writeln("<div id=\"user\" class=\"login-div2\">");
-            		document.writeln("<a href=\"#\">"+storage.getItem("username")+"</a>");
-            		document.writeln("</div>");
-            	}else if(storage!=null&&storage.getItem("nickname")!=null&&storage.getItem("nickname")!=""){
-            		document.writeln("<div id=\"user\" class=\"login-div2\">");
-            		document.writeln("<a href=\"#\">"+storage.getItem("nickname")+"</a>");
-            		document.writeln("</div>");
-            	}else if(storage!=null&&storage.getItem("account")!=null&&storage.getItem("account")!=""){
-            		document.writeln("<div id=\"user\" class=\"login-div2\">");
-            		document.writeln("<a href=\"#\">"+storage.getItem()+"</a>");
-            		document.writeln("</div>");
-            	}else{
-            		document.writeln("<div id=\"user\" class=\"login-div2\">");
-            		document.writeln("<a href=\"#\">登录</a>");
-            		document.writeln("<span>|</span>");
-            		document.writeln("<a href=\"#\">注册</a>");
-            		document.writeln("</div>");
-            	}
+              var storage = window.localStorage;
+              if (storage != null && storage.getItem("head_url") != null && storage.getItem("head_url") != "") {
+                document.writeln("<div>");
+                document.writeln("<img id=\"head_url\" src=\"" + storage.getItem("head_url") + "\" alt=\"\" onclick=\"location.href='./gerenjianjie.html'\">");
+                document.writeln("</div>");
+              } else {
+                document.writeln("<div>");
+                document.writeln("<img id=\"head_url\" src=\"./img/geren.png\" alt=\"\" onclick=\"location.href='./gerenjianjie.html'\">");
+                document.writeln("</div>");
+              }
+              if (storage != null && storage.getItem("username") != null && storage.getItem("username") != "") {
+                document.writeln("<div id=\"user\" class=\"login-div2\">");
+                document.writeln("<a href=\"#\">" + storage.getItem("username") + "</a>");
+                document.writeln("</div>");
+              } else if (storage != null && storage.getItem("nickname") != null && storage.getItem("nickname") != "") {
+                document.writeln("<div id=\"user\" class=\"login-div2\">");
+                document.writeln("<a href=\"#\">" + storage.getItem("nickname") + "</a>");
+                document.writeln("</div>");
+              } else if (storage != null && storage.getItem("account") != null && storage.getItem("account") != "") {
+                document.writeln("<div id=\"user\" class=\"login-div2\">");
+                document.writeln("<a href=\"#\">" + storage.getItem() + "</a>");
+                document.writeln("</div>");
+              } else {
+                document.writeln("<div id=\"user\" class=\"login-div2\">");
+                document.writeln("<a href=\"#\">登录</a>");
+                document.writeln("<span>|</span>");
+                document.writeln("<a href=\"#\">注册</a>");
+                document.writeln("</div>");
+              }
             </script>
           </div>
           <div class="notice">

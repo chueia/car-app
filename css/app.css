@@ -656,3 +656,30 @@ i.icon.icon-bars{
     margin-top:20px;
     font-size: 12px;
 }
+/* 登录页第三次修改CSS */
+.login-screen-content{
+    background: #f3f3f3;
+}
+.login-screen-title{
+    background: white;
+    
+}
+.list-block{
+    background: white;
+    /* border:1px solid #dddddd; */
+}
+.list-block .item-content {
+    padding:0;
+}
+.list-block .item-content{
+    padding:0;
+}
+.list-block .item-inner{
+    padding-left:10%;
+}
+.list-block.bg-normal{
+    background: #f3f3f3;
+}
+.list-block .item-link.list-button.list-login{
+    margin-top:20px;
+}
