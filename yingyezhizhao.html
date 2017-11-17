@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>个人简介</title>
+    <title>营业执照认证</title>
     <link rel="stylesheet" href="css/framework7.ios.min.css">
     <link rel="stylesheet" href="css/framework7.ios.colors.min.css">
     <link rel="stylesheet" href="css/app-main.css">
@@ -18,58 +18,52 @@
                 <div class="exit" onclick='javascript:history.back(-1)'>
                     <img src="./img/exit.png" alt="">
                 </div>
-                <p>个人信息</p>
+                <p>营业执照认证</p>
             </div>
             <div class="excel-box">
                 <div>
-                    <span class="">昵称</span>
-                    <input type="text" placeholder="刘德华">
+                    <span class="">公司名称</span>
+                    <input type="text" placeholder="">
                 </div>
+                <div>
+                    <span class="">公司地址</span>
+                    <input type="text" placeholder="">
+                </div>
+                <div> 
+                        <span class="">社会信用代码</span>
+                        <input type="text" placeholder="">
+                    </div>
             </div>
             <div class="excel-box">
-                <div>
-                    <span class="">头像</span>
+                <div class="id-card">
                     <div class="geren" style="border-bottom:0">
-                        <img src="./img/moren-img.png" alt="">
-                        <form id="uploadform" action="FileUpload" method="post" enctype="multipart/form-data" >
+                        <img src="./img/zhizhao1.png" alt="">
+                        <form id="uploadform" action="FileUpload" method="post" enctype="multipart/form-data">
                             <input class="file file1" accept="image/*" multiple onchange="Upload('uploadform',this,3);" type="file" name="imageFile"
-                                id="imageFile" >
+                                id="imageFile">
                         </form>
                     </div>
                 </div>
-                <div>
-                    <span class="">个人简介</span>
-                    <input type="text">
-                </div>
+                <div class="id-card">
+                        <div class="geren" style="border-bottom:0">
+                            <img src="./img/zhizhao2.png" alt="">
+                            <form id="uploadform" action="FileUpload" method="post" enctype="multipart/form-data">
+                                <input class="file file1" accept="image/*" multiple onchange="Upload('uploadform',this,3);" type="file" name="imageFile"
+                                    id="imageFile">
+                            </form>
+                        </div>
+                    </div>
             </div>
 
-            <div class="excel-box">
-                <a href="./shenfenzheng.html" class="exteral">
-                    
-                    <div>
-                        <span class="">身份证认证</span>
-                        <img class="icon-right" src="./img/icon-right.png" alt="">
-                    </div>
-                </a>
-                <a href="./yingyezhizhao.html" class="exteral">
-                    <div>
-                        <span class="">营业执照认证</span>
-                        <img class="icon-right" src="./img/icon-right.png" alt="">
-                    </div>
-                </a>
-            </div>
-           
-            <div class="excel-box">
-                <div>
-                    <span>
-                        注册时间
-                    </span>
-                    <span class="right">2017-10-09</span>
-                </div>
+            
+
+            <div class="message">
+                
+                <span><img src="./img/careful.png" alt="">我已阅读并同意 <a class="exteral" href="#" >客户服务协议</a></span>
             </div>
             <div class="careful">
                 <button class="able">
-                    确定
+                    提交审核
                 </button>
             </div>
 

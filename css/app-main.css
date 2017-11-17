@@ -1025,6 +1025,7 @@ a.phone{
 }
 .excel-box{
     position: relative;
+    overflow: hidden;
 }
 .excel-box .file{
     position:absolute;
@@ -1036,4 +1037,63 @@ a.phone{
 }
 .main .fabu-title{
     margin-top:0;
+}
+
+.excel-box .geren{
+    display:block;
+    width:80px;
+    float:right;
+}
+
+.excel-box .geren img{
+   width:100%;
+}
+.excel-box .geren form{
+    width:100%;
+    display:block;
+    height:80px;
+    position: absolute;
+    top:20px;
+    right:10px;
+ }
+.excel-box a{
+    color:#a5a5a5;
+}
+.jinrong-excel1 .excel-box div{
+    overflow: hidden;
+}
+.jinrong-excel1 .excel-box .icon-right{
+    width:10px;
+    float:right;
+}
+
+.id-card .geren{
+    display:block;
+    width:100%;
+    float:left;
+}
+.id-card-h .geren{
+    display:block;
+    width:200px;
+    float:left;
+}
+.id-card-h  span{
+    display:inline-block;
+    margin-top:10px;
+    padding-left:50px;
+    color:black;
+}
+ .excel-box .id-card .geren form{
+    height:120px;
+}
+.jinrong-excel1 .message{
+    margin-top:20px;
+    padding-left:20px;
+}
+.jinrong-excel1 .message img{
+    width:15px;
+    display:inline-block;
+    float:left;
+    margin-right:10px;
+    vertical-align: middle;
 }
