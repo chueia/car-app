@@ -662,7 +662,8 @@ i.icon.icon-bars{
 }
 .login-screen-title{
     background: white;
-    
+    border-bottom: 1px solid #dddddd;
+    margin-top:0!important;
 }
 .list-block{
     background: white;
@@ -682,4 +683,17 @@ i.icon.icon-bars{
 }
 .list-block .item-link.list-button.list-login{
     margin-top:20px;
+}
+
+.zhuce-main{
+    text-align: center;
+}
+.zhuce-main span{
+    margin:0 5px;
+}
+.zhuce-main a{
+    color:#3397cc;
+}
+.login-screen-content{
+    height:100%;
 }
