@@ -23,11 +23,11 @@
             <div class="excel-box">
                 <div>
                     <span class="">身份证姓名</span>
-                    <input type="text" placeholder="">
+                    <input id="username" type="text" placeholder="">
                 </div>
                 <div>
                     <span class="">身份证号码</span>
-                    <input type="text" placeholder="">
+                    <input id="IDnum" type="text" placeholder="">
                 </div>
             </div>
             <div class="excel-box">
@@ -35,8 +35,8 @@
                     <div class="geren" style="border-bottom:0">
                         <img src="./img/id-card1.png" alt="">
                         <form id="uploadform" action="FileUpload" method="post" enctype="multipart/form-data">
-                            <input class="file file1" accept="image/*" multiple onchange="Upload('uploadform',this,3);" type="file" name="imageFile"
-                                id="imageFile">
+                            <input class="file file1 ID_url" accept="image/*" multiple onchange="Upload('uploadform',this,3);" type="file" name="imageFile"
+                                id="imageFile1">
                         </form>
                     </div>
                 </div>
@@ -44,8 +44,8 @@
                         <div class="geren" style="border-bottom:0">
                             <img src="./img/id-card2.png" alt="">
                             <form id="uploadform" action="FileUpload" method="post" enctype="multipart/form-data">
-                                <input class="file file1" accept="image/*" multiple onchange="Upload('uploadform',this,3);" type="file" name="imageFile"
-                                    id="imageFile">
+                                <input class="file file1 ID_backurl" accept="image/*" multiple onchange="Upload('uploadform',this,3);" type="file" name="imageFile"
+                                    id="imageFile2">
                             </form>
                         </div>
                     </div>
@@ -57,14 +57,14 @@
                 
                 <span><img src="./img/careful.png" alt="">我已阅读并同意 <a class="exteral" href="#" >客户服务协议</a></span>
             </div>
-            <div class="careful">
+            <div class="careful shenfen">
                 <button class="able">
                     提交审核
                 </button>
             </div>
 
         </div>
-
+        
 
         <script src="./js/jquery-3.2.1.min.js"></script>
         <script type="text/javascript" src="js/framework7.min.js"></script>

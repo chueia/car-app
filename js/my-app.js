@@ -955,3 +955,47 @@ $(document).on('change', '.fabu1 .file1', function () {
 $(document).on('click', '.shoucang .shanchu', function () {
     $(this).parent().parent().remove();
 })
+
+
+
+//身份认证验证js
+$(document).on('click','.jinrong-excel1 .shenfen',function(){
+    var username = $('.jingrong-excel1 #shenfen').val();
+    var IDnum =  $('.jingrong-excel1 #IDnum').val();
+    var ID_url = $('.jingrong-excel1 #ID_url').val();
+    var ID_backurl = $('.jingrong-excel1 #ID_backurl').val();
+
+    if (username == undefined || IDnum == undefined ) {
+        myApp.alert('请填写完整', '金牛金融');
+    } else {
+        $.ajax({
+            type: 'POST',
+            url: url,
+            data: {
+            	userid:userid,
+                username: username,
+                IDnum: IDnum,
+                ID_url: ID_url,
+                ID_backurl: ID_backurl,
+               
+            },
+            dataType: 'json',
+            cache: false,
+            success: function (resu) {
+                var obj = eval(resu);
+
+                if (obj.res.indexOf('成功') >= 0) {
+                    window.event.returnValue = false;
+                    myApp.alert('提交成功，正在审核', '金牛金融');
+                }
+                else {
+                    myApp.alert(obj.res, '金牛金融');
+                }
+            },
+            error: function (resu) {
+                var obj = eval(resu);
+                myApp.alert(obj.res, '金牛金融');
+            }
+        });
+    }
+})
