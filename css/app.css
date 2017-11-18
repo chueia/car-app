@@ -697,3 +697,11 @@ i.icon.icon-bars{
 .login-screen-content{
     height:100%;
 }
+
+
+.list-block .item-title.label{
+    width:auto;
+}
+input{
+    text-align: right!important;
+}

@@ -408,7 +408,7 @@ body {
     margin:10px 0;
 }
 .daiban-box .box-text span{
-    margin-left:20px;
+    /* margin-left:20px; */
     color:#adadad;
 }
 .daiban-box .box-text p{
