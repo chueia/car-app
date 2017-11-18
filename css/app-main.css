@@ -967,10 +967,11 @@ a.phone{
     float:right;
     padding:0.5em  1em;
     border:1px solid #eeeeee;
-    background: white;
+    background: #52adde;
     margin:1em 0;
     border-radius: 10px;
     font-size: 1.2em;
+    color:white;
 }
 .yanzheng i{
     color:#fb9393;

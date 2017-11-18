@@ -952,6 +952,6 @@ $(document).on('change', '.fabu1 .file1', function () {
 
 
 // 我的消息删除js
-$(document).on('click','.shoucang .shanchu',function(){
+$(document).on('click', '.shoucang .shanchu', function () {
     $(this).parent().parent().remove();
 })
