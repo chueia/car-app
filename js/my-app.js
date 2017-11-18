@@ -372,34 +372,34 @@ $('.jinrong-shop  .shop-box .shop-right i').on('touchstart', function () {
 });
 
 //二手车标签JS
-$('.car-choose span').on('touchend', function () {
+$('.car-choose span').on('click', function () {
     var a = $(this).text();
     var text = '<span class="check-box"> ' + a + '&nbsp X</span>';
 
     $('.check').append(text);
 });
 
-$(document).on('touchend', '.check .check-box', function () {
+$(document).on('click', '.check .check-box', function () {
     $(this).remove();
 });
-$('.resetting').on('touchend', function () {
+$('.resetting').on('click', function () {
     $('.check .check-box').remove();
 });
 
 //首页模拟点击
-$('.box-main .box1').on('touchend', function () {
+$('.box-main .box1').on('click', function () {
     $('.tab-all').removeClass('show');
     $('.tab-2').addClass('show');
     $('.tab-link').removeClass('active');
     $('.tab-link2').addClass('active');
 });
-$('.box-main .box2').on('touchend', function () {
+$('.box-main .box2').on('click', function () {
     $('.tab-all').removeClass('show');
     $('.tab-3').addClass('show');
     $('.tab-link').removeClass('active');
     $('.tab-link3').addClass('active');
 });
-$('.box-main .box3').on('touchend', function () {
+$('.box-main .box3').on('click', function () {
     $('.tab-all').removeClass('show');
     $('.tab-4').addClass('show');
     $('.tab-link').removeClass('active');
@@ -407,19 +407,19 @@ $('.box-main .box3').on('touchend', function () {
 });
 
 //订单页模拟点击
-$('.geren-footer .dingdan1').on('touchend', function () {
+$('.geren-footer .dingdan1').on('click', function () {
     $('#dingdan1').addClass('show').siblings().removeClass('show');
     $('.dingdan1').addClass('active').siblings().removeClass('active');
 });
-$('.geren-footer .dingdan2').on('touchend', function () {
+$('.geren-footer .dingdan2').on('click', function () {
     $('#dingdan2').addClass('show').siblings().removeClass('show');
     $('.dingdan2').addClass('active').siblings().removeClass('active');
 });
-$('.geren-footer .dingdan3').on('touchend', function () {
+$('.geren-footer .dingdan3').on('click', function () {
     $('#dingdan3').addClass('show').siblings().removeClass('show');
     $('.dingdan3').addClass('active').siblings().removeClass('active');
 });
-$('.geren-footer .dingdan4').on('touchend', function () {
+$('.geren-footer .dingdan4').on('click', function () {
     $('#dingdan4').addClass('show').siblings().removeClass('show');
     $('.dingdan4').addClass('active').siblings().removeClass('active');
 });
@@ -432,7 +432,7 @@ $('.geren-footer .dingdan4').on('touchend', function () {
 // }
 
 
-$(document).on('touchend', '.tab-0', function () {
+$(document).on('click', '.tab-0', function () {
     setTimeout(function () {
         myApp.loginScreen();
     }, 500)
@@ -466,7 +466,7 @@ function CheckUser(){
 }
 
 // 登录页面js
-$('.list-block .list-login').on('touchend', function () {
+$('.list-block .list-login').on('click', function () {
     var url = '/Rongxin/LoginServlet';
     var account = $('.login-screen-content .phone').val();//手机号
     var pass = $('.login-screen-content .password').val();//密码
@@ -525,7 +525,7 @@ $('.list-block .list-login').on('touchend', function () {
     }
 });
 //注册页面JS
-$('.jinrong-excel1 .careful-zhuce ').on('touchend', function () {
+$('.jinrong-excel1 .careful-zhuce ').on('click', function () {
     var url = '/Rongxin/Regit';
     var nickname = $('.jinrong-excel1 .nickname').val();//昵称
     var account = $('.jinrong-excel1 .phone').val();//手机号
@@ -576,7 +576,7 @@ $('.jinrong-excel1 .careful-zhuce ').on('touchend', function () {
     }
 });
 //验证码收发js
-$('.jinrong-excel1 .yanzheng').on('touchend', function () {
+$('.jinrong-excel1 .yanzheng').on('click', function () {
     if ($(this).hasClass('timeuse')) {
         myApp.alert('请稍后再试', '金牛金融');
     } else {
@@ -663,7 +663,7 @@ function logout(){
 }
 
 // 二手车收藏JS
-$('.car-main .title i').on('touchend', function () {
+$('.car-main .title i').on('click', function () {
 
     if ($(this).hasClass('active')) {
         $(this).removeClass('active');
