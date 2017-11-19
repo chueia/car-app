@@ -49,7 +49,9 @@ var myApp = new Framework7();
 
 // Init slider and store its instance in mySwiper variable
 var mySwiper = myApp.swiper('.swiper-container', {
-    pagination: '.swiper-pagination'
+    pagination: '.swiper-pagination',
+    speed: 400,
+    spaceBetween: 100
 });
 // ;
 // (function(win) {
