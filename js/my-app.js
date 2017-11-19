@@ -319,7 +319,7 @@ var pickerDevice = myApp.picker({
     cols: [
         {
             textAlign: 'center',
-            values: ['二手车', '金融通', '信用卡代办', '信用卡代垫']
+            values: ['二手车', '金融通', '信用卡代办', '信用卡垫付']
         }
     ]
 });
@@ -766,7 +766,7 @@ $(document).on('change', '.fabu-title #fabu', function () {
         case "信用卡代办":
             $('.fabu3').addClass('show').siblings().removeClass('show');
             break;
-        case "信用卡代垫":
+        case "信用卡垫付":
             $('.fabu4').addClass('show').siblings().removeClass('show');
             break;
     }
@@ -1071,6 +1071,11 @@ $(document).on('click','#uploadform',function(){
    
 });
 $(document).on('click','.excel-box div',function(){
-    $(this).find('input').focus();
+    if($(this).hasClass('two')){
+        event.preventDefault;
+    }else{
+        $(this).find('input').focus();
+    }
+    
    
 });
