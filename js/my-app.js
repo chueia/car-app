@@ -639,6 +639,7 @@ $('.jinrong-excel1 .wangjimima').on('click', function () {
     } else {
         var url = '/Rongxin/GetUserPasswordServlet';
         var account = $('.jinrong-excel1 .phone').val();//手机号
+        var yanzheng = $('.jinrong-excel1 .yanzheng1');//验证码
         var newpass1 = $('.jinrong-excel1 .newpass1').val();//新密码
         var newpass2 = $('.jinrong-excel1 .newpass2').val();//确认新密码
         if (account == undefined || account == ""||newpass1 == undefined||newpass2 == undefined) {
@@ -652,6 +653,7 @@ $('.jinrong-excel1 .wangjimima').on('click', function () {
                     account: account,
                     newpass1:newpass1,
                     newpass2:newpass2,
+                    yanzheng:yanzheng,
                 },
                 dataType: 'json',
                 cache: false,
