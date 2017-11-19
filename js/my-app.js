@@ -984,6 +984,63 @@ $('.careful-jd .able').on('click', function () {
     }
 });
 
+
+//抵押贷表单提交js
+$('.careful-diyadai .able').on('click', function () {
+    var url = '/Rongxin/AddDetailServlet';
+    var storage=window.localStorage;
+    var userid=storage.getItem("userid");
+   var dy_jine = $('.dy .dy-jine').val();//金额
+   var choose_times = $('.dy #choose-times').val();//期限
+   var dy_name = $('.dy .dy-name').val();//抵押物名称
+   var dy_num = $('.dy .dy-num').val();//抵押物数量
+   var dy_dizhi = $('.dy .dy-dizhi').val();//抵押物所在地
+   var dy_bianhao = $('.dy .dy-bianhao').val();//权属及其证书编号
+   var dy_price = $('.dy .dy-price').val();//评估价或协议价（万元）
+   var dy_main = $('.dy .dy-main').val();//抵押详情
+  
+
+    if (dy_jine == undefined || choose_times == undefined || dy_name == undefined || dy_num == undefined || dy_dizhi == undefined 
+        || dy_bianhao == undefined || dy_price == undefined|| dy_main == undefined
+    ) {
+        myApp.alert('请填写完整', '金牛金融');
+    } else {
+        $.ajax({
+            type: 'POST',
+            url: url,
+            data: {
+            	userid:userid,
+                dy_jine: dy_jine,
+                choose_times: choose_times,
+                dy_name: dy_name,
+                dy_num: dy_num,
+                dy_dizhi: dy_dizhi,
+                dy_bianhao: dy_bianhao,
+                dy_price: dy_price,
+                dy_main: dy_main,
+            },
+            dataType: 'json',
+            cache: false,
+            success: function (resu) {
+                var obj = eval(resu);
+
+                if (obj.res.indexOf('成功') >= 0) {
+                    window.event.returnValue = false;
+                    myApp.alert('提交成功，正在审核', '金牛金融');
+                }
+                else {
+                    myApp.alert(obj.res, '金牛金融');
+                }
+            },
+            error: function (resu) {
+                var obj = eval(resu);
+                myApp.alert(obj.res, '金牛金融');
+
+            }
+        });
+    }
+});
+
 //图片上传载入JS
 $(document).on('change', '.fabu1 .file1', function () {
 //    //alert($(this).val());
