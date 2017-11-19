@@ -1060,20 +1060,17 @@ $(document).on('click','.jinrong-excel1 .shenfen',function(){
 // input模拟点击
 $(document).on('click','.item-inner',function(){
     $(this).find('input').focus();
-    $(this).find('input').click();
-    event.preventDefault();
+  
     
    
 });
 $(document).on('click','#uploadform',function(){
     $(this).find('input').focus();
-    $(this).find('input').click();
-    event.preventDefault();
+ 
     
    
 });
 $(document).on('click','.excel-box div',function(){
     $(this).find('input').focus();
-    $(this).find('input').click();
-    event.preventDefault();
+   
 });
