@@ -637,7 +637,7 @@ $('.jinrong-excel1 .wangjimima').on('click', function () {
     if ($(this).hasClass('timeuse')) {
         myApp.alert('请稍后再试', '金牛金融');
     } else {
-        var url = '/Rongxin/SendServlet';
+        var url = '/Rongxin/GetUserPasswordServlet';
         var account = $('.jinrong-excel1 .phone').val();//手机号
         var newpass1 = $('.jinrong-excel1 .newpass1').val();//新密码
         var newpass2 = $('.jinrong-excel1 .newpass2').val();//确认新密码
