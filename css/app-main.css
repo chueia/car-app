@@ -1062,6 +1062,7 @@ a.phone{
 }
 .jinrong-excel1 .excel-box div{
     overflow: hidden;
+    position: relative;
 }
 .jinrong-excel1 .excel-box .icon-right{
     width:10px;
