@@ -632,6 +632,42 @@ $('.jinrong-excel1 .careful-zhuce ').on('click', function () {
         });
     }
 });
+//忘记密码JS
+$('.jinrong-excel1 .wangjimima').on('click', function () {
+    if ($(this).hasClass('timeuse')) {
+        myApp.alert('请稍后再试', '金牛金融');
+    } else {
+        var url = '/Rongxin/SendServlet';
+        var account = $('.jinrong-excel1 .phone').val();//手机号
+        var newpass1 = $('.jinrong-excel1 .newpass1').val();//新密码
+        var newpass2 = $('.jinrong-excel1 .newpass2').val();//确认新密码
+        if (account == undefined || account == ""||newpass1 == undefined||newpass2 == undefined) {
+            myApp.alert('请输入完整', '金牛金融');
+            return false;
+        } else {
+            $.ajax({
+                type: 'POST',
+                url: url,
+                data: {
+                    account: account,
+                    newpass1:newpass1,
+                    newpass2:newpass2,
+                },
+                dataType: 'json',
+                cache: false,
+                success: function (resu) {
+                    myApp.alert('密码修改成功', '金牛金融');
+
+                },
+                error: function (resu) {
+                    var obj = eval(resu);
+                    myApp.alert(obj.res, '金牛金融');
+
+                }
+            })
+        }
+    }
+});
 //验证码收发js
 $('.jinrong-excel1 .yanzheng').on('click', function () {
     if ($(this).hasClass('timeuse')) {
@@ -639,6 +675,8 @@ $('.jinrong-excel1 .yanzheng').on('click', function () {
     } else {
         var url = '/Rongxin/SendServlet';
         var account = $('.jinrong-excel1 .phone').val();//手机号
+        var newpass1 = $('.jinrong-excel1 .newpass1').val();//新密码
+        var newpass2 = $('.jinrong-excel1 .newpass2').val();//确认新密码
         var time = $('.jinrong-excel1 .yanzheng i').html();
         $(this).addClass('timeuse');
 
