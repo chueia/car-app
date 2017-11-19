@@ -15,28 +15,92 @@
   <div class="view-main">
     <div class="main">
       <div class="main-title">
-        
-        <div class="exit" onclick='javascript:history.back(-1)';>
+
+        <div class="exit" onclick="javascript:history.back(-1)" ;="">
           <img src="./img/exit.png" alt="">
         </div>
-        
+
         <p>金融贷款</p>
       </div>
-      <script src="./js/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="js/framework7.min.js"></script>
-	<script type="text/javascript" src="js/my-app.js"></script>
-  	<script type="text/javascript" src="js/upload.js"></script>
-      <div id="jinrongshop" class="shop jinrong-shop" >
-        <script type="text/javascript">
-        	GetXiangQing('jinrongshop');
-        </script>
+     
+      <div id="jinrongshop" class="shop jinrong-shop">
+        <div class="shop-box">
+          <div class="shop-top">
+            <div class="shop-left">
+              <img src="null" alt="">
+            </div>
+            <div class="shop-right">
+              <h2>测试数据1</h2>
+              <i class="love active" alt="" onclick="Colltion();"></i>
+              <br>
+              <span class="distance">2km</span>
+              <span class="numbers">351444人已放款</span>
+              <img src="./img/star-5.png" alt="">
+            </div>
+          </div>
+          <div class="text">
+            <p>湖北省恩施市市府路38号</p>
+          </div>
+        </div>
+        <div class="choose">
+          <div class="choose-box">
+            <span>借款金额(11-null)</span>
+            <input id="choose-gold" type="text" readonly="" placeholder="1000" class="">
+          </div>
+          <div class="choose-box">
+            <span>分期期限(1个月）</span>
+            <input id="choose-bystages" type="text" readonly="" placeholder="1">
+          </div>
+        </div>
+        <div class="text1">
+          <div class="text1-box">
+            <span>1000</span>
+            <p>每月还款</p>
+          </div>
+          <div class="text1-box">
+            <span>1</span>
+            <p>参考月利率</p>
+          </div>
+          <div class="text1-box">
+            <span>1min</span>
+            <p>最快放款时间</p>
+          </div>
+        </div>
+        <div class="details">
+          <div class="details-title">
+            <p>产品详情</p>
+          </div>
+          <div class="details-main">
+            <div class="conditions">
+              <i></i>
+              <span>申请条件</span>
+              <p>1</p>
+            </div>
+            <div class="conditions introduction">
+              <i></i>
+              <span>产品介绍</span>
+              <p>null</p>
+            </div>
+          </div>
+        </div>
+        <div class="button">
+          <a href="./jinrongdaikuan.html?detailid=1" class="external">
+            <p>立即申请</p>
+          </a>
+        </div>
       </div>
     </div>
 
 
-    
-   
-    
+
+
+
+
+
+    <script src="./js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/framework7.min.js"></script>
+    <script type="text/javascript" src="js/my-app.js"></script>
+    <script type="text/javascript" src="js/upload.js"></script>
 </body>
 
 </html>
