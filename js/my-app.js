@@ -408,7 +408,7 @@ var calendarDefault = myApp.calendar({
 });
 
 // 标签页切换js
-$(".toolbar .tab-link").on('touchstart', function () {
+$(".toolbar .tab-link").on('click', function () {
     $(this).addClass('active').siblings().removeClass('active');
     var a = $(this).attr('class').replace(/[^0-9]/ig, "");//取得下标数字
 
@@ -418,7 +418,7 @@ $(".toolbar .tab-link").on('touchstart', function () {
 })
 
 // 金融详情页收藏按钮
-$('.jinrong-shop  .shop-box .shop-right i').on('touchstart', function () {
+$('.jinrong-shop  .shop-box .shop-right i').on('click', function () {
 
     if ($(this).hasClass('active')) {
         $(this).removeClass('active');
