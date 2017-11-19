@@ -60,6 +60,7 @@
                     <input type="">
                 </div>
 
+                
             </div>
 
             <div class="excel-box">
@@ -98,7 +99,128 @@
         </div>
 
 
-        
+        <script>
+        // 金额选择
+var pickerDevice = myApp.picker({
+    input: '#choose-gold',
+    cols: [
+        {
+            textAlign: 'center',
+            values: ['1000', '2000', '3000', '5000', '10000', '20000']
+        }
+    ]
+});
+//分期付款
+var pickerDevice = myApp.picker({
+    input: '#choose-bystages',
+    cols: [
+        {
+            textAlign: 'center',
+            values: ['1', '2', '3', '5', '10', '12']
+        }
+    ]
+});
+//分期时间
+var pickerDevice = myApp.picker({
+    input: '#choose-times',
+    cols: [
+        {
+            textAlign: 'center',
+            values: ['1个月', '2个月', '3个月', '5个月', '10个月', '12个月']
+        }
+    ]
+});
+//职业类别
+var pickerDevice = myApp.picker({
+    input: '#choose-job',
+    cols: [
+        {
+            textAlign: 'center',
+            values: ['企业主', '个体工商户', '上班人群', '学生', '无固定职业', '其他']
+        }
+    ]
+});
+
+var pickerDevice = myApp.picker({
+    input: '#choose-insurance',
+    cols: [
+        {
+            textAlign: 'center',
+            values: ['有', '无']
+        }
+    ]
+});
+
+var pickerDevice = myApp.picker({
+    input: '#choose-fund',
+    cols: [
+        {
+            textAlign: 'center',
+            values: ['有', '无']
+        }
+    ]
+});
+
+var pickerDevice = myApp.picker({
+    input: '#choose-slip',
+    cols: [
+        {
+            textAlign: 'center',
+            values: ['有', '无']
+        }
+    ]
+});
+
+// 车辆情况
+var pickerDevice = myApp.picker({
+    input: '#choose-car',
+    cols: [
+        {
+            textAlign: 'center',
+            values: ['无车', '本人名下有车，无贷款', '本人名下有车，有按揭贷款', '本人名下有车，但已被抵押', '其他（请备注）']
+        }
+    ]
+});
+// 车辆档位
+var pickerDevice = myApp.picker({
+    input: '#dangwei',
+    cols: [
+        {
+            textAlign: 'center',
+            values: ['自动', '手动']
+        }
+    ]
+});
+//贷款类型
+var pickerDevice = myApp.picker({
+    input: '#jr-leixing',
+    cols: [
+        {
+            textAlign: 'center',
+            values: ['小额贷', '信用贷', '抵押贷']
+        }
+    ]
+});
+//发布方式
+var pickerDevice = myApp.picker({
+    input: '#fabu',
+    cols: [
+        {
+            textAlign: 'center',
+            values: ['二手车', '金融通', '信用卡代办', '信用卡垫付']
+        }
+    ]
+});
+//还款方式
+var pickerDevice = myApp.picker({
+    input: '#repayment',
+    cols: [
+        {
+            textAlign: 'center',
+            values: ['pos机还款', '扫码还款']
+        }
+    ]
+});</script>
 </body>
 
 </html>

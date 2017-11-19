@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>金融贷款申请</title>
+    <link rel="stylesheet" href="css/framework7.ios.min.css">
+    <link rel="stylesheet" href="css/framework7.ios.colors.min.css">
+    <link rel="stylesheet" href="css/app-main.css">
+</head>
+
+<body>
+    <div class="view-main jinrong-excel1">
+        <div class="main">
+            <div class="main-title">
+                <div class="exit" onclick='javascript:history.back(-1)'>
+                    <img src="./img/exit.png" alt="">
+                </div>
+                <p>金融贷款</p>
+            </div>
+            <div class="jinrong-message">
+                <span>该信息将作为您的实名凭证，请确保真实。</span>
+            </div>
+            <script src="./js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="js/framework7.min.js"></script>
+
+        <script type="text/javascript" src="js/my-app.js"></script>
+        <script type="text/javascript" src="js/upload.js"></script>
+            <div id="userinfo" class="excel-box">
+            	<script type="text/javascript">
+            		getUser("userinfo");
+            	</script>
+            </div>
+
+            <div class="content-block-title">Picker with single value</div>
+            <div class="list-block">
+              <ul>
+                <li>
+                  <div class="item-content">
+                    <div class="item-inner">
+                      <div class="item-input">
+                        <input type="text" placeholder="Your iOS device" readonly id="picker-device">
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div> 
+            <div class="careful">
+                <img class="careful-img" src="./img/careful.png" alt="">
+                <span>我已阅读并同意 <a href="#">贷款知情书</a></span>
+                <button class="able">
+                    提交审核
+                </button>
+            </div>
+        </div>
+
+<script>
+    var pickerDevice = myApp.picker({
+    input: '#picker-device',
+    cols: [
+        {
+            textAlign: 'center',
+            values: ['iPhone 4', 'iPhone 4S', 'iPhone 5', 'iPhone 5S', 'iPhone 6', 'iPhone 6 Plus', 'iPad 2', 'iPad Retina', 'iPad Air', 'iPad mini', 'iPad mini 2', 'iPad mini 3']
+        }
+    ]
+});
+</script>
+        
+</body>
+
+</html>
