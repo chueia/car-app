@@ -705,3 +705,12 @@ i.icon.icon-bars{
 input{
     text-align: right!important;
 }
+
+textarea{
+    border: 0;
+    width: 100%;
+    resize: none;
+}
+.daikuan-book{
+    display:inline-block!important;
+}

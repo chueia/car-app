@@ -1104,3 +1104,12 @@ a.phone{
 .buttons-row{
     margin:0;
 }
+textarea{
+    border: 0;
+    width: 100%;
+    resize: none;
+}
+
+.daikuan-book{
+    display:inline-block!important;
+}

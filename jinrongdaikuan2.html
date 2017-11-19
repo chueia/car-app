@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>金融贷款申请</title>
+    <title>金融贷款抵押贷</title>
     <link rel="stylesheet" href="css/framework7.ios.min.css">
     <link rel="stylesheet" href="css/framework7.ios.colors.min.css">
     <link rel="stylesheet" href="css/app-main.css">
+    
 </head>
 
 <body>
@@ -18,7 +19,7 @@
                 <div class="exit" onclick='javascript:history.back(-1)'>
                     <img src="./img/exit.png" alt="">
                 </div>
-                <p>金融贷款</p>
+                <p>抵押贷</p>
             </div>
             <div class="jinrong-message">
                 <span>该信息将作为您的实名凭证，请确保真实。</span>
@@ -30,10 +31,10 @@
             	</script>
             </div>
 
+
             <div id="userinfo" class="excel-box"><script type="text/javascript">
                 getUser("userinfo");
             </script><div><span class="">本人姓名</span><span style="float:right;">null</span></div><div><span class="">身份证号</span><span style="float:right;">null</span></div><div><span class="">电话</span><span style="float:right;">13997776783</span></div></div>
-
 
             <div class="excel-box">
                 <div>
@@ -49,50 +50,37 @@
 
             <div class="excel-box">
                 <div>
-                    <span class="">职业类别</span>
-                    <input class="choose" id="choose-job" type="text" placeholder="">
+                    <span class="">抵押物名称</span>
+                    <input  type="text" placeholder="">
                 </div>
                 <div>
-                    <span class="">月工资收入</span>
-                    <input id="excel-salary" type="text" placeholder="">
+                    <span class="">抵押物数量</span>
+                    <input  type="text" placeholder="">
                 </div>
                 <div>
-                    <span class="">现单位工作年限</span>
+                    <span class="">抵押物所在地</span>
                     <input type="">
                 </div>
 
+                <div>
+                    <span class="">权属及其证书编号</span>
+                    <input type="">
+                </div>
+                <div>
+                    <span class="">评估价或协议价（万元）</span>
+                    <input type="">
+                </div>
+                <div>
+                    <span class="">抵押物详情</span>
+                    <textarea name="" id="" ></textarea>
+                </div>
                 
             </div>
 
-            <div class="excel-box">
-                <div>
-                    <span class="">社保情况</span>
-                    <input class="choose" id="choose-insurance" type="text" placeholder="">
-                </div>
-                <div>
-                    <span class="">公积金情况</span>
-                    <input class="choose" id="choose-fund" type="text" placeholder="">
-                </div>
-                <div>
-                    <span class="">保单情况</span>
-                    <input class="choose" id="choose-slip" type="text" placeholder="">
-                </div>
-                <div>
-                    <span class="">车辆情况</span>
-                    <input class="choose" id="choose-car" type="text" placeholder="">
-                </div>
-                <div>
-                    <span class="">房产情况</span>
-                    <input class="choose" type="text" placeholder="">
-                </div>
-                <div>
-                    <span class="">个人信用情况</span>
-                    <input type="text" placeholder="">
-                </div>
-            </div>
+           
             <div class="careful">
                 <img class="careful-img" src="./img/careful.png" alt="">
-                <span>我已阅读并同意 <a href="#">贷款知情书</a></span>
+                <span>我已阅读并同意 <a class="daikuan-book" href="#">贷款知情书</a></span>
                 <button class="able">
                     提交审核
                 </button>
