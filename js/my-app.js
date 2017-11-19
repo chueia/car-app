@@ -1058,24 +1058,16 @@ $(document).on('click','.jinrong-excel1 .shenfen',function(){
 })
 
 // input模拟点击
-$(document).on('click','.item-inner',function(){
-    $(this).find('input').focus();
-  
-    
-   
-});
-$(document).on('click','#uploadform',function(){
-    $(this).find('input').focus();
- 
-    
-   
-});
-$(document).on('click','.excel-box div',function(){
-    if($(this).hasClass('two')){
-        event.preventDefault;
-    }else{
-        $(this).find('input').focus();
-    }
-    
-   
-});
+// $(document).on('click','.item-inner',function(){
+//     $(this).find('input').focus();
+// });
+// $(document).on('click','#uploadform',function(){
+//     $(this).find('input').focus();
+// });
+// $(document).on('click','.excel-box div',function(){
+//     if($(this).hasClass('two')){
+//         event.preventDefault;
+//     }else{
+//         $(this).find('input').focus();
+//     }
+// });
