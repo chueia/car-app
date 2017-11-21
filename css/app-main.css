@@ -1116,3 +1116,8 @@ textarea{
 .width-auto img{
     width: auto!important;
 }
+
+.picker-modal{
+    position: fixed;
+    
+}

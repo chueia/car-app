@@ -716,3 +716,7 @@ textarea{
 .daikuan-book{
     display:inline-block!important;
 }
+.picker-modal{
+    position: fixed;
+    
+}
