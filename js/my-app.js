@@ -1044,23 +1044,24 @@ $('.careful-diyadai .able').on('click', function () {
 //图片上传载入JS
 $(document).on('change', '.fabu1 .file1', function () {
 //    //alert($(this).val());
-//    function getObjectURL(file) {
-//        var url = null;
-//        if (window.createObjectURL != undefined) { // basic
-//            url = window.createObjectURL(file);
-//        } else if (window.URL != undefined) { // mozilla(firefox)
-//            url = window.URL.createObjectURL(file);
-//        } else if (window.webkitURL != undefined) { // webkit or chrome
-//            url = window.webkitURL.createObjectURL(file);
-//        }
-//        return url;
-//    }
-//    var objUrl = getObjectURL(this.files[0]);
-//    console.log("objUrl = " + objUrl);
-//    var html = '<div class="img-box col-25"><img src="' + objUrl + '" alt=""></div>'
-//    $(this).parent().parent().prepend(html);
-//
-//    var source_img =  new FormData($( "#uploadForm1" )); 
+   function getObjectURL(file) {
+       var url = null;
+       if (window.createObjectURL != undefined) { // basic
+           url = window.createObjectURL(file);
+       } else if (window.URL != undefined) { // mozilla(firefox)
+           url = window.URL.createObjectURL(file);
+       } else if (window.webkitURL != undefined) { // webkit or chrome
+           url = window.webkitURL.createObjectURL(file);
+       }
+       return url;
+   }
+   var objUrl = getObjectURL(this.files[0]);
+   var a = 10;
+   a++;
+   var b = 'file' + a;
+   var html = '<div class="img-box col-25"><img class="'+ b + 'src="' + objUrl + '" alt=""></div>';
+   $(this).parent().parent().prepend(html);
+   var source_img =  new FormData($( "#uploadForm1" )); 
     $('#imageFile').triggerHandler ("click");
     // $.ajax({
     //     type: 'POST',
@@ -1085,7 +1086,7 @@ $(document).on('change', '.fabu1 .file1', function () {
     //         var obj = eval(resu);
     //         myApp.alert(obj.res, '金牛金融');
     //     }
-    // });
+    });
 
   //拆分符号
     function Separator(type){
