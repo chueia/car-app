@@ -3,7 +3,7 @@ var myApp = new Framework7();
 
 // Export selectors engine
 var $$ = Dom7;
-
+myApp.loginScreen();
 // Add view
 var mainView = myApp.addView('.view-main', {
     dynamicNavbar: true
