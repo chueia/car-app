@@ -705,7 +705,9 @@ i.icon.icon-bars{
 input{
     text-align: right!important;
 }
-
+input.search{
+    text-align: left!important;
+}
 textarea{
     border: 0;
     width: 100%;
