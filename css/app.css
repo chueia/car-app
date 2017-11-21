@@ -718,7 +718,6 @@ textarea{
 }
 .picker-modal{
     position: fixed;
-    
 }
 .modal-overlay, .popup-overlay, .preloader-indicator-overlay{
     position:fixed!important;
