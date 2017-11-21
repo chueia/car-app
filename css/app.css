@@ -723,3 +723,6 @@ textarea{
 .modal-overlay, .popup-overlay, .preloader-indicator-overlay{
     position:fixed!important;
 }
+.modal{
+    position:fixed!important;
+}
