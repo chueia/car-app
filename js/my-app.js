@@ -1042,51 +1042,51 @@ $('.careful-diyadai .able').on('click', function () {
 });
 
 //图片上传载入JS
-$(document).on('change', '.fabu1 .file1', function () {
-//    //alert($(this).val());
-   function getObjectURL(file) {
-       var url = null;
-       if (window.createObjectURL != undefined) { // basic
-           url = window.createObjectURL(file);
-       } else if (window.URL != undefined) { // mozilla(firefox)
-           url = window.URL.createObjectURL(file);
-       } else if (window.webkitURL != undefined) { // webkit or chrome
-           url = window.webkitURL.createObjectURL(file);
-       }
-       return url;
-   }
-   var objUrl = getObjectURL(this.files[0]);
-   var a = 10;
-   a++;
-   var b = 'file' + a;
-   var html = '<div class="img-box col-25"><img class="'+b+'" src="' + objUrl + '" alt=""></div>'
-   $(this).parent().parent().prepend(html);
-   var source_img =  new FormData($( "#uploadForm1" )); 
-    $('#imageFile').triggerHandler ("click");
-    // $.ajax({
-    //     type: 'POST',
-    //     url: url,
-    //     data: {
-    //         source_img:source_img,
-    //     },
-    //     dataType: 'json',
-    //     cache: false,
-    //     success: function (resu) {
-    //         var obj = eval(resu);
+// $(document).on('change', '.fabu1 .file1', function () {
+// //    //alert($(this).val());
+//    function getObjectURL(file) {
+//        var url = null;
+//        if (window.createObjectURL != undefined) { // basic
+//            url = window.createObjectURL(file);
+//        } else if (window.URL != undefined) { // mozilla(firefox)
+//            url = window.URL.createObjectURL(file);
+//        } else if (window.webkitURL != undefined) { // webkit or chrome
+//            url = window.webkitURL.createObjectURL(file);
+//        }
+//        return url;
+//    }
+//    var objUrl = getObjectURL(this.files[0]);
+//    var a = 10;
+//    a++;
+//    var b = 'file' + a;
+//    var html = '<div class="img-box col-25"><img class="'+b+'" src="' + objUrl + '" alt=""></div>'
+//    $(this).parent().parent().prepend(html);
+//    var source_img =  new FormData($( "#uploadForm1" )); 
+//     $('#imageFile').triggerHandler ("click");
+//     // $.ajax({
+//     //     type: 'POST',
+//     //     url: url,
+//     //     data: {
+//     //         source_img:source_img,
+//     //     },
+//     //     dataType: 'json',
+//     //     cache: false,
+//     //     success: function (resu) {
+//     //         var obj = eval(resu);
 
-    //         if (obj.res.indexOf('成功') >= 0) {
-    //             window.event.returnValue = false;
-    //             //myApp.alert('提交成功，正在审核', '金牛金融');
-    //         }
-    //         else {
-    //             myApp.alert(obj.res, '金牛金融');
-    //         }
-    //     },
-    //     error: function (resu) {
-    //         var obj = eval(resu);
-    //         myApp.alert(obj.res, '金牛金融');
-    //     }
-    });
+//     //         if (obj.res.indexOf('成功') >= 0) {
+//     //             window.event.returnValue = false;
+//     //             //myApp.alert('提交成功，正在审核', '金牛金融');
+//     //         }
+//     //         else {
+//     //             myApp.alert(obj.res, '金牛金融');
+//     //         }
+//     //     },
+//     //     error: function (resu) {
+//     //         var obj = eval(resu);
+//     //         myApp.alert(obj.res, '金牛金融');
+//     //     }
+//     });
 
   //拆分符号
     function Separator(type){
@@ -1100,7 +1100,7 @@ $(document).on('change', '.fabu1 .file1', function () {
     function GetPageData(detailtype,loantype){
     	
     }
-})
+
 
 
 // 我的消息删除js

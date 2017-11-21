@@ -1113,3 +1113,6 @@ textarea{
 .daikuan-book{
     display:inline-block!important;
 }
+.width-auto img{
+    width: auto!important;
+}
