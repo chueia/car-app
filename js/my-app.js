@@ -894,8 +894,9 @@ $('.careful-jr .able').on('click', function () {
     var lendingtime = $('.fabu2 .jr-shijian').val();//最快放款时间
     var apply = $('.fabu2 .jr-tiaojian').val();//申请条件
     var product = $('.fabu2 .jr-xiangqing').val();//产品详情
+    var fengmian = $('.img-box .cover').attr('src');//金融封面
     if (loantype == undefined || money_max == undefined || money_min == undefined || term_max == undefined || term_min == undefined || interest == undefined
-        || lendingtime == undefined || apply == undefined || product == undefined) {
+        || lendingtime == undefined || apply == undefined || product == undefined|| fengmian == undefined) {
         myApp.alert('请填写完整', '金牛金融');
     } else {
         $.ajax({
@@ -913,6 +914,7 @@ $('.careful-jr .able').on('click', function () {
                 lendingtime: lendingtime,
                 apply: apply,
                 product: product,
+                fengmian,fengmian,
             },
             dataType: 'json',
             cache: false,
