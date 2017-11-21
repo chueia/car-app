@@ -986,6 +986,58 @@ $('.careful-jd .able').on('click', function () {
     }
 });
 
+//信用卡代办表单提交js
+$('.careful-xyk .able').on('click', function () {
+    var url = '/Rongxin/AddDetailServlet';
+    var storage=window.localStorage;
+    var userid=storage.getItem("userid");
+    var detailtype = $('#fabu').val();//发布类型
+    var front_img = $('.fabu3 .xyk-up').attr('src');//卡片正面照
+    var card_name = $('.fabu3 .xyk-name').val();//卡名
+    var intorduction = $('.fabu3 .xyk-jianjie').val();//简介
+    var information = $('.fabu3 .xyk-jiben').val();//基本信息
+    var cost = $('.fabu3 .xyk-feiyong').val();//费用信息
+    var emarks = $('.fabu3 .xyk-beizhu').val();//申卡备注
+
+    if (front_img == undefined || card_name == undefined || intorduction == undefined || information == undefined || cost == undefined || emarks == undefined
+    ) {
+        myApp.alert('请填写完整', '金牛金融');
+    } else {
+        $.ajax({
+            type: 'POST',
+            url: url,
+            data: {
+                userid:userid,
+                detailtype:detailtype,
+                front_img: front_img,
+                card_name: card_name,
+                intorduction: intorduction,
+                information: information,
+                cost: cost,
+                emarks: emarks,
+            },
+            dataType: 'json',
+            cache: false,
+            success: function (resu) {
+                var obj = eval(resu);
+
+                if (obj.res.indexOf('成功') >= 0) {
+                    window.event.returnValue = false;
+                    myApp.alert('提交成功，正在审核', '金牛金融');
+                }
+                else {
+                    myApp.alert(obj.res, '金牛金融');
+                }
+            },
+            error: function (resu) {
+                var obj = eval(resu);
+                myApp.alert(obj.res, '金牛金融');
+
+            }
+        });
+    }
+});
+
 
 //抵押贷表单提交js
 $('.careful-diyadai .able').on('click', function () {
