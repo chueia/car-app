@@ -1059,7 +1059,7 @@ $(document).on('change', '.fabu1 .file1', function () {
    var a = 10;
    a++;
    var b = 'file' + a;
-   var html = '<div class="img-box col-25"><img class="'+ b + 'src="' + objUrl + '" alt=""></div>';
+   var html = '<div class="img-box col-25"><img class="'+b+'" src="' + objUrl + '" alt=""></div>'
    $(this).parent().parent().prepend(html);
    var source_img =  new FormData($( "#uploadForm1" )); 
     $('#imageFile').triggerHandler ("click");
