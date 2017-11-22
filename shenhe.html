@@ -36,155 +36,161 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="fabu fabu1 show">
-               
-                    <div class="excel-box">
-                    	
-                    	 <div>
-                            <span class="">汽车品牌</span>
-                            <input class=" car-pinpai" name="car-pinpai" type="text" placeholder="">
-                        </div>
-                        <div>
-                            <span class="">您的车型</span>
-                            <input class=" car-chexing" name="car-chexing" type="text" placeholder="">
-                        </div>
-                        <div>
-                            <span class="">行驶里程</span>
-                            <span class="right">万公里</span>
-                            <input class="car-licheng" type="text" name="car-licheng" placeholder="" id="">
 
-                        </div>
-                        <div>
-                            <span class="">首次上牌时间</span>
-                            <input class="car-shijian" type="text" name="car-shijian" placeholder="" readonly id="calendar-default">
-                        </div>
+                <div class="excel-box">
 
-                        <div>
-                            <span class="">上牌城市</span>
-                            <input class="choose car-chengshi" name="car-chengshi" placeholder="" readonly id="picker-dependent"></input>
-                        </div>
-                        <div>
-                            <span class="">车辆档位</span>
-                            <input class="choose car-dangwei" name="car-dangwei" type="text" placeholder="" id="dangwei">
-                        </div>
-                        <div>
-                            <span class="">车辆排量</span>
-                            <input class="car-pailiang" name="pailiang" type="text" placeholder="">
-                        </div>
-                        <div>
-                            <span class="">过户次数</span>
-                            <input class="car-cishu" name="car-cishu" type="text" placeholder="">
+                    <div>
+                        <span class="">汽车品牌</span>
+                        <input class=" car-pinpai" name="car-pinpai" type="text" placeholder="">
+                    </div>
+                    <div>
+                        <span class="">您的车型</span>
+                        <input class=" car-chexing" name="car-chexing" type="text" placeholder="">
+                    </div>
+                    <div>
+                        <span class="">行驶里程</span>
+                        <span class="right">万公里</span>
+                        <input class="car-licheng" type="text" name="car-licheng" placeholder="" id="">
+
+                    </div>
+                    <div>
+                        <span class="">首次上牌时间</span>
+                        <input class="car-shijian" type="text" name="car-shijian" placeholder="" readonly id="calendar-default">
+                    </div>
+
+                    <div>
+                        <span class="">上牌城市</span>
+                        <input class="choose car-chengshi" name="car-chengshi" placeholder="" readonly id="picker-dependent"></input>
+                    </div>
+                    <div>
+                        <span class="">车辆档位</span>
+                        <input class="choose car-dangwei" name="car-dangwei" type="text" placeholder="" id="dangwei">
+                    </div>
+                    <div>
+                        <span class="">车辆排量</span>
+                        <input class="car-pailiang" name="pailiang" type="text" placeholder="">
+                    </div>
+                    <div>
+                        <span class="">过户次数</span>
+                        <input class="car-cishu" name="car-cishu" type="text" placeholder="">
+                    </div>
+                </div>
+                <div class="excel-box">
+                    <div class="item-inner">
+                        <div class="item-title label">车辆详情</div>
+                        <div class="item-input">
+                            <textarea class="car-xiangqing" name="car-xiangqing"></textarea>
                         </div>
                     </div>
-                    <div class="excel-box">
-                        <div class="item-inner">
-                            <div class="item-title label">车辆详情</div>
-                            <div class="item-input">
-                                <textarea class="car-xiangqing" name="car-xiangqing"></textarea>
+                    <div class="excel-box excel-box2">
+
+                        <div>
+                            <span>车源图片 </span>
+                        </div>
+                        <div class="row">
+                            <div class="img-box col-25">
+                                <img src="./img/img-tianjia.png" alt="">
+                                <form id='uploadform' action='FileUpload' method='post' enctype='multipart/form-data' style='width:100%;height:100%;'>
+                                    <input class="file file1" accept='image/*' onchange="Upload('uploadform',this,1);" type='file' name='imageFile' id='imageFile'
+                                        style='' />
+                                </form>
                             </div>
-                        </div>
-                        <div class="excel-box excel-box2">
-                            
-                                <div>
-                                    <span>车源图片 </span>
-                                </div>
-                                <div class="row">
-                                    <div class="img-box col-25">
-                                        <img src="./img/img-tianjia.png" alt="">
-                                        <form id='uploadform' action='FileUpload' method='post' enctype='multipart/form-data' style='width:100%;height:100%;'>
-                                            <input class="file file1" accept='image/*' onchange="Upload('uploadform',this,1);" type='file' name='imageFile' id='imageFile' style=''/>
-                                        </form>
-                                    </div>
-
-                                </div>
-                                <div>
-                                    <span class="tip">点击更换图片，共4张，至少1张。图片更多，更容易被出售哦。</span>
-                                </div>
-                            
-                        </div>
-
-
-
-                        <div class="excel-box excel-box3">
-                                <div class="row">
-                                    <div class="img-box col-100">
-                                        <img src="./img/car-1.jpg" alt="">
-                                         <form id='uploadform2' action='FileUpload' method='post' enctype='multipart/form-data' style='width:100%;height:100%;'>
-                                            <input class="file file1" accept='image/*' onchange="Upload('uploadform2',this,2);" type='file' name='imageFile' id='imageFile' style=''/>
-                                        </form>
-                                    </div>
-                                    <div>
-                                        <span>
-                                            <b>正侧：</b>漆面完整保持较好，车身结构无修复。</span>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="img-box col-100">
-                                        <img src="./img/car-1.jpg" alt="">
-                                         <form id='uploadform3' action='FileUpload' method='post' enctype='multipart/form-data' style='width:100%;height:100%;'>
-                                            <input class="file file1" accept='image/*' onchange="Upload('uploadform3',this,2);" type='file' name='imageFile' id='imageFile' style=''/>
-                                        </form>
-                                    </div>
-                                    <div>
-                                        <span>
-                                            <b>正前：</b>添加一张车辆正前视角图片/填写备注</span>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="img-box col-100">
-                                        <img src="./img/img-tianjia2.png" alt="">
-                                         <form id='uploadform4' action='FileUpload' method='post' enctype='multipart/form-data' style='width:100%;height:100%;'>
-                                            <input class="file file1" accept='image/*' onchange="Upload('uploadform4',this,2);" type='file' name='imageFile' id='imageFile' style=''/>
-                                        </form>
-                                    </div>
-                                    <div>
-                                        <span>
-                                            <b>正背：</b> 添加一张车辆正背视角图片/填写备注</span>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="img-box col-100">
-                                        <img src="./img/img-tianjia2.png" alt="">
-                                         <form id='uploadform5' action='FileUpload' method='post' enctype='multipart/form-data' style='width:100%;height:100%;'>
-                                            <input class="file file1" accept='image/*' onchange="Upload('uploadform5',this,2);" type='file' name='imageFile' id='imageFile' style=''/>
-                                        </form>
-                                    </div>
-                                    <div>
-                                        <span>
-                                            <b>前内饰：</b> 添加一张车辆正背视角图片/填写备注</span>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="img-box col-100">
-                                        <img src="./img/img-tianjia2.png" alt="">
-                                         <form id='uploadform6' action='FileUpload' method='post' enctype='multipart/form-data' style='width:100%;height:100%;'>
-                                            <input class="file file1" accept='image/*' onchange="Upload('uploadform6',this,2);" type='file' name='imageFile' id='imageFile' style=''/>
-                                        </form>
-                                    </div>
-                                    <div>
-                                        <span>
-                                            <b>后内饰：</b> 添加一张车辆正背视角图片/填写备注</span>
-                                    </div>
-                                </div>
 
                         </div>
+                        <div>
+                            <span class="tip">点击更换图片，共4张，至少1张。图片更多，更容易被出售哦。</span>
+                        </div>
 
-                        
+                    </div>
 
-                        <div class="excel-box">
+
+
+                    <div class="excel-box excel-box3">
+                        <div class="row">
+                            <div class="img-box col-100">
+                                <img src="./img/car-1.jpg" alt="">
+                                <form id='uploadform2' action='FileUpload' method='post' enctype='multipart/form-data' style='width:100%;height:100%;'>
+                                    <input class="file file1" accept='image/*' onchange="Upload('uploadform2',this,2);" type='file' name='imageFile' id='imageFile'
+                                        style='' />
+                                </form>
+                            </div>
                             <div>
-                                <span>期望售价
-                                    <input type="text" class="car-shoujia" name="car-shoujia" placeholder="万元">
-                                </span>
+                                <span>
+                                    <b>正侧：</b>漆面完整保持较好，车身结构无修复。</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="img-box col-100">
+                                <img src="./img/car-1.jpg" alt="">
+                                <form id='uploadform3' action='FileUpload' method='post' enctype='multipart/form-data' style='width:100%;height:100%;'>
+                                    <input class="file file1" accept='image/*' onchange="Upload('uploadform3',this,2);" type='file' name='imageFile' id='imageFile'
+                                        style='' />
+                                </form>
+                            </div>
+                            <div>
+                                <span>
+                                    <b>正前：</b>添加一张车辆正前视角图片/填写备注</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="img-box col-100">
+                                <img src="./img/img-tianjia2.png" alt="">
+                                <form id='uploadform4' action='FileUpload' method='post' enctype='multipart/form-data' style='width:100%;height:100%;'>
+                                    <input class="file file1" accept='image/*' onchange="Upload('uploadform4',this,2);" type='file' name='imageFile' id='imageFile'
+                                        style='' />
+                                </form>
+                            </div>
+                            <div>
+                                <span>
+                                    <b>正背：</b> 添加一张车辆正背视角图片/填写备注</span>
                             </div>
                         </div>
 
-                        
+                        <div class="row">
+                            <div class="img-box col-100">
+                                <img src="./img/img-tianjia2.png" alt="">
+                                <form id='uploadform5' action='FileUpload' method='post' enctype='multipart/form-data' style='width:100%;height:100%;'>
+                                    <input class="file file1" accept='image/*' onchange="Upload('uploadform5',this,2);" type='file' name='imageFile' id='imageFile'
+                                        style='' />
+                                </form>
+                            </div>
+                            <div>
+                                <span>
+                                    <b>前内饰：</b> 添加一张车辆正背视角图片/填写备注</span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="img-box col-100">
+                                <img src="./img/img-tianjia2.png" alt="">
+                                <form id='uploadform6' action='FileUpload' method='post' enctype='multipart/form-data' style='width:100%;height:100%;'>
+                                    <input class="file file1" accept='image/*' onchange="Upload('uploadform6',this,2);" type='file' name='imageFile' id='imageFile'
+                                        style='' />
+                                </form>
+                            </div>
+                            <div>
+                                <span>
+                                    <b>后内饰：</b> 添加一张车辆正背视角图片/填写备注</span>
+                            </div>
+                        </div>
+
                     </div>
-               
+
+
+
+                    <div class="excel-box">
+                        <div>
+                            <span>期望售价
+                                <input type="text" class="car-shoujia" name="car-shoujia" placeholder="万元">
+                            </span>
+                        </div>
+                    </div>
+
+
+                </div>
+
             </div>
 
             <div class="fabu fabu2 show">
@@ -229,7 +235,7 @@
                         </div>
                     </div>
                 </div>
-                
+
             </div>
 
             <div class="fabu fabu3 show">
@@ -268,7 +274,7 @@
                             <textarea class="xyk-beizhu"></textarea>
                         </div>
                     </div>
-                   
+
                 </div>
             </div>
 
@@ -303,10 +309,10 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="view-main jinrong-excel1">
                 <div class="main">
-                    
+
                     <div class="excel-box">
                         <div>
                             <span class="">公司名称</span>
@@ -337,7 +343,7 @@
 
                 <div class="view-main jinrong-excel1">
                     <div class="main">
-                        
+
                         <div class="excel-box">
                             <div>
                                 <span class="">身份证姓名</span>
@@ -364,16 +370,17 @@
                         </div>
                     </div>
 
-              <p class="buttons-row">
-                <a href="#" class="button button-big button-fill button-raised color-pink">驳回</a>
-                <a href="#" class="button button-big button-fill button-raised color-teal">通过</a>
-              </p>  
-            
-            <script src="./js/jquery-3.2.1.min.js"></script>
-            
-            <script type="text/javascript" src="js/framework7.min.js"></script>
-            <script src="./js/upload.js"></script>
-            <script type="text/javascript" src="js/my-app.js"></script>
+                    <p class="buttons-row">
+                        <a href="#" class="button button-big button-fill button-raised color-pink refuse">驳回</a>
+                        <a href="#" class="button button-big button-fill button-raised color-teal pass">通过</a>
+                    </p>
+
+                    <script src="./js/jquery-3.2.1.min.js"></script>
+
+                    <script type="text/javascript" src="js/framework7.min.js"></script>
+                    <script src="./js/upload.js"></script>
+                    <script type="text/javascript" src="js/my-app.js"></script>
+                    
 </body>
 
 </html>

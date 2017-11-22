@@ -1258,6 +1258,80 @@ $(document).on('click','.jinrong-excel1 .shenfen',function(){
     }
 })
 
+
+//审核页面通过驳回js
+$$('.buttons-row .refuse').on('click', function () {
+    myApp.prompt('请填写驳回理由', '金牛', function (value) {
+        var url = '/Rongxin/AddDetailServlet';
+        var storage = window.localStorage;
+        var userid = storage.getItem("userid");
+        var refuse = value;//驳回理由
+        if (refuse == undefined 
+        ) {
+            myApp.alert('请填写驳回理由', '金牛金融');
+        } else {
+            $.ajax({
+                type: 'POST',
+                url: url,
+                data: {
+                    userid: userid,
+                    refuse: refuse,
+                },
+                dataType: 'json',
+                cache: false,
+                success: function (resu) {
+                    var obj = eval(resu);
+                    if (obj.res.indexOf('成功') >= 0) {
+                        window.event.returnValue = false;
+                        myApp.alert('驳回成功', '金牛金融');
+                    } else {
+                        myApp.alert(obj.res, '金牛金融');
+                    }
+                },
+                error: function (resu) {
+                    var obj = eval(resu);
+                    myApp.alert(obj.res, '金牛金融');
+
+                }
+            });
+        }
+    });
+});
+$$('.buttons-row .pass').on('click', function () {
+    myApp.confirm('确定通过审核?', 
+      function () {
+        var url = '/Rongxin/AddDetailServlet';
+        var storage = window.localStorage;
+        var userid = storage.getItem("userid");
+        $.ajax({
+                type: 'POST',
+                url: url,
+                data: {
+                    userid: userid,
+                },
+                dataType: 'json',
+                cache: false,
+                success: function (resu) {
+                    var obj = eval(resu);
+                    if (obj.res.indexOf('成功') >= 0) {
+                        window.event.returnValue = false;
+                        myApp.alert('驳回成功', '金牛金融');
+                    } else {
+                        myApp.alert(obj.res, '金牛金融');
+                    }
+                },
+                error: function (resu) {
+                    var obj = eval(resu);
+                    myApp.alert(obj.res, '金牛金融');
+
+                }
+            });
+      },
+      function () {
+        
+      }
+    );
+});
 // input模拟点击
 // $(document).on('click','.item-inner',function(){
 //     $(this).find('input').focus();
