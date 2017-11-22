@@ -701,7 +701,6 @@ $('.jinrong-excel1 .yanzheng').on('click', function () {
                             time = 60;
                             $('.jinrong-excel1 .yanzheng i').text(time);
                             clearInterval(timer);
-
                         }
                         else {
                             $('.jinrong-excel1 .yanzheng i').text(time);
@@ -1072,6 +1071,59 @@ $('.careful-diyadai .able').on('click', function () {
                 dy_bianhao: dy_bianhao,
                 dy_price: dy_price,
                 dy_main: dy_main,
+            },
+            dataType: 'json',
+            cache: false,
+            success: function (resu) {
+                var obj = eval(resu);
+
+                if (obj.res.indexOf('成功') >= 0) {
+                    window.event.returnValue = false;
+                    myApp.alert('提交成功，正在审核', '金牛金融');
+                }
+                else {
+                    myApp.alert(obj.res, '金牛金融');
+                }
+            },
+            error: function (resu) {
+                var obj = eval(resu);
+                myApp.alert(obj.res, '金牛金融');
+
+            }
+        });
+    }
+});
+
+
+//营业执照表单提交js
+$('.careful-diyadai .able').on('click', function () {
+    var url = '/Rongxin/UpdateUserServlet';
+    var storage=window.localStorage;
+    var userid=storage.getItem("userid");
+   var company = $('.jinrong-excel1 .company').val();//公司名称
+   var company_address = $('.jinrong-excel1 .company_address').val();//公司地址
+   var credit_code = $('.jinrong-excel1 .code').val();//信用代码
+   var Business_address = $('.jinrong-excel1 .zhengmian').attr('src');//营业执照正面
+   var Business_url = $('.jinrong-excel1 .fanmian').attr('src');//营业执照背面
+   
+  
+
+    if (company == undefined || company_address == undefined || credit_code == undefined || Business_address == undefined || Business_url == undefined 
+       
+    ) {
+        myApp.alert('请填写完整', '金牛金融');
+    } else {
+        $.ajax({
+            type: 'POST',
+            url: url,
+            data: {
+            	userid:userid,
+                company: company,
+                company_address: company_address,
+                credit_code: credit_code,
+                Business_address: Business_address,
+                Business_url: Business_url,
+               
             },
             dataType: 'json',
             cache: false,
